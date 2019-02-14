@@ -13,4 +13,5 @@ struct Cell {
 }
 
 struct Segues {
+    static let goToAddCar = "GoToAddCar"
 }

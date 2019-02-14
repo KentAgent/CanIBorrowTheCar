@@ -7,3 +7,9 @@
 //
 
 import Foundation
+import RealmSwift
+
+class RealmManager {
+    let realm = try! Realm()
+    let fileURL = Realm.Configuration.defaultConfiguration.fileURL
+}
