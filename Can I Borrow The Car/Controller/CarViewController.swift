@@ -8,8 +8,9 @@
 
 import UIKit
 
-class CarViewController: UIViewController {
+class CarViewController: UIViewController, Storyboarded {
 
+    weak var coordinator: MainCoordinator?
     var carModel = CarModel()
     var carRealmManager = CarRealmManager()
     
@@ -21,15 +22,9 @@ class CarViewController: UIViewController {
     }
     
     @IBAction func addCarButton(_ sender: Any) {
-        performSegue(withIdentifier: Segues.goToAddCar, sender: self)
+        coordinator?.addCar()
+    }
 
-    }
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        //let VC = segue.destination as! AddCarViewController
-//        if let indexPath = tableView.indexPathForSelectedRow {
-//            VC.selectedCategory = categoryModel.categories?[indexPath.row]
-//        }
-    }
 }
 
 extension CarViewController: UITableViewDelegate, UITableViewDataSource{
@@ -41,7 +36,7 @@ extension CarViewController: UITableViewDelegate, UITableViewDataSource{
         let cell = tableView.dequeueReusableCell(withIdentifier: Cell.carCell, for: indexPath)
         
         if let car = carModel.cars?[indexPath.row] {
-            cell.textLabel?.text = car.model
+            cell.textLabel?.text = car.carName
             cell.accessoryType = car.isBorrowed ? .checkmark : .none
         } else {
             cell.textLabel?.text = "No cars added yet"

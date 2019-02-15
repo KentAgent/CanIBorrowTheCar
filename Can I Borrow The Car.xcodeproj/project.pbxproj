@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		26F7A0347F40B23288849637 /* Pods_Can_I_Borrow_The_Car.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A70825BEE60397904434F862 /* Pods_Can_I_Borrow_The_Car.framework */; };
+		875F91BF2216AA5800A8522E /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 875F91BE2216AA5800A8522E /* Coordinator.swift */; };
+		875F91C12216AAA900A8522E /* Storyboarded.swift in Sources */ = {isa = PBXBuildFile; fileRef = 875F91C02216AAA900A8522E /* Storyboarded.swift */; };
+		875F91C32216AB6D00A8522E /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 875F91C22216AB6D00A8522E /* MainCoordinator.swift */; };
+		875F91C52216B44800A8522E /* AddCarCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 875F91C42216B44800A8522E /* AddCarCoordinator.swift */; };
 		87BB0F322215EC490000F853 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87BB0F312215EC490000F853 /* AppDelegate.swift */; };
 		87BB0F342215EC490000F853 /* CarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87BB0F332215EC490000F853 /* CarViewController.swift */; };
 		87BB0F372215EC490000F853 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 87BB0F352215EC490000F853 /* Main.storyboard */; };
@@ -49,6 +53,10 @@
 		40F154D8D66F9DB403E6B190 /* Pods-Can I Borrow The CarUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Can I Borrow The CarUITests.debug.xcconfig"; path = "Target Support Files/Pods-Can I Borrow The CarUITests/Pods-Can I Borrow The CarUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		5C31AB43B550D59F86780BED /* Pods_Can_I_Borrow_The_CarUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Can_I_Borrow_The_CarUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7EDE679B327CE5AE0D30D222 /* Pods_Can_I_Borrow_The_CarTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Can_I_Borrow_The_CarTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		875F91BE2216AA5800A8522E /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		875F91C02216AAA900A8522E /* Storyboarded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboarded.swift; sourceTree = "<group>"; };
+		875F91C22216AB6D00A8522E /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
+		875F91C42216B44800A8522E /* AddCarCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCarCoordinator.swift; sourceTree = "<group>"; };
 		87BB0F2E2215EC490000F853 /* Can I Borrow The Car.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Can I Borrow The Car.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		87BB0F312215EC490000F853 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		87BB0F332215EC490000F853 /* CarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarViewController.swift; sourceTree = "<group>"; };
@@ -103,6 +111,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		875F91BD2216AA3D00A8522E /* Coordinators */ = {
+			isa = PBXGroup;
+			children = (
+				875F91BE2216AA5800A8522E /* Coordinator.swift */,
+				875F91C02216AAA900A8522E /* Storyboarded.swift */,
+				875F91C22216AB6D00A8522E /* MainCoordinator.swift */,
+				875F91C42216B44800A8522E /* AddCarCoordinator.swift */,
+			);
+			path = Coordinators;
+			sourceTree = "<group>";
+		};
 		87BB0F252215EC490000F853 = {
 			isa = PBXGroup;
 			children = (
@@ -130,6 +149,7 @@
 			isa = PBXGroup;
 			children = (
 				87BB0F692215F1F10000F853 /* Config.swift */,
+				875F91BD2216AA3D00A8522E /* Coordinators */,
 				87BB0F752215F6130000F853 /* Extension */,
 				87BB0F612215EC640000F853 /* Model */,
 				87BB0F602215EC620000F853 /* View */,
@@ -460,9 +480,13 @@
 				87BB0F682215EF9D0000F853 /* RealmManager.swift in Sources */,
 				87BB0F832215FB340000F853 /* AddCarViewController.swift in Sources */,
 				87BB0F6A2215F1F10000F853 /* Config.swift in Sources */,
+				875F91C52216B44800A8522E /* AddCarCoordinator.swift in Sources */,
+				875F91C32216AB6D00A8522E /* MainCoordinator.swift in Sources */,
 				87BB0F322215EC490000F853 /* AppDelegate.swift in Sources */,
 				87BB0F802215F6580000F853 /* AlertModel.swift in Sources */,
+				875F91C12216AAA900A8522E /* Storyboarded.swift in Sources */,
 				87BB0F642215ED850000F853 /* Car.swift in Sources */,
+				875F91BF2216AA5800A8522E /* Coordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

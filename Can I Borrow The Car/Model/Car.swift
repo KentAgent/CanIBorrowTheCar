@@ -14,19 +14,21 @@ struct CarModel {
 }
 
 class Car: Object {
+    @objc dynamic var carName : String = ""
     @objc dynamic var model : String = ""
     @objc dynamic var licensePlate : String = ""
     @objc dynamic var owner : String = ""
     @objc dynamic var color : String = ""
+    @objc dynamic var borrowedOf : String = ""
     @objc dynamic var isBorrowed : Bool = false
 }
 
 class CarRealmManager: RealmManager {
     
-    func create(complititon: () -> ()) {
+    func create(complititon: () -> Car) {
         do {
             try realm.write {
-                complititon()
+                realm.add(complititon())
             }
         } catch {
             print("Error saving item \(error)")
