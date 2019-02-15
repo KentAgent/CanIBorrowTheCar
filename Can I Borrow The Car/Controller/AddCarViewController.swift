@@ -10,8 +10,9 @@ import UIKit
 
 class AddCarViewController: UIViewController, Storyboarded {
     
-    weak var coordinator: AddCarCoordinator?
+    //weak var coordinator: AddCarCoordinator?
     var carModel = CarModel()
+    var borrowCar = BorrowCar()
     var carRealmManager = CarRealmManager()
     
     @IBOutlet weak var carNameTextField: UITextField!
@@ -40,6 +41,11 @@ class AddCarViewController: UIViewController, Storyboarded {
         car.licensePlate = licensePlateTextField.text!
         car.owner = ownerTextFIeld.text!
         car.isBorrowed = isBorrowedSwitch.isOn ? true : false
+        if car.isBorrowed == true {
+            //ADD TO BORROWED CARS
+        } else {
+            //ADD TO NOT BORROWED CARS
+        }
         return car
     }
     
@@ -47,7 +53,11 @@ class AddCarViewController: UIViewController, Storyboarded {
     
     @IBAction func saveCarButton(_ sender: Any) {
         carRealmManager.create(complititon: saveCar)
-        dismiss(animated: false, completion: nil)
+        dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func cancelButton(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
     }
     
 }

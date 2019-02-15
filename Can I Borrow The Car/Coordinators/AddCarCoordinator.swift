@@ -20,7 +20,7 @@ class AddCarCoordinator: Coordinator {
     
     func start() {
         let vc = AddCarViewController.instantiate()
-        vc.coordinator = self
+        //vc.coordinator = self
         navigationController.pushViewController(vc, animated: true)
     }
     

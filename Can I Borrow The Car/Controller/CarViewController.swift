@@ -8,10 +8,12 @@
 
 import UIKit
 
-class CarViewController: UIViewController, Storyboarded {
+class CarViewController: UIViewController {
 
-    weak var coordinator: MainCoordinator?
+    //weak var coordinator: MainCoordinator?
     var carModel = CarModel()
+    var borrowCarModel = BorrowCarModel()
+    var borrowCarRealmManager = BorrowCarRealmManager()
     var carRealmManager = CarRealmManager()
     
     @IBOutlet weak var tableView: UITableView!
@@ -19,12 +21,8 @@ class CarViewController: UIViewController, Storyboarded {
     override func viewDidLoad() {
         super.viewDidLoad()
         print(carRealmManager.fileURL!)
+        borrowCarRealmManager.createTheCategories()
     }
-    
-    @IBAction func addCarButton(_ sender: Any) {
-        coordinator?.addCar()
-    }
-
 }
 
 extension CarViewController: UITableViewDelegate, UITableViewDataSource{

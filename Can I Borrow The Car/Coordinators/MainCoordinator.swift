@@ -20,9 +20,9 @@ class MainCoordinator: NSObject, Coordinator, UINavigationControllerDelegate {
     
     func start() {
         navigationController.delegate = self
-        let vc = CarViewController.instantiate()
-        vc.coordinator = self
-        navigationController.pushViewController(vc, animated: true)
+        //let vc = CarViewController.instantiate()
+        //vc.coordinator = self
+        //navigationController.pushViewController(vc, animated: true)
     }
     
     func addCar() {
@@ -33,7 +33,8 @@ class MainCoordinator: NSObject, Coordinator, UINavigationControllerDelegate {
     }
     
     func goBack() {
-        
+        // HUR GÅR JAG TILLBAKS???
+        // 
     }
     
     
@@ -55,7 +56,7 @@ class MainCoordinator: NSObject, Coordinator, UINavigationControllerDelegate {
         }
         
         if let addCarViewController = fromViewController as? AddCarViewController {
-            childDidFinish(addCarViewController.coordinator)
+            //childDidFinish(addCarViewController.coordinator)
         }
         
     }

@@ -21,6 +21,7 @@ class Car: Object {
     @objc dynamic var color : String = ""
     @objc dynamic var borrowedOf : String = ""
     @objc dynamic var isBorrowed : Bool = false
+    var parent = LinkingObjects(fromType: BorrowCar.self, property: "cars")
 }
 
 class CarRealmManager: RealmManager {

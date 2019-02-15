@@ -12,6 +12,7 @@
 		875F91C12216AAA900A8522E /* Storyboarded.swift in Sources */ = {isa = PBXBuildFile; fileRef = 875F91C02216AAA900A8522E /* Storyboarded.swift */; };
 		875F91C32216AB6D00A8522E /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 875F91C22216AB6D00A8522E /* MainCoordinator.swift */; };
 		875F91C52216B44800A8522E /* AddCarCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 875F91C42216B44800A8522E /* AddCarCoordinator.swift */; };
+		875F91CE2216F93B00A8522E /* BorrowCar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 875F91CD2216F93B00A8522E /* BorrowCar.swift */; };
 		87BB0F322215EC490000F853 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87BB0F312215EC490000F853 /* AppDelegate.swift */; };
 		87BB0F342215EC490000F853 /* CarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87BB0F332215EC490000F853 /* CarViewController.swift */; };
 		87BB0F372215EC490000F853 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 87BB0F352215EC490000F853 /* Main.storyboard */; };
@@ -20,7 +21,6 @@
 		87BB0F472215EC4A0000F853 /* Can_I_Borrow_The_CarTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87BB0F462215EC4A0000F853 /* Can_I_Borrow_The_CarTests.swift */; };
 		87BB0F522215EC4A0000F853 /* Can_I_Borrow_The_CarUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87BB0F512215EC4A0000F853 /* Can_I_Borrow_The_CarUITests.swift */; };
 		87BB0F642215ED850000F853 /* Car.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87BB0F632215ED850000F853 /* Car.swift */; };
-		87BB0F662215EDD20000F853 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 87BB0F652215EDD20000F853 /* Default-568h@2x.png */; };
 		87BB0F682215EF9D0000F853 /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87BB0F672215EF9D0000F853 /* RealmManager.swift */; };
 		87BB0F6A2215F1F10000F853 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87BB0F692215F1F10000F853 /* Config.swift */; };
 		87BB0F802215F6580000F853 /* AlertModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87BB0F7E2215F6580000F853 /* AlertModel.swift */; };
@@ -57,6 +57,7 @@
 		875F91C02216AAA900A8522E /* Storyboarded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboarded.swift; sourceTree = "<group>"; };
 		875F91C22216AB6D00A8522E /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 		875F91C42216B44800A8522E /* AddCarCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCarCoordinator.swift; sourceTree = "<group>"; };
+		875F91CD2216F93B00A8522E /* BorrowCar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BorrowCar.swift; sourceTree = "<group>"; };
 		87BB0F2E2215EC490000F853 /* Can I Borrow The Car.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Can I Borrow The Car.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		87BB0F312215EC490000F853 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		87BB0F332215EC490000F853 /* CarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarViewController.swift; sourceTree = "<group>"; };
@@ -71,7 +72,6 @@
 		87BB0F512215EC4A0000F853 /* Can_I_Borrow_The_CarUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Can_I_Borrow_The_CarUITests.swift; sourceTree = "<group>"; };
 		87BB0F532215EC4A0000F853 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		87BB0F632215ED850000F853 /* Car.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Car.swift; sourceTree = "<group>"; };
-		87BB0F652215EDD20000F853 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		87BB0F672215EF9D0000F853 /* RealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
 		87BB0F692215F1F10000F853 /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		87BB0F7E2215F6580000F853 /* AlertModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertModel.swift; sourceTree = "<group>"; };
@@ -125,7 +125,6 @@
 		87BB0F252215EC490000F853 = {
 			isa = PBXGroup;
 			children = (
-				87BB0F652215EDD20000F853 /* Default-568h@2x.png */,
 				87BB0F302215EC490000F853 /* Can I Borrow The Car */,
 				87BB0F452215EC4A0000F853 /* Can I Borrow The CarTests */,
 				87BB0F502215EC4A0000F853 /* Can I Borrow The CarUITests */,
@@ -200,6 +199,7 @@
 			isa = PBXGroup;
 			children = (
 				87BB0F632215ED850000F853 /* Car.swift */,
+				875F91CD2216F93B00A8522E /* BorrowCar.swift */,
 				87BB0F672215EF9D0000F853 /* RealmManager.swift */,
 				87BB0F7E2215F6580000F853 /* AlertModel.swift */,
 			);
@@ -355,7 +355,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				87BB0F3C2215EC4A0000F853 /* LaunchScreen.storyboard in Resources */,
-				87BB0F662215EDD20000F853 /* Default-568h@2x.png in Resources */,
 				87BB0F392215EC4A0000F853 /* Assets.xcassets in Resources */,
 				87BB0F372215EC490000F853 /* Main.storyboard in Resources */,
 			);
@@ -486,6 +485,7 @@
 				87BB0F802215F6580000F853 /* AlertModel.swift in Sources */,
 				875F91C12216AAA900A8522E /* Storyboarded.swift in Sources */,
 				87BB0F642215ED850000F853 /* Car.swift in Sources */,
+				875F91CE2216F93B00A8522E /* BorrowCar.swift in Sources */,
 				875F91BF2216AA5800A8522E /* Coordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
