@@ -26,6 +26,7 @@ class Car: Object {
 
 class CarRealmManager: RealmManager {
     
+    
     func create(complititon: () -> ()) {
         do {
             try realm.write {
@@ -41,7 +42,7 @@ class CarRealmManager: RealmManager {
         return car
     }
     
-    func update(complititon: () -> ()) {
+    func update(complititon: () -> ()){
         do {
             try realm.write {
                 complititon()

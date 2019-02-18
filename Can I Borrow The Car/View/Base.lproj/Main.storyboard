@@ -50,12 +50,12 @@
                         <barButtonItem key="rightBarButtonItem" title="Add car" id="vxG-LO-jk1">
                             <connections>
                                 <action selector="addCarButton:" destination="BYZ-38-t0r" id="4OM-p3-z05"/>
-                                <segue destination="Q0I-2D-gly" kind="presentation" identifier="GoToAddCar" id="YJg-rq-M2p"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="coj-n9-Cx8" id="yZe-vL-ge0"/>
+                        <segue destination="Q0I-2D-gly" kind="presentation" identifier="GoToAddCar" id="jtL-12-cfv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

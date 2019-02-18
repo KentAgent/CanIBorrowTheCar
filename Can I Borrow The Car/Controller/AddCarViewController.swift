@@ -10,7 +10,6 @@ import UIKit
 
 class AddCarViewController: UIViewController, Storyboarded {
     
-    //weak var coordinator: AddCarCoordinator?
     var carModel = CarModel()
     var categoryModel = CategoryModel()
     var carRealmManager = CarRealmManager()
@@ -26,8 +25,17 @@ class AddCarViewController: UIViewController, Storyboarded {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
+    
+    var selectedCar : Car? {
+        didSet {
+            carModel.cars = carRealmManager.load()
+            DispatchQueue.main.async {
+                self.updateView(selectedCar: self.selectedCar!)
+            }
+        }
+    }
 
-    func saveCar() -> Car{
+    func saveCar(){
         let car = Car()
         car.carName = carNameTextField.text!
         car.model = modelTextField.text!
@@ -35,21 +43,46 @@ class AddCarViewController: UIViewController, Storyboarded {
         car.licensePlate = licensePlateTextField.text!
         car.owner = ownerTextFIeld.text!
         car.isBorrowed = isBorrowedSwitch.isOn ? true : false
-        return car
+        car.borrowedOf = borrowedOfTextField.text!
+        car.isBorrowed == true ? categoryModel.categories![1].cars.append(car) : categoryModel.categories![0].cars.append(car)
+    }
+    
+    func updateCar() -> Car{
+        selectedCar!.carName = carNameTextField.text!
+        selectedCar!.model = modelTextField.text!
+        selectedCar!.color = colorTextField.text!
+        selectedCar!.licensePlate = licensePlateTextField.text!
+        selectedCar!.owner = ownerTextFIeld.text!
+        selectedCar!.isBorrowed = isBorrowedSwitch.isOn ? true : false
+        selectedCar!.borrowedOf = borrowedOfTextField.text!
+        return selectedCar!
+    }
+    
+    func updateView(selectedCar: Car) {
+        carNameTextField.text! = selectedCar.carName
+        modelTextField.text! = selectedCar.model
+        colorTextField.text! = selectedCar.color
+        licensePlateTextField.text! = selectedCar.licensePlate
+        ownerTextFIeld.text! = selectedCar.owner
+        if selectedCar.isBorrowed == true {
+            isBorrowedSwitch.isOn = true
+        } else {
+            isBorrowedSwitch.isOn = false
+        }
+        borrowedOfTextField.text! = selectedCar.borrowedOf
     }
     
     @IBAction func saveCarButton(_ sender: Any) {
-        self.carRealmManager.create {
-            let car = Car()
-            car.carName = carNameTextField.text!
-            car.model = modelTextField.text!
-            car.color = colorTextField.text!
-            car.licensePlate = licensePlateTextField.text!
-            car.owner = ownerTextFIeld.text!
-            car.isBorrowed = isBorrowedSwitch.isOn ? true : false
-            car.borrowedOf = borrowedOfTextField.text!
-            car.isBorrowed == true ? categoryModel.categories![1].cars.append(car) : categoryModel.categories![0].cars.append(car)
+        if selectedCar == nil {
+            self.carRealmManager.create {
+                saveCar()
+            }
+        } else {
+            carRealmManager.update {
+                selectedCar = updateCar()
+            }
         }
+
         dismiss(animated: true, completion: nil)
     }
     
