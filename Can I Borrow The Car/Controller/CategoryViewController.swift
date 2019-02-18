@@ -11,46 +11,42 @@ import UIKit
 class CarViewController: UIViewController {
 
     //weak var coordinator: MainCoordinator?
-    var carModel = CarModel()
-    var borrowCarModel = BorrowCarModel()
-    var borrowCarRealmManager = BorrowCarRealmManager()
-    var carRealmManager = CarRealmManager()
+    var categoryModel = CategoryModel()
+    var categoryRealmManager = CategoryRealmManager()
     
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(carRealmManager.fileURL!)
-        borrowCarRealmManager.createTheCategories()
+        categoryRealmManager.createTheCategories()
+        categoryModel.categories = categoryRealmManager.load()
+        print(RealmManager.fileURL!)
+        tableView.reloadData()
+    }
+    
+    @IBAction func addCarButton(_ sender: Any) {
+        performSegue(withIdentifier: Segues.goToAddCar, sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let VC = segue.destination as! AddCarViewController
+        VC.categoryModel = categoryModel
     }
 }
 
 extension CarViewController: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return carModel.cars?.count ?? 1
+        return categoryModel.categories?.count ?? 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: Cell.carCell, for: indexPath)
-        
-        if let car = carModel.cars?[indexPath.row] {
-            cell.textLabel?.text = car.carName
-            cell.accessoryType = car.isBorrowed ? .checkmark : .none
-        } else {
-            cell.textLabel?.text = "No cars added yet"
-        }
-        
+        let cell = tableView.dequeueReusableCell(withIdentifier: Cell.category, for: indexPath)
+        cell.textLabel?.text = categoryModel.categories?[indexPath.row].isBorrowed ?? "No Categories added yet"
         return cell
 
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if let car = carModel.cars?[indexPath.row] {
-            carRealmManager.update {
-                car.isBorrowed.toggle()
-            }
-        }
-        self.tableView.reloadData()
         tableView.deselectRow(at: indexPath, animated: true)
     }
     

@@ -11,5 +11,5 @@ import RealmSwift
 
 class RealmManager {
     let realm = try! Realm()
-    let fileURL = Realm.Configuration.defaultConfiguration.fileURL
+    static let fileURL = Realm.Configuration.defaultConfiguration.fileURL
 }

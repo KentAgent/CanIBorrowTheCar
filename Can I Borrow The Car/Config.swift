@@ -9,7 +9,7 @@
 import Foundation
 
 struct Cell {
-    static let carCell = "CarCell"
+    static let category = "CarCell"
 }
 
 struct Segues {

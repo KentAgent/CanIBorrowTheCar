@@ -49,7 +49,8 @@
                     <navigationItem key="navigationItem" id="rD9-zP-WVi">
                         <barButtonItem key="rightBarButtonItem" title="Add car" id="vxG-LO-jk1">
                             <connections>
-                                <segue destination="Q0I-2D-gly" kind="presentation" id="BMx-5K-7Lx"/>
+                                <action selector="addCarButton:" destination="BYZ-38-t0r" id="4OM-p3-z05"/>
+                                <segue destination="Q0I-2D-gly" kind="presentation" identifier="GoToAddCar" id="YJg-rq-M2p"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

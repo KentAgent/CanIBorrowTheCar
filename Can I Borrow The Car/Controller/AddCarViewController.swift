@@ -12,7 +12,7 @@ class AddCarViewController: UIViewController, Storyboarded {
     
     //weak var coordinator: AddCarCoordinator?
     var carModel = CarModel()
-    var borrowCar = BorrowCar()
+    var categoryModel = CategoryModel()
     var carRealmManager = CarRealmManager()
     
     @IBOutlet weak var carNameTextField: UITextField!
@@ -22,12 +22,6 @@ class AddCarViewController: UIViewController, Storyboarded {
     @IBOutlet weak var colorTextField: UITextField!
     @IBOutlet weak var isBorrowedSwitch: UISwitch!
     @IBOutlet weak var borrowedOfTextField: UITextField!
-    
-    var selectedCar : Car? {
-        didSet {
-            
-        }
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,18 +35,21 @@ class AddCarViewController: UIViewController, Storyboarded {
         car.licensePlate = licensePlateTextField.text!
         car.owner = ownerTextFIeld.text!
         car.isBorrowed = isBorrowedSwitch.isOn ? true : false
-        if car.isBorrowed == true {
-            //ADD TO BORROWED CARS
-        } else {
-            //ADD TO NOT BORROWED CARS
-        }
         return car
     }
     
-
-    
     @IBAction func saveCarButton(_ sender: Any) {
-        carRealmManager.create(complititon: saveCar)
+        self.carRealmManager.create {
+            let car = Car()
+            car.carName = carNameTextField.text!
+            car.model = modelTextField.text!
+            car.color = colorTextField.text!
+            car.licensePlate = licensePlateTextField.text!
+            car.owner = ownerTextFIeld.text!
+            car.isBorrowed = isBorrowedSwitch.isOn ? true : false
+            car.borrowedOf = borrowedOfTextField.text!
+            car.isBorrowed == true ? categoryModel.categories![1].cars.append(car) : categoryModel.categories![0].cars.append(car)
+        }
         dismiss(animated: true, completion: nil)
     }
     

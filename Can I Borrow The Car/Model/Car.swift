@@ -21,15 +21,15 @@ class Car: Object {
     @objc dynamic var color : String = ""
     @objc dynamic var borrowedOf : String = ""
     @objc dynamic var isBorrowed : Bool = false
-    var parent = LinkingObjects(fromType: BorrowCar.self, property: "cars")
+    var parent = LinkingObjects(fromType: Category.self, property: "cars")
 }
 
 class CarRealmManager: RealmManager {
     
-    func create(complititon: () -> Car) {
+    func create(complititon: () -> ()) {
         do {
             try realm.write {
-                realm.add(complititon())
+                complititon()
             }
         } catch {
             print("Error saving item \(error)")

@@ -9,17 +9,17 @@
 import Foundation
 import RealmSwift
 
-struct BorrowCarModel {
-    var CanIBorrowCar : Results<BorrowCar>?
+struct CategoryModel {
+    var categories : Results<Category>?
 }
 
-class BorrowCar: Object {
+class Category: Object {
     @objc dynamic var isBorrowed : String = ""
     let cars = List<Car>()
 }
 
 
-class BorrowCarRealmManager: RealmManager {
+class CategoryRealmManager: RealmManager {
     
     func create(complititon: () -> ()) {
         do {
@@ -32,11 +32,11 @@ class BorrowCarRealmManager: RealmManager {
     }
     
     func createTheCategories() {
-        if realm.objects(BorrowCar.self).isEmpty {
+        if realm.objects(Category.self).isEmpty {
             create {
-                let notBorrowed = BorrowCar()
+                let notBorrowed = Category()
                 notBorrowed.isBorrowed = "Not Borrowed"
-                let borrowed = BorrowCar()
+                let borrowed = Category()
                 borrowed.isBorrowed = "Borrowed"
                 realm.add(notBorrowed)
                 realm.add(borrowed)
@@ -44,8 +44,8 @@ class BorrowCarRealmManager: RealmManager {
         }
     }
     
-    func load() -> Results<BorrowCar>{
-        let categories = realm.objects(BorrowCar.self)
+    func load() -> Results<Category>{
+        let categories = realm.objects(Category.self)
         return categories
     }
     
