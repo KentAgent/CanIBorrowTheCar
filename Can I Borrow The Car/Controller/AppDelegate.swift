@@ -13,8 +13,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     //var coordinator: MainCoordinator?
+    var categoryRealmManager = CategoryRealmManager()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        categoryRealmManager.createTheCategories()
+
         // Override point for customization after application launch.
 //        let navController = UINavigationController()
 //        coordinator = MainCoordinator(navigationController: navController)

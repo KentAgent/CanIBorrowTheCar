@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" restorationIdentifier="NotBorrowedCarCell" selectionStyle="default" indentationWidth="10" reuseIdentifier="NotBorrowedCarCell" rowHeight="46" id="KGk-i7-Jjw" customClass="NotBorrowedCarTableViewCell" customModule="Can_I_Borrow_The_Car" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="46"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="375" height="45.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WwI-3R-ON7">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="45.5"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e2I-29-Fdi" userLabel="Car Color">
+                                <rect key="frame" x="8" y="11.5" width="23" height="23"/>
+                                <color key="backgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="23" id="C7q-1c-pXv"/>
+                                    <constraint firstAttribute="width" constant="23" id="KCa-Ji-TeT"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mercedes-Benz" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="diH-hD-BfA">
+                                <rect key="frame" x="221" y="11" width="146" height="24"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="20"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FRP 782" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wlL-W0-3jl">
+                                <rect key="frame" x="39" y="11" width="79" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="24" id="7f3-pi-bDK"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="20"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="diH-hD-BfA" secondAttribute="trailing" constant="8" id="8Hd-2m-ytr"/>
+                            <constraint firstItem="diH-hD-BfA" firstAttribute="centerY" secondItem="e2I-29-Fdi" secondAttribute="centerY" id="BaO-Vc-4fL"/>
+                            <constraint firstItem="diH-hD-BfA" firstAttribute="height" secondItem="wlL-W0-3jl" secondAttribute="height" id="Fq2-nm-WyI"/>
+                            <constraint firstItem="e2I-29-Fdi" firstAttribute="centerY" secondItem="WwI-3R-ON7" secondAttribute="centerY" id="NUN-M4-hvC"/>
+                            <constraint firstItem="wlL-W0-3jl" firstAttribute="centerY" secondItem="e2I-29-Fdi" secondAttribute="centerY" id="mEd-GM-b4V"/>
+                            <constraint firstItem="e2I-29-Fdi" firstAttribute="leading" secondItem="WwI-3R-ON7" secondAttribute="leading" constant="8" id="pOp-0H-pha"/>
+                            <constraint firstItem="wlL-W0-3jl" firstAttribute="leading" secondItem="e2I-29-Fdi" secondAttribute="trailing" constant="8" id="y15-5f-6Ka"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="WwI-3R-ON7" secondAttribute="bottom" id="8tk-s6-NIt"/>
+                    <constraint firstItem="WwI-3R-ON7" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="Y2n-el-GNx"/>
+                    <constraint firstAttribute="trailing" secondItem="WwI-3R-ON7" secondAttribute="trailing" id="fXq-De-2am"/>
+                    <constraint firstItem="WwI-3R-ON7" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="j2o-d4-EPa"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="carColorView" destination="e2I-29-Fdi" id="6v3-hn-Lc5"/>
+                <outlet property="carLicencePlatelabel" destination="wlL-W0-3jl" id="XkG-di-fui"/>
+                <outlet property="carModelLabel" destination="diH-hD-BfA" id="sB7-fz-Ebe"/>
+            </connections>
+            <point key="canvasLocation" x="100" y="49.475262368815599"/>
+        </tableViewCell>
+    </objects>
+</document>

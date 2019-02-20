@@ -37,9 +37,9 @@ class CarRealmManager: RealmManager {
         }
     }
     
-    func load() -> Results<Car>{
+    func load(loaded: ((Results<Car>) -> ())? = nil){
         let car = realm.objects(Car.self)
-        return car
+        loaded?(car)
     }
     
     func update(complititon: () -> ()){

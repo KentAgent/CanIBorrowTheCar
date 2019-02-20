@@ -25,15 +25,6 @@ class AddCarViewController: UIViewController, Storyboarded {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-    
-    var selectedCar : Car? {
-        didSet {
-            carModel.cars = carRealmManager.load()
-            DispatchQueue.main.async {
-                self.updateView(selectedCar: self.selectedCar!)
-            }
-        }
-    }
 
     func saveCar(){
         let car = Car()
@@ -47,42 +38,10 @@ class AddCarViewController: UIViewController, Storyboarded {
         car.isBorrowed == true ? categoryModel.categories![1].cars.append(car) : categoryModel.categories![0].cars.append(car)
     }
     
-    func updateCar() -> Car{
-        selectedCar!.carName = carNameTextField.text!
-        selectedCar!.model = modelTextField.text!
-        selectedCar!.color = colorTextField.text!
-        selectedCar!.licensePlate = licensePlateTextField.text!
-        selectedCar!.owner = ownerTextFIeld.text!
-        selectedCar!.isBorrowed = isBorrowedSwitch.isOn ? true : false
-        selectedCar!.borrowedOf = borrowedOfTextField.text!
-        return selectedCar!
-    }
-    
-    func updateView(selectedCar: Car) {
-        carNameTextField.text! = selectedCar.carName
-        modelTextField.text! = selectedCar.model
-        colorTextField.text! = selectedCar.color
-        licensePlateTextField.text! = selectedCar.licensePlate
-        ownerTextFIeld.text! = selectedCar.owner
-        if selectedCar.isBorrowed == true {
-            isBorrowedSwitch.isOn = true
-        } else {
-            isBorrowedSwitch.isOn = false
-        }
-        borrowedOfTextField.text! = selectedCar.borrowedOf
-    }
-    
     @IBAction func saveCarButton(_ sender: Any) {
-        if selectedCar == nil {
-            self.carRealmManager.create {
-                saveCar()
-            }
-        } else {
-            carRealmManager.update {
-                selectedCar = updateCar()
-            }
+        self.carRealmManager.create {
+            saveCar()
         }
-
         dismiss(animated: true, completion: nil)
     }
     

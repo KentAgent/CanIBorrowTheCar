@@ -10,8 +10,11 @@ import Foundation
 
 struct Cell {
     static let category = "CarCell"
+    static let notBorroewd = "NotBorrowedCarCell"
+    static let borroewd = "BorrowedCarCell"
 }
 
 struct Segues {
     static let goToAddCar = "GoToAddCar"
+    static let goToChosenCar = "GoToChosenCar"
 }
