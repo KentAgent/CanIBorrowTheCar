@@ -11,16 +11,24 @@ import UIKit
 
 extension CarViewController: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let allCars = [categoryModel.categories![0].cars, categoryModel.categories![1].cars]
-        return allCars[section].count
+//        let notBorrowed = carModel.cars?.filter({$0.borrowedTo == nil})
+//        let borrowed = carModel.cars?.filter({$0.borrowedTo != nil})
+        let notBorrowed = carModel.cars?.filter({$0.borrowed == false})
+        let borrowed = carModel.cars?.filter({$0.borrowed == true})
+        let allCars = [notBorrowed, borrowed]
+        return allCars[section]?.count ?? 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: Cell.notBorroewd, for: indexPath) as! NotBorrowedCarTableViewCell
-        let allCars = [self.categoryModel.categories![0].cars, self.categoryModel.categories![1].cars]
-        let car = allCars[indexPath.section][indexPath.row]
-        cell.car = car
+//        let notBorrowed = carModel.cars?.filter({$0.borrowedTo == nil})
+//        let borrowed = carModel.cars?.filter({$0.borrowedTo != nil})
+        let notBorrowed = carModel.cars?.filter({$0.borrowed == false})
+        let borrowed = carModel.cars?.filter({$0.borrowed == true})
         
+        let allCars = [notBorrowed, borrowed]
+        let car = allCars[indexPath.section]?[indexPath.row]
+        cell.car = car
         return cell
         
     }
@@ -31,15 +39,24 @@ extension CarViewController: UITableViewDelegate, UITableViewDataSource{
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return categoryModel.categories!.count
+        return 2
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let label = UILabel()
         label.backgroundColor = UIColor.lightGray
-        label.text = categoryModel.categories?[section].isBorrowed
+        switch section {
+        case 0:
+            label.text = "Cars at home"
+        case 1:
+            label.text = "Cars not at home"
+        default:
+            break
+        }
         return label
     }
+    
+
     
     func registerTableView() {
         tableView.register(UINib(nibName: Cell.notBorroewd, bundle: nil), forCellReuseIdentifier: Cell.notBorroewd)

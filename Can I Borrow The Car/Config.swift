@@ -18,3 +18,7 @@ struct Segues {
     static let goToAddCar = "GoToAddCar"
     static let goToChosenCar = "GoToChosenCar"
 }
+
+struct Nibs {
+    static let cerCellHeader = "HeaderView"
+}

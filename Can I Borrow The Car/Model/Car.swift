@@ -17,20 +17,19 @@ class Car: Object {
     @objc dynamic var carName : String = ""
     @objc dynamic var model : String = ""
     @objc dynamic var licensePlate : String = ""
-    @objc dynamic var owner : String = ""
     @objc dynamic var color : String = ""
-    @objc dynamic var borrowedOf : String = ""
-    @objc dynamic var isBorrowed : Bool = false
-    var parent = LinkingObjects(fromType: Category.self, property: "cars")
+    @objc dynamic var borrowed : Bool = false
+    let owner = List<User>()
+    @objc dynamic var borrowedTo : User?
 }
 
 class CarRealmManager: RealmManager {
     
-    
-    func create(complititon: () -> ()) {
+    func create(add: () -> (Car), compilation: (() -> ())? = nil){
         do {
             try realm.write {
-                complititon()
+                realm.add(add())
+                compilation?()
             }
         } catch {
             print("Error saving item \(error)")
@@ -42,10 +41,11 @@ class CarRealmManager: RealmManager {
         loaded?(car)
     }
     
-    func update(complititon: () -> ()){
+    func update(update: () -> (Car), compilation: (() -> ())? = nil){
         do {
             try realm.write {
-                complititon()
+                realm.add(update())
+                compilation?()
             }
         } catch {
             print("Error saving item \(error)")

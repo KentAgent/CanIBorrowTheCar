@@ -10,6 +10,7 @@ import UIKit
 
 class NotBorrowedCarTableViewCell: UITableViewCell {
 
+    
     @IBOutlet weak var carColorView: UIView!
     @IBOutlet weak var carLicencePlatelabel: UILabel!
     @IBOutlet weak var carModelLabel: UILabel!
@@ -31,7 +32,7 @@ class NotBorrowedCarTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        AppStyle.roundedCornersUIView(image: carColorView)
+        AppStyle.circleUIView(image: carColorView)
     }
     
 }

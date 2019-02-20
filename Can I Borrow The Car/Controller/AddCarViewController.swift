@@ -17,31 +17,23 @@ class AddCarViewController: UIViewController, Storyboarded {
     @IBOutlet weak var carNameTextField: UITextField!
     @IBOutlet weak var modelTextField: UITextField!
     @IBOutlet weak var licensePlateTextField: UITextField!
-    @IBOutlet weak var ownerTextFIeld: UITextField!
     @IBOutlet weak var colorTextField: UITextField!
-    @IBOutlet weak var isBorrowedSwitch: UISwitch!
-    @IBOutlet weak var borrowedOfTextField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-
-    func saveCar(){
+    
+    func saveCar() -> Car{
         let car = Car()
         car.carName = carNameTextField.text!
         car.model = modelTextField.text!
         car.color = colorTextField.text!
         car.licensePlate = licensePlateTextField.text!
-        car.owner = ownerTextFIeld.text!
-        car.isBorrowed = isBorrowedSwitch.isOn ? true : false
-        car.borrowedOf = borrowedOfTextField.text!
-        car.isBorrowed == true ? categoryModel.categories![1].cars.append(car) : categoryModel.categories![0].cars.append(car)
+        return car
     }
     
     @IBAction func saveCarButton(_ sender: Any) {
-        self.carRealmManager.create {
-            saveCar()
-        }
+        self.carRealmManager.create(add: saveCar)
         dismiss(animated: true, completion: nil)
     }
     

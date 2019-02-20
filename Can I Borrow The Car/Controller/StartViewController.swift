@@ -8,11 +8,9 @@
 
 import UIKit
 
-class CarViewController: UIViewController {
-
-    var categoryModel = CategoryModel()
+class CarViewController: UIViewController, UpdateView {
+ 
     var carModel = CarModel()
-    var categoryRealmManager = CategoryRealmManager()
     var carRealmManager = CarRealmManager()
     
     @IBOutlet weak var tableView: UITableView!
@@ -23,18 +21,22 @@ class CarViewController: UIViewController {
         loadCars()
         print(RealmManager.fileURL!)
     }
-    
-    override func viewDidAppear(_ animated: Bool) {
+
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         loadCars()
     }
     
     func loadCars() {
-        categoryModel.categories = categoryRealmManager.load()
         carRealmManager.load { (car) in
             self.carModel.cars = car
             self.tableView.reloadData()
+            print("Test")
         }
+    }
+    
+    func reloadCarModel() {
+        loadCars()
     }
     
     
@@ -45,10 +47,10 @@ class CarViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let indexPath = tableView.indexPathForSelectedRow {
             let vcSelectedCar = segue.destination as! UpdateChosenCarViewController
-            vcSelectedCar.selectedCar = categoryModel.categories![indexPath.section].cars[indexPath.row]
+            vcSelectedCar.selectedCar = carModel.cars![indexPath.row]
         } else {
             let vcAddCar = segue.destination as! AddCarViewController
-            vcAddCar.categoryModel = categoryModel
+            
         }
     }
     

@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol UpdateView {
+    func reloadCarModel()
+}
+
 class UpdateChosenCarViewController: UIViewController {
 
     var carModel = CarModel()
@@ -22,6 +26,7 @@ class UpdateChosenCarViewController: UIViewController {
     @IBOutlet weak var ownerLabel: UILabel!
     @IBOutlet weak var borrowedOfLabel: UILabel!
     @IBOutlet weak var availableButton: UIButton!
+    var delegate : UpdateView?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,54 +36,42 @@ class UpdateChosenCarViewController: UIViewController {
         didSet {
             DispatchQueue.main.async {
                 self.fetchCar()
-                print(self.selectedCar!.parent)
             }
         }
     }
     
     func fetchCar() {
-        switch selectedCar?.isBorrowed {
-        case true:
+        if selectedCar!.borrowedTo != nil {
             availableButton.setTitle("Return car", for: .normal)
             availableLable.textColor = UIColor.red
             availableLable.text! = "Car is not at home"
-        case false:
+        } else {
             availableButton.setTitle("Borrow car", for: .normal)
             availableLable.textColor = UIColor.green
             availableLable.text! = "Car is at home"
-        default:
-            break
         }
         carNameLabel.text! = selectedCar!.carName
         modelLabel.text! = selectedCar!.model
         colorLabel.text! = selectedCar!.color
         licencePlateLabel.text! = selectedCar!.licensePlate
-        ownerLabel.text = selectedCar!.owner
     }
 
-    func updateCar() {
-        //Byt array om bilen lånas eller lämnas tillbaka
-        switch selectedCar?.isBorrowed {
-        case true:
-            selectedCar?.isBorrowed = false
-            print("Bilen är nu hemma")
-            print(selectedCar!)
-        case false:
-            print("Bilen är nu lånad")
-            selectedCar?.isBorrowed = true
-            print(selectedCar!)
-        default:
-            break
+    func updateCar() -> Car{
+        if selectedCar!.borrowedTo == nil && selectedCar!.borrowed == false {
+            selectedCar!.borrowed = true
+        } else {
+            selectedCar!.borrowed = false
         }
+        return selectedCar!
+
     }
     
     @IBAction func exitWindow(_ sender: UIButton) {
         switch sender.tag {
         case 1:
-            carRealmManager.update {
-                updateCar()
+            carRealmManager.update(update: updateCar) {
+                self.dismiss(animated: true, completion: nil)
             }
-            dismiss(animated: true, completion: nil)
         case 2:
             dismiss(animated: true, completion: nil)
         default:
