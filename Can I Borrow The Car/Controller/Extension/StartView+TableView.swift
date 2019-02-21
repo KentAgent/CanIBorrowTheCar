@@ -22,10 +22,9 @@ extension CarViewController: UITableViewDelegate, UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: Cell.notBorroewd, for: indexPath) as! NotBorrowedCarTableViewCell
-        //let carsAtHome = carModel.cars?.filter({$0.borrowed == false})
-        //let carsNotAtHome = carModel.cars?.filter({$0.borrowed == true})
-        //let allCars = [carsAtHome, carsAtHome]
-        //cell.car = carModel.cars?[indexPath.section]
+        
+        //TODO: FIX indexPath.Section
+        //måste ta fram [indexPath.section], annars blir alla med samma indexpath.row likadana, oberoende section
         cell.car = carModel.cars?[indexPath.row]
         return cell
     }
