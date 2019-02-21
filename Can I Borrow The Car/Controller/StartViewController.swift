@@ -14,11 +14,13 @@ class CarViewController: UIViewController, UpdateView {
     var carRealmManager = CarRealmManager()
     
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var profileImageUIImage: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         registerTableView()
         loadCars()
+        updateProfileView()
         print(RealmManager.fileURL!)
     }
 
@@ -36,6 +38,10 @@ class CarViewController: UIViewController, UpdateView {
             self.carModel.cars = car
             self.tableView.reloadData()
         }
+    }
+    
+    func updateProfileView() {
+        AppStyle.cirlceUIImageView(image: profileImageUIImage)
     }
     
     @IBAction func addCarButton(_ sender: Any) {

@@ -54,10 +54,7 @@ class MainCoordinator: NSObject, Coordinator, UINavigationControllerDelegate {
         if navigationController.viewControllers.contains(fromViewController) {
             return
         }
-        
-        if let addCarViewController = fromViewController as? AddCarViewController {
-            //childDidFinish(addCarViewController.coordinator)
-        }
+
         
     }
 

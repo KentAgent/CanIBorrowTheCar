@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="IDj-bk-r5I">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="coj-n9-Cx8">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                                <rect key="frame" x="0.0" y="100" width="375" height="712"/>
                                 <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803915" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CarCell" id="MA7-gj-5Go">
@@ -28,7 +28,9 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="MA7-gj-5Go" id="9dj-ta-uz4">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -36,24 +38,42 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="B2I-6R-B3X"/>
                                 </connections>
                             </tableView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profileImage" translatesAutoresizingMaskIntoConstraints="NO" id="iIY-yK-hCM">
+                                <rect key="frame" x="321" y="56" width="36" height="36"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="36" id="5Ef-BR-A3n"/>
+                                    <constraint firstAttribute="height" constant="36" id="QfP-XE-uRf"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jiz-9Q-LAv">
+                                <rect key="frame" x="18" y="56" width="36" height="36"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="36" id="dqG-j6-X4S"/>
+                                    <constraint firstAttribute="height" constant="36" id="mll-jk-t65"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="32"/>
+                                <state key="normal" title="+"/>
+                                <connections>
+                                    <action selector="addCarButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tU1-gh-Cmh"/>
+                                </connections>
+                            </button>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803915" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="coj-n9-Cx8" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="1UX-Ua-OKA"/>
                             <constraint firstItem="coj-n9-Cx8" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" constant="34" id="3EF-AQ-sG2"/>
                             <constraint firstItem="coj-n9-Cx8" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="E8o-tw-m3w"/>
-                            <constraint firstItem="coj-n9-Cx8" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="zXt-2V-JlX"/>
+                            <constraint firstItem="Jiz-9Q-LAv" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="12" id="Eeq-xe-9gv"/>
+                            <constraint firstItem="iIY-yK-hCM" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="12" id="e5p-Ut-rtq"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="iIY-yK-hCM" secondAttribute="trailing" constant="18" id="epG-gZ-JGj"/>
+                            <constraint firstItem="Jiz-9Q-LAv" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="18" id="fQh-dK-lRb"/>
+                            <constraint firstItem="coj-n9-Cx8" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="100" id="zXt-2V-JlX"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" id="rD9-zP-WVi">
-                        <barButtonItem key="rightBarButtonItem" title="Add car" id="vxG-LO-jk1">
-                            <connections>
-                                <action selector="addCarButton:" destination="BYZ-38-t0r" id="4OM-p3-z05"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="rD9-zP-WVi"/>
                     <connections>
+                        <outlet property="profileImageUIImage" destination="iIY-yK-hCM" id="leW-L6-nZs"/>
                         <outlet property="tableView" destination="coj-n9-Cx8" id="yZe-vL-ge0"/>
                         <segue destination="Q0I-2D-gly" kind="presentation" identifier="GoToAddCar" id="jtL-12-cfv"/>
                         <segue destination="erb-Ta-QTg" kind="presentation" identifier="GoToChosenCar" modalPresentationStyle="overCurrentContext" id="ouv-M2-ZBP"/>
@@ -270,23 +290,8 @@
             </objects>
             <point key="canvasLocation" x="2786.4000000000001" y="132.26600985221674"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="GhP-iH-hXu">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="IDj-bk-r5I" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="6VO-iz-U1V">
-                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="gqb-iL-Gj6"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="kTp-Wp-PDc" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1076" y="133.00492610837438"/>
-        </scene>
     </scenes>
+    <resources>
+        <image name="profileImage" width="934" height="911"/>
+    </resources>
 </document>

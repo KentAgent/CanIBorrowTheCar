@@ -11,7 +11,6 @@ import UIKit
 class AddCarViewController: UIViewController, Storyboarded {
     
     var carModel = CarModel()
-    var categoryModel = CategoryModel()
     var carRealmManager = CarRealmManager()
     
     @IBOutlet weak var carNameTextField: UITextField!

@@ -15,7 +15,6 @@ protocol UpdateView {
 class UpdateChosenCarViewController: UIViewController {
 
     var carModel = CarModel()
-    var categoryModel = CategoryModel()
     var carRealmManager = CarRealmManager()
     var delegate : UpdateView?
     
@@ -36,7 +35,6 @@ class UpdateChosenCarViewController: UIViewController {
         didSet {
             DispatchQueue.main.async {
                 self.fetchCar()
-                print(self.selectedCar!)
             }
         }
     }

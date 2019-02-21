@@ -12,7 +12,6 @@
 		875F91C12216AAA900A8522E /* Storyboarded.swift in Sources */ = {isa = PBXBuildFile; fileRef = 875F91C02216AAA900A8522E /* Storyboarded.swift */; };
 		875F91C32216AB6D00A8522E /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 875F91C22216AB6D00A8522E /* MainCoordinator.swift */; };
 		875F91C52216B44800A8522E /* AddCarCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 875F91C42216B44800A8522E /* AddCarCoordinator.swift */; };
-		875F91CE2216F93B00A8522E /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 875F91CD2216F93B00A8522E /* Category.swift */; };
 		878AE459221D3AA5003A2F1D /* UpdateChosenCarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878AE458221D3AA5003A2F1D /* UpdateChosenCarViewController.swift */; };
 		878AE45C221D55A6003A2F1D /* StartView+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878AE45B221D55A6003A2F1D /* StartView+TableView.swift */; };
 		878AE45F221D5657003A2F1D /* NotBorrowedCarTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878AE45D221D5657003A2F1D /* NotBorrowedCarTableViewCell.swift */; };
@@ -66,7 +65,6 @@
 		875F91C02216AAA900A8522E /* Storyboarded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboarded.swift; sourceTree = "<group>"; };
 		875F91C22216AB6D00A8522E /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 		875F91C42216B44800A8522E /* AddCarCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCarCoordinator.swift; sourceTree = "<group>"; };
-		875F91CD2216F93B00A8522E /* Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		878AE458221D3AA5003A2F1D /* UpdateChosenCarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateChosenCarViewController.swift; sourceTree = "<group>"; };
 		878AE45B221D55A6003A2F1D /* StartView+TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StartView+TableView.swift"; sourceTree = "<group>"; };
 		878AE45D221D5657003A2F1D /* NotBorrowedCarTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotBorrowedCarTableViewCell.swift; sourceTree = "<group>"; };
@@ -162,7 +160,6 @@
 		878AE466221D9218003A2F1D /* Removed */ = {
 			isa = PBXGroup;
 			children = (
-				875F91CD2216F93B00A8522E /* Category.swift */,
 			);
 			path = Removed;
 			sourceTree = "<group>";
@@ -544,7 +541,6 @@
 				875F91C12216AAA900A8522E /* Storyboarded.swift in Sources */,
 				87BB0F642215ED850000F853 /* Car.swift in Sources */,
 				878AE468221D9261003A2F1D /* UserModel.swift in Sources */,
-				875F91CE2216F93B00A8522E /* Category.swift in Sources */,
 				878AE465221D8240003A2F1D /* UIView.swift in Sources */,
 				875F91BF2216AA5800A8522E /* Coordinator.swift in Sources */,
 			);

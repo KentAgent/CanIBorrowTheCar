@@ -25,7 +25,7 @@ extension CarViewController: UITableViewDelegate, UITableViewDataSource{
         
         //TODO: FIX indexPath.Section
         //måste ta fram [indexPath.section], annars blir alla med samma indexpath.row likadana, oberoende section
-        cell.car = carModel.cars?[indexPath.row]
+
         return cell
     }
     

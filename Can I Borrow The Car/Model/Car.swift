@@ -42,7 +42,7 @@ class CarRealmManager: RealmManager {
         let car = realm.objects(Car.self)
         loaded?(car)
     }
-    
+
     func update(update: () -> (Car), compilation: (() -> ())? = nil){
         do {
             try realm.write {
