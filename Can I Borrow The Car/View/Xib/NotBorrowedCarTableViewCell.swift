@@ -34,6 +34,7 @@ class NotBorrowedCarTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         AppStyle.circleUIView(image: carColorView)
+        self.selectionStyle = UITableViewCell.SelectionStyle.none
     }
-    
+
 }

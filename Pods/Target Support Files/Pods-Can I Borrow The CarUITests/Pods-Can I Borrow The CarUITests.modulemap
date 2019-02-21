@@ -1,0 +1,6 @@
+framework module Pods_Can_I_Borrow_The_CarUITests {
+  umbrella header "Pods-Can I Borrow The CarUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
