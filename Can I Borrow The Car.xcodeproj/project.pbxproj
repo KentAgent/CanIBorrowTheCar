@@ -20,6 +20,9 @@
 		878AE463221D6AD4003A2F1D /* AppStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878AE462221D6AD4003A2F1D /* AppStyle.swift */; };
 		878AE465221D8240003A2F1D /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878AE464221D8240003A2F1D /* UIView.swift */; };
 		878AE468221D9261003A2F1D /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878AE467221D9261003A2F1D /* UserModel.swift */; };
+		87B0CADE221EE67F004C2DF2 /* UIView+Section.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87B0CADD221EE67F004C2DF2 /* UIView+Section.swift */; };
+		87B0CAE4221EECC8004C2DF2 /* HeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 87B0CAE3221EECC8004C2DF2 /* HeaderView.xib */; };
+		87B0CAE6221EF388004C2DF2 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87B0CAE5221EF388004C2DF2 /* HeaderView.swift */; };
 		87BB0F322215EC490000F853 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87BB0F312215EC490000F853 /* AppDelegate.swift */; };
 		87BB0F342215EC490000F853 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87BB0F332215EC490000F853 /* StartViewController.swift */; };
 		87BB0F372215EC490000F853 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 87BB0F352215EC490000F853 /* Main.storyboard */; };
@@ -72,6 +75,9 @@
 		878AE462221D6AD4003A2F1D /* AppStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStyle.swift; sourceTree = "<group>"; };
 		878AE464221D8240003A2F1D /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		878AE467221D9261003A2F1D /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		87B0CADD221EE67F004C2DF2 /* UIView+Section.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Section.swift"; sourceTree = "<group>"; };
+		87B0CAE3221EECC8004C2DF2 /* HeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HeaderView.xib; sourceTree = "<group>"; };
+		87B0CAE5221EF388004C2DF2 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		87BB0F2E2215EC490000F853 /* Can I Borrow The Car.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Can I Borrow The Car.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		87BB0F312215EC490000F853 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		87BB0F332215EC490000F853 /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
@@ -149,6 +155,8 @@
 			children = (
 				878AE45E221D5657003A2F1D /* NotBorrowedCarCell.xib */,
 				878AE45D221D5657003A2F1D /* NotBorrowedCarTableViewCell.swift */,
+				87B0CAE3221EECC8004C2DF2 /* HeaderView.xib */,
+				87B0CAE5221EF388004C2DF2 /* HeaderView.swift */,
 			);
 			path = Xib;
 			sourceTree = "<group>";
@@ -222,11 +230,11 @@
 		87BB0F5F2215EC5D0000F853 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				878AE45A221D558B003A2F1D /* Extension */,
 				87BB0F312215EC490000F853 /* AppDelegate.swift */,
+				878AE45A221D558B003A2F1D /* Extension */,
 				87BB0F332215EC490000F853 /* StartViewController.swift */,
-				87BB0F822215FB340000F853 /* AddCarViewController.swift */,
 				878AE458221D3AA5003A2F1D /* UpdateChosenCarViewController.swift */,
+				87BB0F822215FB340000F853 /* AddCarViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -264,6 +272,7 @@
 			isa = PBXGroup;
 			children = (
 				87BB0F7F2215F6580000F853 /* UIApplication.swift */,
+				87B0CADD221EE67F004C2DF2 /* UIView+Section.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -402,6 +411,7 @@
 				87BB0F3C2215EC4A0000F853 /* LaunchScreen.storyboard in Resources */,
 				87BB0F392215EC4A0000F853 /* Assets.xcassets in Resources */,
 				878AE460221D5657003A2F1D /* NotBorrowedCarCell.xib in Resources */,
+				87B0CAE4221EECC8004C2DF2 /* HeaderView.xib in Resources */,
 				87BB0F372215EC490000F853 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -520,6 +530,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				87B0CADE221EE67F004C2DF2 /* UIView+Section.swift in Sources */,
 				87BB0F342215EC490000F853 /* StartViewController.swift in Sources */,
 				87BB0F812215F6580000F853 /* UIApplication.swift in Sources */,
 				87BB0F682215EF9D0000F853 /* RealmManager.swift in Sources */,
@@ -532,6 +543,7 @@
 				875F91C32216AB6D00A8522E /* MainCoordinator.swift in Sources */,
 				87BB0F322215EC490000F853 /* AppDelegate.swift in Sources */,
 				878AE459221D3AA5003A2F1D /* UpdateChosenCarViewController.swift in Sources */,
+				87B0CAE6221EF388004C2DF2 /* HeaderView.swift in Sources */,
 				87BB0F802215F6580000F853 /* AlertModel.swift in Sources */,
 				875F91C12216AAA900A8522E /* Storyboarded.swift in Sources */,
 				87BB0F642215ED850000F853 /* Car.swift in Sources */,

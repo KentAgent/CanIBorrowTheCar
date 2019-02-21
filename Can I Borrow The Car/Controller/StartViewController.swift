@@ -22,23 +22,21 @@ class CarViewController: UIViewController, UpdateView {
         print(RealmManager.fileURL!)
     }
 
-    override func viewWillAppear(_ animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-        loadCars()
+        self.tableView.reloadData()
+    }
+    
+    func userUpdateCar() {
+        self.tableView.reloadData()
     }
     
     func loadCars() {
         carRealmManager.load { (car) in
             self.carModel.cars = car
             self.tableView.reloadData()
-            print("Test")
         }
     }
-    
-    func reloadCarModel() {
-        loadCars()
-    }
-    
     
     @IBAction func addCarButton(_ sender: Any) {
         performSegue(withIdentifier: Segues.goToAddCar, sender: self)
@@ -48,9 +46,7 @@ class CarViewController: UIViewController, UpdateView {
         if let indexPath = tableView.indexPathForSelectedRow {
             let vcSelectedCar = segue.destination as! UpdateChosenCarViewController
             vcSelectedCar.selectedCar = carModel.cars![indexPath.row]
-        } else {
-            let vcAddCar = segue.destination as! AddCarViewController
-            
+            vcSelectedCar.delegate = self
         }
     }
     

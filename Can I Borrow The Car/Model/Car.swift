@@ -25,6 +25,8 @@ class Car: Object {
 
 class CarRealmManager: RealmManager {
     
+    let carModel = CarModel()
+    
     func create(add: () -> (Car), compilation: (() -> ())? = nil){
         do {
             try realm.write {
@@ -59,6 +61,28 @@ class CarRealmManager: RealmManager {
             }
         } catch {
             print("Error saving item \(error)")
+        }
+    }
+    
+    func carsAtHome() {
+        let cars = realm.objects(Car.self).filter("borrowed == false").sorted(byKeyPath: "carName")
+        do {
+            try realm.write {
+                realm.add(cars)
+            }
+        } catch {
+            print("Error updating item \(error)")
+        }
+    }
+    
+    func carsNotAtHome() {
+        let cars = realm.objects(Car.self).filter("borrowed == true").sorted(byKeyPath: "carName")
+        do {
+            try realm.write {
+                realm.add(cars)
+            }
+        } catch {
+            print("Error updating item \(error)")
         }
     }
 }

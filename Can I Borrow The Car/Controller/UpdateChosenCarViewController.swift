@@ -9,7 +9,7 @@
 import UIKit
 
 protocol UpdateView {
-    func reloadCarModel()
+    func userUpdateCar()
 }
 
 class UpdateChosenCarViewController: UIViewController {
@@ -17,6 +17,7 @@ class UpdateChosenCarViewController: UIViewController {
     var carModel = CarModel()
     var categoryModel = CategoryModel()
     var carRealmManager = CarRealmManager()
+    var delegate : UpdateView?
     
     @IBOutlet weak var availableLable: UILabel!
     @IBOutlet weak var carNameLabel: UILabel!
@@ -26,7 +27,6 @@ class UpdateChosenCarViewController: UIViewController {
     @IBOutlet weak var ownerLabel: UILabel!
     @IBOutlet weak var borrowedOfLabel: UILabel!
     @IBOutlet weak var availableButton: UIButton!
-    var delegate : UpdateView?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,6 +36,7 @@ class UpdateChosenCarViewController: UIViewController {
         didSet {
             DispatchQueue.main.async {
                 self.fetchCar()
+                print(self.selectedCar!)
             }
         }
     }
@@ -57,21 +58,21 @@ class UpdateChosenCarViewController: UIViewController {
     }
 
     func updateCar() -> Car{
-        if selectedCar!.borrowedTo == nil && selectedCar!.borrowed == false {
+        if selectedCar!.borrowed == false {
             selectedCar!.borrowed = true
         } else {
             selectedCar!.borrowed = false
         }
         return selectedCar!
-
     }
     
     @IBAction func exitWindow(_ sender: UIButton) {
         switch sender.tag {
         case 1:
             carRealmManager.update(update: updateCar) {
-                self.dismiss(animated: true, completion: nil)
+                self.delegate?.userUpdateCar()
             }
+            self.dismiss(animated: true, completion: nil)
         case 2:
             dismiss(animated: true, completion: nil)
         default:

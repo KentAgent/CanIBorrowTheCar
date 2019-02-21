@@ -11,6 +11,7 @@ import UIKit
 class NotBorrowedCarTableViewCell: UITableViewCell {
 
     
+    @IBOutlet weak var carView: UIView!
     @IBOutlet weak var carColorView: UIView!
     @IBOutlet weak var carLicencePlatelabel: UILabel!
     @IBOutlet weak var carModelLabel: UILabel!
@@ -22,8 +23,9 @@ class NotBorrowedCarTableViewCell: UITableViewCell {
     }
     
     func updateUI() {
-        carLicencePlatelabel.text = car?.licensePlate
-        carModelLabel.text = car?.model
+        carLicencePlatelabel.text = car!.licensePlate
+        carModelLabel.text = car!.model
+        backgroundView?.backgroundColor = UIColor.clear
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
