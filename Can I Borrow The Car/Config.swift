@@ -20,5 +20,5 @@ struct Segues {
 }
 
 struct Nibs {
-    static let cerCellHeader = "HeaderView"
+    static let carCellHeader = "HeaderView"
 }

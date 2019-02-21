@@ -35,12 +35,12 @@ extension CarViewController: UITableViewDelegate, UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: "HeaderView") as! HeaderView
+        let headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: Nibs.carCellHeader) as! HeaderView
         switch section {
         case 0:
-            headerView.sectionLabel.text = "Cars at home"
+            headerView.sectionLabel.text = headerView.notAtHome
         case 1:
-            headerView.sectionLabel.text = "Cars not at home"
+            headerView.sectionLabel.text = headerView.atHome
         default:
             break
         }
@@ -54,15 +54,14 @@ extension CarViewController: UITableViewDelegate, UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 100
+        return 70
     }
     
     func registerTableView() {
         tableView.register(UINib(nibName: Cell.notBorroewd, bundle: nil), forCellReuseIdentifier: Cell.notBorroewd)
-        let headerNib = UINib.init(nibName: "HeaderView", bundle: Bundle.main)
-        tableView.register(headerNib, forHeaderFooterViewReuseIdentifier: "HeaderView")
+        let headerNib = UINib.init(nibName: Nibs.carCellHeader, bundle: Bundle.main)
+        tableView.register(headerNib, forHeaderFooterViewReuseIdentifier: Nibs.carCellHeader)
         tableView.rowHeight = UITableView.automaticDimension
-        tableView.estimatedRowHeight = 27
     }
     
 }

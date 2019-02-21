@@ -10,6 +10,9 @@ import UIKit
 
 class HeaderView: UITableViewHeaderFooterView {
 
+    let atHome = "Cars at home"
+    let notAtHome = "Cars not at home"
+    
     @IBOutlet weak var sectionLabel: UILabel!
     override func draw(_ rect: CGRect) {
         backgroundView?.backgroundColor = UIColor.clear
