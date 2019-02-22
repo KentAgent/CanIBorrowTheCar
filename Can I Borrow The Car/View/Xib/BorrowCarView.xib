@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BorrowCarView" customModule="Can_I_Borrow_The_Car" customModuleProvider="target">
+            <connections>
+                <outlet property="borrowCarButton" destination="WD7-HL-n6q" id="qND-8u-K3t"/>
+                <outlet property="borrowCarView" destination="iN0-l3-epB" id="lGl-09-zyf"/>
+                <outlet property="cancelCarButton" destination="1JU-OO-d1t" id="jHT-q5-NPl"/>
+                <outlet property="carColorLine" destination="VNg-iX-ar4" id="PlX-mk-E18"/>
+                <outlet property="carLicencePlate" destination="xPR-gW-f6D" id="AyD-oy-S5x"/>
+                <outlet property="carModel" destination="pc7-Os-NTd" id="GwM-XN-1cH"/>
+                <outlet property="carName" destination="p6M-gT-CZ6" id="crc-fR-5Hh"/>
+                <outlet property="ownerView" destination="GOG-V5-XIq" id="tdD-Ur-skT"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="270"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Anders" translatesAutoresizingMaskIntoConstraints="NO" id="GOG-V5-XIq">
+                    <rect key="frame" x="16" y="16" width="45" height="45"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="45" id="EEB-ve-Zjf"/>
+                        <constraint firstAttribute="width" constant="45" id="UtL-kN-7El"/>
+                    </constraints>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cancel" translatesAutoresizingMaskIntoConstraints="NO" id="1JU-OO-d1t">
+                    <rect key="frame" x="314" y="16" width="45" height="45"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="45" id="C43-gP-HRN"/>
+                        <constraint firstAttribute="height" constant="45" id="fJt-Zm-hEN"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Car name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p6M-gT-CZ6">
+                    <rect key="frame" x="120.5" y="20.5" width="134" height="36"/>
+                    <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="30"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.69999999999999996" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mazda MX 5 NA" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pc7-Os-NTd">
+                    <rect key="frame" x="31" y="108" width="120" height="19.5"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="120" id="y6J-NI-hy4"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="16"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.69999999999999996" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BEB 419" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xPR-gW-f6D">
+                    <rect key="frame" x="252" y="108" width="64" height="20"/>
+                    <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="16"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.69999999999999996" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VNg-iX-ar4">
+                    <rect key="frame" x="13" y="98" width="349" height="2"/>
+                    <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="2" id="Q4r-Bf-agX"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                            <real key="value" value="0.0"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <real key="value" value="2"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Model" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ApY-B4-7hj">
+                    <rect key="frame" x="45" y="74" width="92" height="20"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="92" id="831-nu-awl"/>
+                        <constraint firstAttribute="height" constant="20" id="rqq-6A-XSc"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="16"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Licence plate" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E2b-Fi-ktB">
+                    <rect key="frame" x="238" y="74" width="92" height="20"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="92" id="EFB-YV-NeA"/>
+                        <constraint firstAttribute="height" constant="20" id="EGP-Ud-X2I"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="16"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WD7-HL-n6q">
+                    <rect key="frame" x="97" y="205" width="180" height="45"/>
+                    <color key="backgroundColor" red="0.2955245661" green="0.81617969000000001" blue="0.10494515090000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="45" id="HuH-dD-ohd"/>
+                        <constraint firstAttribute="width" constant="180" id="gab-F4-Xoy"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="24"/>
+                    <state key="normal" title="Borrow">
+                        <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="0.69999999999999996" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <real key="value" value="23"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803915" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="VNg-iX-ar4" firstAttribute="top" secondItem="ApY-B4-7hj" secondAttribute="bottom" constant="4" id="1zV-yc-LBs"/>
+                <constraint firstItem="WD7-HL-n6q" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="2bb-mq-JL4"/>
+                <constraint firstAttribute="trailing" secondItem="VNg-iX-ar4" secondAttribute="trailing" constant="13" id="6q2-6l-Zeg"/>
+                <constraint firstItem="pc7-Os-NTd" firstAttribute="centerX" secondItem="ApY-B4-7hj" secondAttribute="centerX" id="86Z-FB-6xL"/>
+                <constraint firstItem="p6M-gT-CZ6" firstAttribute="centerY" secondItem="GOG-V5-XIq" secondAttribute="centerY" id="BGY-8e-Y3b"/>
+                <constraint firstItem="ApY-B4-7hj" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="45" id="HGo-cl-BSO"/>
+                <constraint firstItem="pc7-Os-NTd" firstAttribute="top" secondItem="VNg-iX-ar4" secondAttribute="bottom" constant="8" id="Mj8-U1-L6V"/>
+                <constraint firstItem="VNg-iX-ar4" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="13" id="Nes-dp-Haw"/>
+                <constraint firstItem="xPR-gW-f6D" firstAttribute="centerX" secondItem="E2b-Fi-ktB" secondAttribute="centerX" id="OqL-We-kKy"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="WD7-HL-n6q" secondAttribute="bottom" constant="20" id="YZZ-1b-s6B"/>
+                <constraint firstItem="p6M-gT-CZ6" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="dsL-mU-UzA"/>
+                <constraint firstItem="VNg-iX-ar4" firstAttribute="top" secondItem="E2b-Fi-ktB" secondAttribute="bottom" constant="4" id="fk3-7i-MZu"/>
+                <constraint firstItem="VNg-iX-ar4" firstAttribute="top" secondItem="ApY-B4-7hj" secondAttribute="bottom" constant="4" id="iHR-Jj-3pv"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="E2b-Fi-ktB" secondAttribute="trailing" constant="45" id="m1C-Ks-vN3"/>
+                <constraint firstItem="GOG-V5-XIq" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="16" id="mYp-Ez-Pke"/>
+                <constraint firstItem="1JU-OO-d1t" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="16" id="qWu-gU-x5c"/>
+                <constraint firstAttribute="bottom" secondItem="VNg-iX-ar4" secondAttribute="bottom" constant="170" id="qfA-5R-lfN"/>
+                <constraint firstItem="xPR-gW-f6D" firstAttribute="top" secondItem="VNg-iX-ar4" secondAttribute="bottom" constant="8" id="taN-fI-1J0"/>
+                <constraint firstItem="GOG-V5-XIq" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="vc3-Qp-qWP"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="1JU-OO-d1t" secondAttribute="trailing" constant="16" id="ypL-HL-yhC"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <userDefinedRuntimeAttributes>
+                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                    <real key="value" value="17"/>
+                </userDefinedRuntimeAttribute>
+                <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                    <real key="value" value="0.0"/>
+                </userDefinedRuntimeAttribute>
+            </userDefinedRuntimeAttributes>
+            <point key="canvasLocation" x="128.80000000000001" y="223.98800599700152"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="Anders" width="800" height="873"/>
+        <image name="cancel" width="96" height="96"/>
+    </resources>
+</document>

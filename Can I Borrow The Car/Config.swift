@@ -21,4 +21,5 @@ struct Segues {
 
 struct Nibs {
     static let carCellHeader = "HeaderView"
+    static let borrowCarView = "BorrowCarView"
 }

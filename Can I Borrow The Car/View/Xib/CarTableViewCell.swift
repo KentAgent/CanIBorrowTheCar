@@ -23,7 +23,7 @@ class CarTableViewCell: UITableViewCell {
     }
     
     func updateUI() {
-        carLicencePlatelabel.text = car!.licensePlate
+        carLicencePlatelabel.text = car!.licensePlate.uppercased()
         carModelLabel.text = car!.model
     }
 

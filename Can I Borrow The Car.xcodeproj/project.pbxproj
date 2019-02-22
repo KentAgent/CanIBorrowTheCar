@@ -12,6 +12,9 @@
 		875F91C12216AAA900A8522E /* Storyboarded.swift in Sources */ = {isa = PBXBuildFile; fileRef = 875F91C02216AAA900A8522E /* Storyboarded.swift */; };
 		875F91C32216AB6D00A8522E /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 875F91C22216AB6D00A8522E /* MainCoordinator.swift */; };
 		875F91C52216B44800A8522E /* AddCarCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 875F91C42216B44800A8522E /* AddCarCoordinator.swift */; };
+		8775787422201BA40002860B /* BorrowCarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8775787322201BA40002860B /* BorrowCarView.xib */; };
+		877578762220227F0002860B /* BorrowCarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877578752220227F0002860B /* BorrowCarView.swift */; };
+		87757878222034DC0002860B /* UIView+Tap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87757877222034DC0002860B /* UIView+Tap.swift */; };
 		878AE459221D3AA5003A2F1D /* UpdateChosenCarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878AE458221D3AA5003A2F1D /* UpdateChosenCarViewController.swift */; };
 		878AE45C221D55A6003A2F1D /* StartView+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878AE45B221D55A6003A2F1D /* StartView+TableView.swift */; };
 		878AE45F221D5657003A2F1D /* CarTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878AE45D221D5657003A2F1D /* CarTableViewCell.swift */; };
@@ -65,6 +68,9 @@
 		875F91C02216AAA900A8522E /* Storyboarded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboarded.swift; sourceTree = "<group>"; };
 		875F91C22216AB6D00A8522E /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 		875F91C42216B44800A8522E /* AddCarCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCarCoordinator.swift; sourceTree = "<group>"; };
+		8775787322201BA40002860B /* BorrowCarView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BorrowCarView.xib; sourceTree = "<group>"; };
+		877578752220227F0002860B /* BorrowCarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BorrowCarView.swift; sourceTree = "<group>"; };
+		87757877222034DC0002860B /* UIView+Tap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Tap.swift"; sourceTree = "<group>"; };
 		878AE458221D3AA5003A2F1D /* UpdateChosenCarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateChosenCarViewController.swift; sourceTree = "<group>"; };
 		878AE45B221D55A6003A2F1D /* StartView+TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StartView+TableView.swift"; sourceTree = "<group>"; };
 		878AE45D221D5657003A2F1D /* CarTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarTableViewCell.swift; sourceTree = "<group>"; };
@@ -153,6 +159,8 @@
 				878AE45D221D5657003A2F1D /* CarTableViewCell.swift */,
 				87B0CAE3221EECC8004C2DF2 /* HeaderView.xib */,
 				87B0CAE5221EF388004C2DF2 /* HeaderView.swift */,
+				8775787322201BA40002860B /* BorrowCarView.xib */,
+				877578752220227F0002860B /* BorrowCarView.swift */,
 			);
 			path = Xib;
 			sourceTree = "<group>";
@@ -267,6 +275,7 @@
 			children = (
 				878AE464221D8240003A2F1D /* UIView.swift */,
 				87BB0F7F2215F6580000F853 /* UIApplication.swift */,
+				87757877222034DC0002860B /* UIView+Tap.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -404,6 +413,7 @@
 			files = (
 				87BB0F3C2215EC4A0000F853 /* LaunchScreen.storyboard in Resources */,
 				87BB0F392215EC4A0000F853 /* Assets.xcassets in Resources */,
+				8775787422201BA40002860B /* BorrowCarView.xib in Resources */,
 				878AE460221D5657003A2F1D /* NotBorrowedCarCell.xib in Resources */,
 				87B0CAE4221EECC8004C2DF2 /* HeaderView.xib in Resources */,
 				87BB0F372215EC490000F853 /* Main.storyboard in Resources */,
@@ -536,8 +546,10 @@
 				875F91C32216AB6D00A8522E /* MainCoordinator.swift in Sources */,
 				87BB0F322215EC490000F853 /* AppDelegate.swift in Sources */,
 				878AE459221D3AA5003A2F1D /* UpdateChosenCarViewController.swift in Sources */,
+				87757878222034DC0002860B /* UIView+Tap.swift in Sources */,
 				87B0CAE6221EF388004C2DF2 /* HeaderView.swift in Sources */,
 				87BB0F802215F6580000F853 /* AlertModel.swift in Sources */,
+				877578762220227F0002860B /* BorrowCarView.swift in Sources */,
 				875F91C12216AAA900A8522E /* Storyboarded.swift in Sources */,
 				87BB0F642215ED850000F853 /* Car.swift in Sources */,
 				878AE468221D9261003A2F1D /* UserModel.swift in Sources */,

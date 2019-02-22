@@ -18,52 +18,51 @@ class UpdateChosenCarViewController: UIViewController {
     var carRealmManager = CarRealmManager()
     var delegate : UpdateView?
     
-    @IBOutlet weak var availableLable: UILabel!
-    @IBOutlet weak var carNameLabel: UILabel!
-    @IBOutlet weak var colorLabel: UILabel!
-    @IBOutlet weak var modelLabel: UILabel!
-    @IBOutlet weak var licencePlateLabel: UILabel!
-    @IBOutlet weak var ownerLabel: UILabel!
-    @IBOutlet weak var borrowedOfLabel: UILabel!
-    @IBOutlet weak var availableButton: UIButton!
+    @IBOutlet weak var borrowCarView: BorrowCarView!
+    @IBOutlet weak var visiualEffectView: UIVisualEffectView!
+    var effect : UIVisualEffect?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        borrowCarView.awakeFromNib()
+        borrowCar_TouchUpInside()
+        cancelCar_TouchUpInside()
     }
     
     var selectedCar : Car? {
         didSet {
             DispatchQueue.main.async {
-                self.fetchCar()
+                self.updateCarUI()
+                self.updateVisualEffect()
+                self.animateIn()
+                
             }
         }
     }
     
-    func fetchCar() {
+    func updateCarUI() {
         if selectedCar!.borrowedTo != nil {
-            availableButton.setTitle("Return car", for: .normal)
-            availableLable.textColor = UIColor.red
-            availableLable.text! = "Car is not at home"
+            //borrowCarView.borrowCarButton.setTitle("Return", for: .normal)
         } else {
-            availableButton.setTitle("Borrow car", for: .normal)
-            availableLable.textColor = UIColor.green
-            availableLable.text! = "Car is at home"
+            //borrowCarView.borrowCarButton.setTitle("Borrow", for: .normal)
         }
-        carNameLabel.text! = selectedCar!.carName
-        modelLabel.text! = selectedCar!.model
-        colorLabel.text! = selectedCar!.color
-        licencePlateLabel.text! = selectedCar!.licensePlate
-    }
-
-    func updateCar() -> Car {
-        if selectedCar!.borrowed == false {
-            selectedCar!.borrowed = true
-        } else {
-            selectedCar!.borrowed = false
-        }
-        return selectedCar!
+        borrowCarView.carName.text! = selectedCar!.carName
+        borrowCarView.carModel.text! = selectedCar!.model
+        borrowCarView.carLicencePlate.text! = selectedCar!.licensePlate.uppercased()
+        AppStyle.circleUIView(image: borrowCarView.ownerView)
     }
     
+    func updateVisualEffect() {
+        effect = visiualEffectView.effect
+        visiualEffectView.effect = nil
+    }
+    
+    func animateIn() {
+        UIView.animate(withDuration: 0.4) {
+            self.visiualEffectView.effect = self.effect
+        }
+    }
+
     @IBAction func exitWindow(_ sender: UIButton) {
         switch sender.tag {
         case 1:
@@ -76,6 +75,32 @@ class UpdateChosenCarViewController: UIViewController {
         default:
             break
         }
+    }
+    
+    func borrowCar_TouchUpInside() {
+        borrowCarView.borrowCarButton.addTapGestureRecognizer {
+            print("borrow")
+//            self.carRealmManager.update(update: self.updateCar) {
+//                self.delegate?.userUpdateCar()
+//            }
+            self.dismiss(animated: true, completion: nil)
+        }
+    }
+    
+    func cancelCar_TouchUpInside() {
+        borrowCarView.cancelCarButton.addTapGestureRecognizer {
+            print("cancel")
+            self.dismiss(animated: true, completion: nil)
+        }
+    }
+    
+    func updateCar() -> Car {
+        if selectedCar!.borrowed == false {
+            selectedCar!.borrowed = true
+        } else {
+            selectedCar!.borrowed = false
+        }
+        return selectedCar!
     }
     
 }
