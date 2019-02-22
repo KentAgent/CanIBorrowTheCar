@@ -14,8 +14,8 @@ class HeaderView: UITableViewHeaderFooterView {
     let notAtHome = "Cars not at home"
     
     @IBOutlet weak var sectionLabel: UILabel!
+    
     override func draw(_ rect: CGRect) {
-        backgroundView?.backgroundColor = UIColor.clear
     }
 
 

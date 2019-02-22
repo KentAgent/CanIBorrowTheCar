@@ -55,7 +55,7 @@ class UpdateChosenCarViewController: UIViewController {
         licencePlateLabel.text! = selectedCar!.licensePlate
     }
 
-    func updateCar() -> Car{
+    func updateCar() -> Car {
         if selectedCar!.borrowed == false {
             selectedCar!.borrowed = true
         } else {

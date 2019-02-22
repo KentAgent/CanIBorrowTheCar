@@ -8,7 +8,7 @@
 
 import UIKit
 
-class NotBorrowedCarTableViewCell: UITableViewCell {
+class CarTableViewCell: UITableViewCell {
 
     
     @IBOutlet weak var carView: UIView!

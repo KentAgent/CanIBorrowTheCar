@@ -48,9 +48,12 @@ class CarViewController: UIViewController, UpdateView {
         performSegue(withIdentifier: Segues.goToAddCar, sender: self)
     }
     
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let indexPath = tableView.indexPathForSelectedRow {
             let vcSelectedCar = segue.destination as! UpdateChosenCarViewController
+            //TODO: FIX indexPath.Section
+            //måste ta fram [indexPath.section], annars vet ej cellen jag klickar på, vilken section den ligger i, bara vilken rad.
             vcSelectedCar.selectedCar = carModel.cars![indexPath.row]
             vcSelectedCar.delegate = self
         }

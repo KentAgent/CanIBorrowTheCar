@@ -17,15 +17,16 @@ extension CarViewController: UITableViewDelegate, UITableViewDataSource{
         
         let allcars = [carsAtHome?.count, carsNotAtHome?.count]
         
-        return  allcars[section] ?? 1
+        return allcars[section] ?? 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: Cell.notBorroewd, for: indexPath) as! NotBorrowedCarTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: Cell.notBorroewd, for: indexPath) as! CarTableViewCell
         
         //TODO: FIX indexPath.Section
         //måste ta fram [indexPath.section], annars blir alla med samma indexpath.row likadana, oberoende section
-
+        cell.car = carModel.cars?[indexPath.row]
+        
         return cell
     }
     
@@ -37,9 +38,9 @@ extension CarViewController: UITableViewDelegate, UITableViewDataSource{
         let headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: Nibs.carCellHeader) as! HeaderView
         switch section {
         case 0:
-            headerView.sectionLabel.text = headerView.notAtHome
-        case 1:
             headerView.sectionLabel.text = headerView.atHome
+        case 1:
+            headerView.sectionLabel.text = headerView.notAtHome
         default:
             break
         }

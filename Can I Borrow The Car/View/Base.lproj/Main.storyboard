@@ -33,6 +33,7 @@
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </tableViewCell>
                                 </prototypes>
+                                <sections/>
                                 <connections>
                                     <outlet property="dataSource" destination="BYZ-38-t0r" id="0r1-7H-nLk"/>
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="B2I-6R-B3X"/>
@@ -91,9 +92,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qZK-OS-9R1">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qZK-OS-9R1">
                                 <rect key="frame" x="32" y="76" width="311" height="670"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Owner" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kWT-eX-E2I">
                                         <rect key="frame" x="129" y="287" width="50" height="21"/>
@@ -174,6 +174,12 @@
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="mZV-2U-SxU" firstAttribute="trailing" secondItem="qZK-OS-9R1" secondAttribute="trailing" constant="32" id="b0u-jR-iTD"/>
+                            <constraint firstItem="mZV-2U-SxU" firstAttribute="bottom" secondItem="qZK-OS-9R1" secondAttribute="bottom" constant="32" id="dAf-2i-Eve"/>
+                            <constraint firstItem="qZK-OS-9R1" firstAttribute="leading" secondItem="mZV-2U-SxU" secondAttribute="leading" constant="32" id="t1z-8T-gxB"/>
+                            <constraint firstItem="qZK-OS-9R1" firstAttribute="top" secondItem="mZV-2U-SxU" secondAttribute="top" constant="32" id="xAP-IF-49A"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="mZV-2U-SxU"/>
                     </view>
                     <connections>

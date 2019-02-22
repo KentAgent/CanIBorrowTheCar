@@ -14,7 +14,7 @@
 		875F91C52216B44800A8522E /* AddCarCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 875F91C42216B44800A8522E /* AddCarCoordinator.swift */; };
 		878AE459221D3AA5003A2F1D /* UpdateChosenCarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878AE458221D3AA5003A2F1D /* UpdateChosenCarViewController.swift */; };
 		878AE45C221D55A6003A2F1D /* StartView+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878AE45B221D55A6003A2F1D /* StartView+TableView.swift */; };
-		878AE45F221D5657003A2F1D /* NotBorrowedCarTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878AE45D221D5657003A2F1D /* NotBorrowedCarTableViewCell.swift */; };
+		878AE45F221D5657003A2F1D /* CarTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878AE45D221D5657003A2F1D /* CarTableViewCell.swift */; };
 		878AE460221D5657003A2F1D /* NotBorrowedCarCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 878AE45E221D5657003A2F1D /* NotBorrowedCarCell.xib */; };
 		878AE463221D6AD4003A2F1D /* AppStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878AE462221D6AD4003A2F1D /* AppStyle.swift */; };
 		878AE465221D8240003A2F1D /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878AE464221D8240003A2F1D /* UIView.swift */; };
@@ -67,7 +67,7 @@
 		875F91C42216B44800A8522E /* AddCarCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCarCoordinator.swift; sourceTree = "<group>"; };
 		878AE458221D3AA5003A2F1D /* UpdateChosenCarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateChosenCarViewController.swift; sourceTree = "<group>"; };
 		878AE45B221D55A6003A2F1D /* StartView+TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StartView+TableView.swift"; sourceTree = "<group>"; };
-		878AE45D221D5657003A2F1D /* NotBorrowedCarTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotBorrowedCarTableViewCell.swift; sourceTree = "<group>"; };
+		878AE45D221D5657003A2F1D /* CarTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarTableViewCell.swift; sourceTree = "<group>"; };
 		878AE45E221D5657003A2F1D /* NotBorrowedCarCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NotBorrowedCarCell.xib; sourceTree = "<group>"; };
 		878AE462221D6AD4003A2F1D /* AppStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStyle.swift; sourceTree = "<group>"; };
 		878AE464221D8240003A2F1D /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
@@ -150,7 +150,7 @@
 			isa = PBXGroup;
 			children = (
 				878AE45E221D5657003A2F1D /* NotBorrowedCarCell.xib */,
-				878AE45D221D5657003A2F1D /* NotBorrowedCarTableViewCell.swift */,
+				878AE45D221D5657003A2F1D /* CarTableViewCell.swift */,
 				87B0CAE3221EECC8004C2DF2 /* HeaderView.xib */,
 				87B0CAE5221EF388004C2DF2 /* HeaderView.swift */,
 			);
@@ -530,7 +530,7 @@
 				87BB0F832215FB340000F853 /* AddCarViewController.swift in Sources */,
 				87BB0F6A2215F1F10000F853 /* Config.swift in Sources */,
 				878AE45C221D55A6003A2F1D /* StartView+TableView.swift in Sources */,
-				878AE45F221D5657003A2F1D /* NotBorrowedCarTableViewCell.swift in Sources */,
+				878AE45F221D5657003A2F1D /* CarTableViewCell.swift in Sources */,
 				875F91C52216B44800A8522E /* AddCarCoordinator.swift in Sources */,
 				878AE463221D6AD4003A2F1D /* AppStyle.swift in Sources */,
 				875F91C32216AB6D00A8522E /* MainCoordinator.swift in Sources */,
