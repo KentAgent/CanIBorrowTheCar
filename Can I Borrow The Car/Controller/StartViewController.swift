@@ -16,6 +16,10 @@ class CarViewController: UIViewController, UpdateView {
     var cars = [CarModel]()
     var users = [UserModel]()
     
+    var carsAtHome: [CarModel] = []
+    var carsNotAtHome: [CarModel] = []
+    var allCars: [[CarModel]]?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         registerTableView()
@@ -37,9 +41,9 @@ class CarViewController: UIViewController, UpdateView {
             guard let carId = car.uid else { return }
             self.fetchUser(uid: carId, completion: {
                 self.cars.append(car)
+                self.setObjectArraysBasedOnBool()
                 self.tableView.reloadData()
-                print(self.cars.count)
-                print(self.users.count)
+                print("CAAARS: \(self.cars)")
             })
         }
     }
@@ -62,13 +66,28 @@ class CarViewController: UIViewController, UpdateView {
             let vcSelectedCar = segue.destination as! UpdateChosenCarViewController
             //TODO: FIX indexPath.Section
             //måste ta fram [indexPath.section], annars vet ej cellen jag klickar på, vilken section den ligger i, bara vilken rad.
-            vcSelectedCar.selectedCar = cars[indexPath.row]
+            vcSelectedCar.selectedCar = allCars?[indexPath.section][indexPath.row]
             vcSelectedCar.delegate = self
         }
     }
     
     @IBAction func signOut(_ sender: Any) {
         AuthServiceSign.signOut(currentVC: self)
+    }
+    
+    
+    func setObjectArraysBasedOnBool() {
+        carsAtHome.removeAll()
+        carsNotAtHome.removeAll()
+        allCars?.removeAll()
+        for car in cars {
+            if car.borrowed == true {
+                carsNotAtHome.append(car)
+            } else {
+                carsAtHome.append(car)
+            }
+        }
+        allCars = [carsAtHome, carsNotAtHome]
     }
     
 }

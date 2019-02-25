@@ -12,8 +12,8 @@ import UIKit
 extension CarViewController: UITableViewDelegate, UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let carsAtHome = cars.filter({$0.borrowed == false})
-        let carsNotAtHome = cars.filter({$0.borrowed == true})
+//        let carsAtHome = cars.filter({$0.borrowed == false})
+//        let carsNotAtHome = cars.filter({$0.borrowed == true})
 
         let allcars = [carsAtHome.count, carsNotAtHome.count]
         
@@ -24,8 +24,9 @@ extension CarViewController: UITableViewDelegate, UITableViewDataSource{
         let cell = tableView.dequeueReusableCell(withIdentifier: Cell.notBorroewd, for: indexPath) as! CarTableViewCell
         //TODO: FIX indexPath.Section
         //måste ta fram [indexPath.section], annars blir alla med samma indexpath.row likadana, oberoende section
-        let car = cars[indexPath.row]
-        cell.car = car
+        //let car = cars[indexPath.row]
+        let car = allCars?[indexPath.section][indexPath.row].model
+        cell.carModelLabel.text = car
         
         return cell
     }

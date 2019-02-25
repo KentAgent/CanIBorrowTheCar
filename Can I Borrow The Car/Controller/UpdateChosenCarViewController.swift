@@ -15,7 +15,6 @@ protocol UpdateView {
 class UpdateChosenCarViewController: UIViewController {
     
     var delegate : UpdateView?
-    var carId: String!
     
     @IBOutlet weak var borrowCarView: BorrowCarView!
     @IBOutlet weak var visiualEffectView: UIVisualEffectView!
@@ -26,12 +25,13 @@ class UpdateChosenCarViewController: UIViewController {
         borrowCarView.awakeFromNib()
         borrowCar_TouchUpInside()
         cancelCar_TouchUpInside()
-        print(carId)
     }
     
     var selectedCar : CarModel? {
         didSet {
             DispatchQueue.main.async {
+                print(self.selectedCar!.id!)
+                AppStyle.circleUIView(image: self.borrowCarView.ownerView)
                 self.updateCarUI()
                 self.updateVisualEffect()
                 self.animateIn()
@@ -40,15 +40,15 @@ class UpdateChosenCarViewController: UIViewController {
     }
     
     func updateCarUI() {
-//        if selectedCar!.borrowedTo != nil {
-//            //borrowCarView.borrowCarButton.setTitle("Return", for: .normal)
-//        } else {
-//            //borrowCarView.borrowCarButton.setTitle("Borrow", for: .normal)
-//        }
-//        borrowCarView.carName.text! = selectedCar!.carName
-//        borrowCarView.carModel.text! = selectedCar!.model
-//        borrowCarView.carLicencePlate.text! = selectedCar!.licensePlate.uppercased()
-//        AppStyle.circleUIView(image: borrowCarView.ownerView)
+        if selectedCar?.borrowed != nil {
+            borrowCarView.borrowCarButton.setTitle("Return", for: .normal)
+        } else {
+            borrowCarView.borrowCarButton.setTitle("Borrow", for: .normal)
+        }
+        borrowCarView.carName.text = selectedCar?.name
+        borrowCarView.carModel.text = selectedCar?.model
+        borrowCarView.carLicencePlate.text = selectedCar?.licensePlate?.uppercased()
+        AppStyle.circleUIView(image: borrowCarView.ownerView)
     }
     
     func updateVisualEffect() {
