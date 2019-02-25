@@ -7,33 +7,33 @@
 //
 
 import UIKit
+import ProgressHUD
 
 class AddCarViewController: UIViewController, Storyboarded {
-    
-    var carModel = CarModel()
-    var carRealmManager = CarRealmManager()
     
     @IBOutlet weak var carNameTextField: UITextField!
     @IBOutlet weak var modelTextField: UITextField!
     @IBOutlet weak var licensePlateTextField: UITextField!
     @IBOutlet weak var colorTextField: UITextField!
     
+    var user: UserModel!
+    var cars: [CarModel] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
     
-    func saveCar() -> Car{
-        let car = Car()
-        car.carName = carNameTextField.text!
-        car.model = modelTextField.text!
-        car.color = colorTextField.text!
-        car.licensePlate = licensePlateTextField.text!
-        return car
+    func saveCar() {
+        API.UploadCar.uploadCar(name: carNameTextField.text!, model: modelTextField.text!, licencePlate: licensePlateTextField.text!, color: colorTextField!.text!, borrowed: true, uploaded: {
+            ProgressHUD.showSuccess("Succes")
+            self.dismiss(animated: true, completion: nil)
+        }) { (error) in
+            ProgressHUD.showError(error)
+        }
     }
     
     @IBAction func saveCarButton(_ sender: Any) {
-        self.carRealmManager.create(add: saveCar)
-        dismiss(animated: true, completion: nil)
+        saveCar()
     }
     
     @IBAction func cancelButton(_ sender: Any) {

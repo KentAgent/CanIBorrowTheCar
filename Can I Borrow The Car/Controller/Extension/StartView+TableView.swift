@@ -12,20 +12,20 @@ import UIKit
 extension CarViewController: UITableViewDelegate, UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let carsAtHome = carModel.cars?.filter({$0.borrowed == false})
-        let carsNotAtHome = carModel.cars?.filter({$0.borrowed == true})
+        let carsAtHome = cars.filter({$0.borrowed == false})
+        let carsNotAtHome = cars.filter({$0.borrowed == true})
+
+        let allcars = [carsAtHome.count, carsNotAtHome.count]
         
-        let allcars = [carsAtHome?.count, carsNotAtHome?.count]
-        
-        return allcars[section] ?? 1
+        return allcars[section]
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: Cell.notBorroewd, for: indexPath) as! CarTableViewCell
-        
         //TODO: FIX indexPath.Section
         //måste ta fram [indexPath.section], annars blir alla med samma indexpath.row likadana, oberoende section
-        cell.car = carModel.cars?[indexPath.row]
+        let car = cars[indexPath.row]
+        cell.car = car
         
         return cell
     }
@@ -48,7 +48,6 @@ extension CarViewController: UITableViewDelegate, UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("\(indexPath.section) \(indexPath.row)")
         performSegue(withIdentifier: Segues.goToChosenCar, sender: self)
         tableView.deselectRow(at: indexPath, animated: true)
     }

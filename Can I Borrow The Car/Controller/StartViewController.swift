@@ -9,19 +9,18 @@
 import UIKit
 
 class CarViewController: UIViewController, UpdateView {
- 
-    var carModel = CarModel()
-    var carRealmManager = CarRealmManager()
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var profileImageUIImage: UIImageView!
+    
+    var cars = [CarModel]()
+    var users = [UserModel]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         registerTableView()
         loadCars()
-        updateProfileView()
-        print(RealmManager.fileURL!)
+        print("Current User \(API.User.currentUser?.email)")
     }
 
     override func viewDidAppear(_ animated: Bool) {
@@ -34,14 +33,23 @@ class CarViewController: UIViewController, UpdateView {
     }
     
     func loadCars() {
-        carRealmManager.load { (car) in
-            self.carModel.cars = car
-            self.tableView.reloadData()
+        API.Feed.observeFeed(with: API.User.currentUser!.uid) { (car) in
+            guard let carId = car.uid else { return }
+            self.fetchUser(uid: carId, completion: {
+                self.cars.append(car)
+                self.tableView.reloadData()
+                print(self.cars.count)
+                print(self.users.count)
+            })
         }
     }
     
-    func updateProfileView() {
-        AppStyle.cirlceUIImageView(image: profileImageUIImage)
+    func fetchUser(uid: String, completion: (() -> Void)? = nil) {
+        API.User.observeUser(uid: uid) { (user) in
+            self.users.append(user)
+            print(self.users)
+            completion!()
+        }
     }
     
     @IBAction func addCarButton(_ sender: Any) {
@@ -54,10 +62,13 @@ class CarViewController: UIViewController, UpdateView {
             let vcSelectedCar = segue.destination as! UpdateChosenCarViewController
             //TODO: FIX indexPath.Section
             //måste ta fram [indexPath.section], annars vet ej cellen jag klickar på, vilken section den ligger i, bara vilken rad.
-            vcSelectedCar.selectedCar = carModel.cars![indexPath.row]
+            vcSelectedCar.selectedCar = cars[indexPath.row]
             vcSelectedCar.delegate = self
         }
     }
     
-
+    @IBAction func signOut(_ sender: Any) {
+        AuthServiceSign.signOut(currentVC: self)
+    }
+    
 }

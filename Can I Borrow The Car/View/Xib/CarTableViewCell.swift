@@ -10,20 +10,19 @@ import UIKit
 
 class CarTableViewCell: UITableViewCell {
 
-    
     @IBOutlet weak var carView: UIView!
     @IBOutlet weak var carColorView: UIView!
     @IBOutlet weak var carLicencePlatelabel: UILabel!
     @IBOutlet weak var carModelLabel: UILabel!
     
-    var car: Car? {
+    var car: CarModel? {
         didSet {
             updateUI()
         }
     }
     
     func updateUI() {
-        carLicencePlatelabel.text = car!.licensePlate.uppercased()
+        carLicencePlatelabel.text = car!.licensePlate?.uppercased()
         carModelLabel.text = car!.model
     }
 

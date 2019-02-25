@@ -5,6 +5,13 @@ target 'Can I Borrow The Car' do
 
   # Pods for Can I Borrow The Car
     pod 'RealmSwift'
+    pod 'Firebase/Core'
+    pod 'Firebase'
+    pod 'Firebase/Auth'
+    pod 'Firebase/Database'
+    pod 'Firebase/Storage'
+    pod 'SDWebImage'
+    pod 'ProgressHUD'
 
 
   target 'Can I Borrow The CarTests' do
