@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import ProgressHUD
 
 protocol UpdateView {
     func userUpdateCar()
@@ -20,6 +21,8 @@ class UpdateChosenCarViewController: UIViewController {
     @IBOutlet weak var visiualEffectView: UIVisualEffectView!
     var effect : UIVisualEffect?
     
+    var selected = true
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         borrowCarView.awakeFromNib()
@@ -32,15 +35,24 @@ class UpdateChosenCarViewController: UIViewController {
             DispatchQueue.main.async {
                 print(self.selectedCar!.id!)
                 AppStyle.circleUIView(image: self.borrowCarView.ownerView)
-                self.updateCarUI()
-                self.updateVisualEffect()
+                self.showCarUI()
+                self.showVisualEffect()
                 self.animateIn()
             }
         }
     }
     
-    func updateCarUI() {
-        if selectedCar?.borrowed != nil {
+    func updateCar() {
+        API.UploadCar.updateCar(with: selectedCar!.id!, borrowed: updateCarBool(), uploaded: {
+            ProgressHUD.showSuccess()
+            self.dismiss(animated: true, completion: nil)
+        }) { (error) in
+            ProgressHUD.showError(error)
+        }
+    }
+    
+    func showCarUI() {
+        if selectedCar?.borrowed == true {
             borrowCarView.borrowCarButton.setTitle("Return", for: .normal)
         } else {
             borrowCarView.borrowCarButton.setTitle("Borrow", for: .normal)
@@ -51,7 +63,12 @@ class UpdateChosenCarViewController: UIViewController {
         AppStyle.circleUIView(image: borrowCarView.ownerView)
     }
     
-    func updateVisualEffect() {
+    func test() -> Bool {
+        selected = ((selectedCar?.borrowed?.toggle()) != nil)
+        return selected
+    }
+    
+    func showVisualEffect() {
         effect = visiualEffectView.effect
         visiualEffectView.effect = nil
     }
@@ -65,9 +82,6 @@ class UpdateChosenCarViewController: UIViewController {
     @IBAction func exitWindow(_ sender: UIButton) {
         switch sender.tag {
         case 1:
-//            carRealmManager.update(update: updateCar) {
-//                self.delegate?.userUpdateCar()
-//            }
             self.dismiss(animated: true, completion: nil)
         case 2:
             dismiss(animated: true, completion: nil)
@@ -77,13 +91,9 @@ class UpdateChosenCarViewController: UIViewController {
     }
     
     func borrowCar_TouchUpInside() {
-//       // borrowCarView.borrowCarButton.addTapGestureRecognizer {
-//            print("borrow")
-//            self.carRealmManager.update(update: self.updateCar) {
-//                self.delegate?.userUpdateCar()
-//            }
-//            self.dismiss(animated: true, completion: nil)
-//        }
+        borrowCarView.borrowCarButton.addTapGestureRecognizer {
+            self.updateCar()
+        }
     }
     
     func cancelCar_TouchUpInside() {
@@ -92,13 +102,13 @@ class UpdateChosenCarViewController: UIViewController {
         }
     }
     
-//    func updateCar() -> Car {
-//        if selectedCar!.borrowed == false {
-//            selectedCar!.borrowed = true
-//        } else {
-//            selectedCar!.borrowed = false
-//        }
-//        return selectedCar!
-//    }
+    func updateCarBool() -> Bool {
+        if selectedCar!.borrowed == false {
+            selectedCar!.borrowed = true
+        } else {
+            selectedCar!.borrowed = false
+        }
+        return selectedCar!.borrowed!
+    }
     
 }

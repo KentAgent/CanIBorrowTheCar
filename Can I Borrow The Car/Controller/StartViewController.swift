@@ -29,11 +29,11 @@ class CarViewController: UIViewController, UpdateView {
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-        self.tableView.reloadData()
+        self.setObjectArraysBasedOnBool()
     }
     
     func userUpdateCar() {
-        self.tableView.reloadData()
+        self.setObjectArraysBasedOnBool()
     }
     
     func loadCars() {
@@ -42,7 +42,6 @@ class CarViewController: UIViewController, UpdateView {
             self.fetchUser(uid: carId, completion: {
                 self.cars.append(car)
                 self.setObjectArraysBasedOnBool()
-                self.tableView.reloadData()
                 print("CAAARS: \(self.cars)")
             })
         }
@@ -88,6 +87,7 @@ class CarViewController: UIViewController, UpdateView {
             }
         }
         allCars = [carsAtHome, carsNotAtHome]
+        tableView.reloadData()
     }
     
 }
