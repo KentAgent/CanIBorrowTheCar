@@ -10,7 +10,7 @@ import UIKit
 import ProgressHUD
 
 protocol UpdateView {
-    func userUpdateCar()
+    func updateCarsFromDismiss()
 }
 
 class UpdateChosenCarViewController: UIViewController {
@@ -45,6 +45,7 @@ class UpdateChosenCarViewController: UIViewController {
     func updateCar() {
         API.UploadCar.updateCar(with: selectedCar!.id!, borrowed: updateCarBool(), uploaded: {
             ProgressHUD.showSuccess()
+            self.delegate?.updateCarsFromDismiss()
             self.dismiss(animated: true, completion: nil)
         }) { (error) in
             ProgressHUD.showError(error)
@@ -63,11 +64,6 @@ class UpdateChosenCarViewController: UIViewController {
         AppStyle.circleUIView(image: borrowCarView.ownerView)
     }
     
-    func test() -> Bool {
-        selected = ((selectedCar?.borrowed?.toggle()) != nil)
-        return selected
-    }
-    
     func showVisualEffect() {
         effect = visiualEffectView.effect
         visiualEffectView.effect = nil
@@ -76,17 +72,6 @@ class UpdateChosenCarViewController: UIViewController {
     func animateIn() {
         UIView.animate(withDuration: 0.4) {
             self.visiualEffectView.effect = self.effect
-        }
-    }
-
-    @IBAction func exitWindow(_ sender: UIButton) {
-        switch sender.tag {
-        case 1:
-            self.dismiss(animated: true, completion: nil)
-        case 2:
-            dismiss(animated: true, completion: nil)
-        default:
-            break
         }
     }
     

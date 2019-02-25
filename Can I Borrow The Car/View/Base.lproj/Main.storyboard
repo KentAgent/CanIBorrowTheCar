@@ -21,6 +21,24 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="coj-n9-Cx8">
                                 <rect key="frame" x="0.0" y="100" width="375" height="663"/>
                                 <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803915" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="zlJ-Fz-2Ht">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="zlJ-Fz-2Ht" id="4J6-xT-9Ji">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="xSf-V7-qYb">
+                                        <rect key="frame" x="0.0" y="72" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="xSf-V7-qYb" id="5oi-fR-XJr">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
                                 <sections/>
                                 <connections>
                                     <outlet property="dataSource" destination="BYZ-38-t0r" id="0r1-7H-nLk"/>
@@ -40,10 +58,9 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GE4-CI-Rnk">
-                                <rect key="frame" x="279" y="62" width="80" height="30"/>
+                                <rect key="frame" x="299" y="62" width="60" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="VYb-xp-pEQ"/>
-                                    <constraint firstAttribute="width" constant="80" id="jB3-H2-nTb"/>
                                 </constraints>
                                 <state key="normal" title="Sign Out"/>
                                 <connections>
@@ -58,6 +75,7 @@
                             <constraint firstItem="coj-n9-Cx8" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="E8o-tw-m3w"/>
                             <constraint firstItem="Jiz-9Q-LAv" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="12" id="Eeq-xe-9gv"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="GE4-CI-Rnk" secondAttribute="trailing" constant="16" id="PB0-jp-3Hd"/>
+                            <constraint firstItem="GE4-CI-Rnk" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Jiz-9Q-LAv" secondAttribute="trailing" constant="8" symbolic="YES" id="QiK-LI-M6H"/>
                             <constraint firstItem="GE4-CI-Rnk" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="18" id="aLZ-jP-yD1"/>
                             <constraint firstItem="Jiz-9Q-LAv" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="18" id="fQh-dK-lRb"/>
                             <constraint firstItem="coj-n9-Cx8" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="100" id="zXt-2V-JlX"/>
@@ -69,7 +87,7 @@
                     <connections>
                         <outlet property="tableView" destination="coj-n9-Cx8" id="yZe-vL-ge0"/>
                         <segue destination="Q0I-2D-gly" kind="presentation" identifier="GoToAddCar" id="jtL-12-cfv"/>
-                        <segue destination="erb-Ta-QTg" kind="presentation" identifier="GoToChosenCar" modalPresentationStyle="overCurrentContext" id="ouv-M2-ZBP"/>
+                        <segue destination="erb-Ta-QTg" kind="presentation" identifier="GoToChosenCar" modalPresentationStyle="overFullScreen" id="ouv-M2-ZBP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -84,7 +102,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <visualEffectView opaque="NO" alpha="0.34999999999999998" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cKI-Kx-yxP">
+                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cKI-Kx-yxP">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="xmU-hp-LG3">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>

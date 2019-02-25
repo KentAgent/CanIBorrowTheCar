@@ -18,7 +18,8 @@ class AddCarViewController: UIViewController, Storyboarded {
     
     var user: UserModel!
     var cars: [CarModel] = []
-    
+    var delegate : UpdateView?
+
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -26,6 +27,7 @@ class AddCarViewController: UIViewController, Storyboarded {
     func saveCar() {
         API.UploadCar.uploadCar(name: carNameTextField.text!, model: modelTextField.text!, licencePlate: licensePlateTextField.text!, color: colorTextField!.text!, borrowed: true, uploaded: {
             ProgressHUD.showSuccess("Succes")
+            self.delegate?.updateCarsFromDismiss()
             self.dismiss(animated: true, completion: nil)
         }) { (error) in
             ProgressHUD.showError(error)
