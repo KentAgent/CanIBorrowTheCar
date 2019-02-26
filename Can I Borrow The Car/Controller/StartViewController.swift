@@ -10,12 +10,13 @@ import UIKit
 
 class CarViewController: UIViewController, UpdateView {
     
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var profileImageUIImage: UIImageView!
+    @IBOutlet weak var emptyTableViewLabel: UILabel!
     
     var cars = [CarModel]()
     var users = [UserModel]()
-    var sortedCarsByBool: [[CarModel]]?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,24 +25,28 @@ class CarViewController: UIViewController, UpdateView {
     }
 
     func loadCars() {
+        self.showLabelOnEmptyTableView()
+        activityIndicator.startAnimating()
         API.Feed.observeFeed(with: API.User.currentUser!.uid) { (car) in
             guard let carId = car.uid else { return }
             self.fetchUser(uid: carId, completion: {
                 self.cars.append(car)
-                self.setObjectArraysBasedOnBool()
+                self.showLabelOnEmptyTableView()
+                self.activityIndicator.stopAnimating()
+                self.tableView.reloadData()
             })
         }
     }
     
     func updateCarsFromDismiss() {
-        self.setObjectArraysBasedOnBool()
+        tableView.reloadData()
     }
     
-    func fetchUser(uid: String, completion: (() -> Void)? = nil) {
+    func fetchUser(uid: String, completion: (() -> ())? = nil) {
         API.User.observeUser(uid: uid) { (user) in
             self.users.append(user)
             print(self.users)
-            completion!()
+            completion?()
         }
     }
     
@@ -56,7 +61,7 @@ class CarViewController: UIViewController, UpdateView {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let indexPath = tableView.indexPathForSelectedRow {
             let vcSelectedCar = segue.destination as! UpdateChosenCarViewController
-            vcSelectedCar.selectedCar = sortedCarsByBool![indexPath.section][indexPath.row]
+            vcSelectedCar.selectedCar = sortedCarsByBool[indexPath.section][indexPath.row]
             vcSelectedCar.delegate = self
         }
         if let vcAddCar = segue.destination as? AddCarViewController {

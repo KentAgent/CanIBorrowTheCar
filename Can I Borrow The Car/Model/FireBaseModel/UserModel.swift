@@ -19,7 +19,6 @@ class UserModel {
 extension UserModel {
     static func transformUserToDict(dict: [String: Any], key: String) -> UserModel {
         let user = UserModel()
-        
         user.username = dict[FIRStrings.username] as? String
         user.email = dict[FIRStrings.email] as? String
         user.profileImageUrl = dict[FIRStrings.profileImageUrl] as? String

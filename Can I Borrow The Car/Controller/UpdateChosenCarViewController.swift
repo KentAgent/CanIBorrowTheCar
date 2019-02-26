@@ -43,7 +43,7 @@ class UpdateChosenCarViewController: UIViewController {
     }
     
     func updateCar() {
-        API.UploadCar.updateCar(with: selectedCar!.id!, borrowed: updateCarBool(), uploaded: {
+        API.Car.updateCarValues(with: selectedCar!.id!, borrowed: updateCarBool(), uploaded: {
             ProgressHUD.showSuccess()
             self.delegate?.updateCarsFromDismiss()
             self.dismiss(animated: true, completion: nil)

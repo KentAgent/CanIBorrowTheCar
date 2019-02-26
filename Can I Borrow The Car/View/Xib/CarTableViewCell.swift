@@ -22,8 +22,8 @@ class CarTableViewCell: UITableViewCell {
     }
     
     func updateUI() {
-        carLicencePlatelabel.text = car!.licensePlate?.uppercased()
-        carModelLabel.text = car!.model
+        carLicencePlatelabel.text = car?.licensePlate?.uppercased()
+        carModelLabel.text = car?.model
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

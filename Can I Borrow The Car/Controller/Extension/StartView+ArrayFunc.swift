@@ -10,19 +10,28 @@ import Foundation
 import UIKit
 
 extension CarViewController {
-    func setObjectArraysBasedOnBool() {
-        sortedCarsByBool?.removeAll()
-        sortedCarsByBool = [sortCarsAtHome(cars: cars), sortCarsNotAtHome(cars: cars)]
-        tableView.reloadData()
-    }
     
-    func sortCarsAtHome(cars: [CarModel]) -> [CarModel] {
+    var sortCarsAtHome : [CarModel] {
         return cars.filter({$0.borrowed == false})
     }
     
-    func sortCarsNotAtHome(cars: [CarModel]) -> [CarModel] {
+    var sortCarsNotAtHome : [CarModel] {
         return cars.filter({$0.borrowed == true})
     }
     
-
+    var sortedCarsByBool : [[CarModel]] {
+        return [sortCarsAtHome, sortCarsNotAtHome]
+    }
+    
+    func showLabelOnEmptyTableView() {
+        if cars.count == 0 {
+            tableView.isHidden = true
+            emptyTableViewLabel.isHidden = false
+            emptyTableViewLabel.text = "No cars added"
+        } else {
+            tableView.isHidden = false
+            emptyTableViewLabel.isHidden = true
+        }
+    }
+    
 }

@@ -12,14 +12,13 @@ import UIKit
 extension CarViewController: UITableViewDelegate, UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let allcars = [sortCarsAtHome(cars: cars).count, sortCarsAtHome(cars: cars).count]
+        let allcars = [sortCarsAtHome.count, sortCarsNotAtHome.count]
         return allcars[section]
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: Identifier.AtHomeCarCell, for: indexPath) as! CarTableViewCell
-        let car = sortedCarsByBool![indexPath.section][indexPath.row]
-        
+        let car = sortedCarsByBool[indexPath.section][indexPath.row]
         cell.car = car
         return cell
     }

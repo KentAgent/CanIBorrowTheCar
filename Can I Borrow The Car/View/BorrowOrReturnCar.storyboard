@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="erb-Ta-QTg">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--BorrowOrReturnCar-->
+        <scene sceneID="eBP-mL-b0E">
+            <objects>
+                <viewController id="erb-Ta-QTg" userLabel="BorrowOrReturnCar" customClass="UpdateChosenCarViewController" customModule="Can_I_Borrow_The_Car" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="eQ8-oM-ZlL">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cKI-Kx-yxP">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="xmU-hp-LG3">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </view>
+                                <color key="backgroundColor" red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <blurEffect style="extraLight"/>
+                            </visualEffectView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pyx-iG-ZRb" customClass="BorrowCarView" customModule="Can_I_Borrow_The_Car" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="397" width="375" height="270"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="270" id="MQe-Cq-Sno"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="cKI-Kx-yxP" firstAttribute="top" secondItem="eQ8-oM-ZlL" secondAttribute="top" id="1Wg-wX-QWW"/>
+                            <constraint firstAttribute="bottom" secondItem="Pyx-iG-ZRb" secondAttribute="bottom" id="1eI-Ig-1yj"/>
+                            <constraint firstItem="Pyx-iG-ZRb" firstAttribute="leading" secondItem="mZV-2U-SxU" secondAttribute="leading" id="8pn-kG-D7z"/>
+                            <constraint firstAttribute="bottom" secondItem="cKI-Kx-yxP" secondAttribute="bottom" id="FYd-uA-dBE"/>
+                            <constraint firstItem="cKI-Kx-yxP" firstAttribute="leading" secondItem="mZV-2U-SxU" secondAttribute="leading" id="fyF-Gz-5Vk"/>
+                            <constraint firstItem="Pyx-iG-ZRb" firstAttribute="trailing" secondItem="mZV-2U-SxU" secondAttribute="trailing" id="ihM-IO-w88"/>
+                            <constraint firstItem="cKI-Kx-yxP" firstAttribute="trailing" secondItem="mZV-2U-SxU" secondAttribute="trailing" id="rga-SU-2PN"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="mZV-2U-SxU"/>
+                    </view>
+                    <connections>
+                        <outlet property="borrowCarView" destination="Pyx-iG-ZRb" id="5j1-LO-Bgg"/>
+                        <outlet property="visiualEffectView" destination="cKI-Kx-yxP" id="ccU-Md-ydM"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sqH-VJ-dq7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2016.8" y="861.57635467980299"/>
+        </scene>
+    </scenes>
+</document>

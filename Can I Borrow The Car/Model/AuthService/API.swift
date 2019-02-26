@@ -9,10 +9,7 @@
 import Foundation
 
 class API {
-    static var User = LoadUser()
-    static var Car = CarModel()
-    static var LoadCar = LoadCarModel()
-    static var UploadCar = UploadCarModel()
-    static let Feed = FeedAPI()
-    static var MyCar = UserCar()
+    static var Car = CarFirebaseModel()
+    static var User = UserFirebaseModel()
+    static let Feed = FeedFirebaseModel()
 }

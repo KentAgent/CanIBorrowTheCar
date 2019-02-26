@@ -10,14 +10,9 @@ import Foundation
 import UIKit
 import Firebase
 
-class LoadUser {
+class UserFirebaseModel {
 
     var refUsers = Database.database().reference().child(AuthConfig.userUrl)
-
-//    var refCurrentUser: DatabaseReference? {
-//        guard let currentUser = Auth.auth().currentUser else { return nil}
-//        return refUsers.child(currentUser.uid)
-//    }
 
     func observeUser(uid: String, completion: @escaping (UserModel) -> Void) {
         refUsers.child(uid).observe(.value, with: {

@@ -10,13 +10,13 @@ import Foundation
 import Firebase
 
 
-class FeedAPI {
+class FeedFirebaseModel {
     var refFeed = Database.database().reference().child(AuthConfig.feed)
     
     func observeFeed(with id: String, completion: ((CarModel) -> ())? = nil) {
         refFeed.child(id).observe(.childAdded) { (snapshot) in
             let key = snapshot.key
-            API.LoadCar.observeCar(with: key, completion: { (car) in
+            API.Car.observeCar(with: key, completion: { (car) in
                 completion?(car)
             })
         }

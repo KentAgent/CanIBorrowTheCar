@@ -25,7 +25,7 @@ class AddCarViewController: UIViewController, Storyboarded {
     }
     
     func saveCar() {
-        API.UploadCar.uploadCar(name: carNameTextField.text!, model: modelTextField.text!, licencePlate: licensePlateTextField.text!, color: colorTextField!.text!, borrowed: true, uploaded: {
+        API.Car.uploadCarValues(name: carNameTextField.text!, model: modelTextField.text!, licencePlate: licensePlateTextField.text!, color: colorTextField!.text!, borrowed: false, uploaded: {
             ProgressHUD.showSuccess("Succes")
             self.delegate?.updateCarsFromDismiss()
             self.dismiss(animated: true, completion: nil)
