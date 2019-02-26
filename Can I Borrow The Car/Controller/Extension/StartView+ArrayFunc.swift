@@ -22,16 +22,5 @@ extension CarViewController {
     var sortedCarsByBool : [[CarModel]] {
         return [sortCarsAtHome, sortCarsNotAtHome]
     }
-    
-    func showLabelOnEmptyTableView() {
-        if cars.count == 0 {
-            tableView.isHidden = true
-            emptyTableViewLabel.isHidden = false
-            emptyTableViewLabel.text = "No cars added"
-        } else {
-            tableView.isHidden = false
-            emptyTableViewLabel.isHidden = true
-        }
-    }
-    
+
 }

@@ -98,7 +98,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WD7-HL-n6q">
-                    <rect key="frame" x="97" y="205" width="180" height="45"/>
+                    <rect key="frame" x="97.5" y="205" width="180" height="45"/>
                     <color key="backgroundColor" red="0.2955245661" green="0.81617969000000001" blue="0.10494515090000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="45" id="HuH-dD-ohd"/>

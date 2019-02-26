@@ -7,13 +7,13 @@
 //
 
 import UIKit
+import SDWebImage
 
 class CarViewController: UIViewController, UpdateView {
     
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var profileImageUIImage: UIImageView!
-    @IBOutlet weak var emptyTableViewLabel: UILabel!
     
     var cars = [CarModel]()
     var users = [UserModel]()
@@ -21,25 +21,21 @@ class CarViewController: UIViewController, UpdateView {
     override func viewDidLoad() {
         super.viewDidLoad()
         registerTableView()
+        updateCurrentUserUI()
+        goToProfilePage_TouchUpInside()
         loadCars()
     }
 
     func loadCars() {
-        self.showLabelOnEmptyTableView()
         activityIndicator.startAnimating()
         API.Feed.observeFeed(with: API.User.currentUser!.uid) { (car) in
             guard let carId = car.uid else { return }
             self.fetchUser(uid: carId, completion: {
                 self.cars.append(car)
-                self.showLabelOnEmptyTableView()
                 self.activityIndicator.stopAnimating()
                 self.tableView.reloadData()
             })
         }
-    }
-    
-    func updateCarsFromDismiss() {
-        tableView.reloadData()
     }
     
     func fetchUser(uid: String, completion: (() -> ())? = nil) {
@@ -47,6 +43,25 @@ class CarViewController: UIViewController, UpdateView {
             self.users.append(user)
             print(self.users)
             completion?()
+        }
+    }
+    
+    func updateCarsFromDismiss() {
+        tableView.reloadData()
+    }
+    
+    func updateCurrentUserUI() {
+        profileImageUIImage.isHidden = true
+        AppStyle.cirlceUIImageView(image: profileImageUIImage)
+        API.User.observeCurrentUser { (user) in
+            self.profileImageUIImage.isHidden = false
+            SdSetImage.fetchUserImage(image: self.profileImageUIImage, user: user)
+        }
+    }
+    
+    func goToProfilePage_TouchUpInside() {
+        profileImageUIImage.addTapGestureRecognizer {
+            self.performSegue(withIdentifier: Segues.goToProfilePage, sender: nil)
         }
     }
     
@@ -66,6 +81,10 @@ class CarViewController: UIViewController, UpdateView {
         }
         if let vcAddCar = segue.destination as? AddCarViewController {
             vcAddCar.delegate = self
+        }
+        if let vcProfile = segue.destination as? ProfileViewController {
+            
+            vcProfile.delegate = self
         }
     }
     

@@ -9,7 +9,7 @@
 import UIKit
 import ProgressHUD
 
-class AddCarViewController: UIViewController, Storyboarded {
+class AddCarViewController: UIViewController {
     
     @IBOutlet weak var carNameTextField: UITextField!
     @IBOutlet weak var modelTextField: UITextField!
@@ -22,6 +22,7 @@ class AddCarViewController: UIViewController, Storyboarded {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        updateNavigationBarUI()
     }
     
     func saveCar() {
@@ -34,12 +35,12 @@ class AddCarViewController: UIViewController, Storyboarded {
         }
     }
     
-    @IBAction func saveCarButton(_ sender: Any) {
-        saveCar()
+    func updateNavigationBarUI() {
+        navigationItem.largeTitleDisplayMode = .never
     }
     
-    @IBAction func cancelButton(_ sender: Any) {
-        dismiss(animated: true, completion: nil)
+    @IBAction func saveCarButton(_ sender: Any) {
+        saveCar()
     }
     
 }

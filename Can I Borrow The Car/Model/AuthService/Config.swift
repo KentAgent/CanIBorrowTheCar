@@ -16,6 +16,7 @@ struct Cell {
 struct Segues {
     static let goToAddCar = "GoToAddCar"
     static let goToChosenCar = "GoToChosenCar"
+    static let goToProfilePage = "GoToProfilePage"
 }
 
 struct Nibs {
