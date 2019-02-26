@@ -15,10 +15,7 @@ class CarViewController: UIViewController, UpdateView {
     
     var cars = [CarModel]()
     var users = [UserModel]()
-    
-    var carsAtHome: [CarModel] = []
-    var carsNotAtHome: [CarModel] = []
-    var allCars: [[CarModel]]?
+    var sortedCarsByBool: [[CarModel]]?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -56,25 +53,10 @@ class CarViewController: UIViewController, UpdateView {
         AuthServiceSign.signOut(currentVC: self)
     }
     
-    func setObjectArraysBasedOnBool() {
-        carsAtHome.removeAll()
-        carsNotAtHome.removeAll()
-        allCars?.removeAll()
-        for car in cars {
-            if car.borrowed == true {
-                carsNotAtHome.append(car)
-            } else {
-                carsAtHome.append(car)
-            }
-        }
-        allCars = [carsAtHome, carsNotAtHome]
-        tableView.reloadData()
-    }
-    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let indexPath = tableView.indexPathForSelectedRow {
             let vcSelectedCar = segue.destination as! UpdateChosenCarViewController
-            vcSelectedCar.selectedCar = allCars![indexPath.section][indexPath.row]
+            vcSelectedCar.selectedCar = sortedCarsByBool![indexPath.section][indexPath.row]
             vcSelectedCar.delegate = self
         }
         if let vcAddCar = segue.destination as? AddCarViewController {

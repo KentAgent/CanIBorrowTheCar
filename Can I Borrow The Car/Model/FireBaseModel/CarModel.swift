@@ -9,6 +9,7 @@
 import Foundation
 
 class CarModel {
+    
     var id : String?
     var name : String?
     var model : String?

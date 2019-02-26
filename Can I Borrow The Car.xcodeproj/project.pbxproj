@@ -35,9 +35,10 @@
 		878AE459221D3AA5003A2F1D /* UpdateChosenCarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878AE458221D3AA5003A2F1D /* UpdateChosenCarViewController.swift */; };
 		878AE45C221D55A6003A2F1D /* StartView+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878AE45B221D55A6003A2F1D /* StartView+TableView.swift */; };
 		878AE45F221D5657003A2F1D /* CarTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878AE45D221D5657003A2F1D /* CarTableViewCell.swift */; };
-		878AE460221D5657003A2F1D /* NotBorrowedCarCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 878AE45E221D5657003A2F1D /* NotBorrowedCarCell.xib */; };
+		878AE460221D5657003A2F1D /* CarCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 878AE45E221D5657003A2F1D /* CarCell.xib */; };
 		878AE463221D6AD4003A2F1D /* AppStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878AE462221D6AD4003A2F1D /* AppStyle.swift */; };
 		878AE465221D8240003A2F1D /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878AE464221D8240003A2F1D /* UIView.swift */; };
+		879CDF392225367700BB300F /* StartView+ArrayFunc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 879CDF382225367700BB300F /* StartView+ArrayFunc.swift */; };
 		87B0CAE4221EECC8004C2DF2 /* HeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 87B0CAE3221EECC8004C2DF2 /* HeaderView.xib */; };
 		87B0CAE6221EF388004C2DF2 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87B0CAE5221EF388004C2DF2 /* HeaderView.swift */; };
 		87BB0F322215EC490000F853 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87BB0F312215EC490000F853 /* AppDelegate.swift */; };
@@ -109,9 +110,10 @@
 		878AE458221D3AA5003A2F1D /* UpdateChosenCarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateChosenCarViewController.swift; sourceTree = "<group>"; };
 		878AE45B221D55A6003A2F1D /* StartView+TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StartView+TableView.swift"; sourceTree = "<group>"; };
 		878AE45D221D5657003A2F1D /* CarTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarTableViewCell.swift; sourceTree = "<group>"; };
-		878AE45E221D5657003A2F1D /* NotBorrowedCarCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NotBorrowedCarCell.xib; sourceTree = "<group>"; };
+		878AE45E221D5657003A2F1D /* CarCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CarCell.xib; sourceTree = "<group>"; };
 		878AE462221D6AD4003A2F1D /* AppStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStyle.swift; sourceTree = "<group>"; };
 		878AE464221D8240003A2F1D /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
+		879CDF382225367700BB300F /* StartView+ArrayFunc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StartView+ArrayFunc.swift"; sourceTree = "<group>"; };
 		87B0CAE3221EECC8004C2DF2 /* HeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HeaderView.xib; sourceTree = "<group>"; };
 		87B0CAE5221EF388004C2DF2 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		87BB0F2E2215EC490000F853 /* Can I Borrow The Car.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Can I Borrow The Car.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -249,6 +251,7 @@
 			isa = PBXGroup;
 			children = (
 				878AE45B221D55A6003A2F1D /* StartView+TableView.swift */,
+				879CDF382225367700BB300F /* StartView+ArrayFunc.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -256,7 +259,7 @@
 		878AE461221D565B003A2F1D /* Xib */ = {
 			isa = PBXGroup;
 			children = (
-				878AE45E221D5657003A2F1D /* NotBorrowedCarCell.xib */,
+				878AE45E221D5657003A2F1D /* CarCell.xib */,
 				878AE45D221D5657003A2F1D /* CarTableViewCell.swift */,
 				87B0CAE3221EECC8004C2DF2 /* HeaderView.xib */,
 				87B0CAE5221EF388004C2DF2 /* HeaderView.swift */,
@@ -521,7 +524,7 @@
 				87BB0F3C2215EC4A0000F853 /* LaunchScreen.storyboard in Resources */,
 				87BB0F392215EC4A0000F853 /* Assets.xcassets in Resources */,
 				8775787422201BA40002860B /* BorrowCarView.xib in Resources */,
-				878AE460221D5657003A2F1D /* NotBorrowedCarCell.xib in Resources */,
+				878AE460221D5657003A2F1D /* CarCell.xib in Resources */,
 				87B0CAE4221EECC8004C2DF2 /* HeaderView.xib in Resources */,
 				87BB0F372215EC490000F853 /* Main.storyboard in Resources */,
 				87859D292223E9050088E599 /* GoogleService-Info.plist in Resources */,
@@ -681,6 +684,7 @@
 				877578762220227F0002860B /* BorrowCarView.swift in Sources */,
 				87859D2B2223EB710088E599 /* CarModel.swift in Sources */,
 				875F91C12216AAA900A8522E /* Storyboarded.swift in Sources */,
+				879CDF392225367700BB300F /* StartView+ArrayFunc.swift in Sources */,
 				87859E35222405B30088E599 /* SignUp+ButtonFade.swift in Sources */,
 				87859E36222405B60088E599 /* SignUp+CameraPicker.swift in Sources */,
 				878AE465221D8240003A2F1D /* UIView.swift in Sources */,

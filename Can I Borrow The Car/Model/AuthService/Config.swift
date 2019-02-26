@@ -9,8 +9,7 @@
 import Foundation
 
 struct Cell {
-    static let category = "CarCell"
-    static let notBorroewd = "NotBorrowedCarCell"
+    static let carCell = "CarCell"
     static let borroewd = "BorrowedCarCell"
 }
 
@@ -21,6 +20,7 @@ struct Segues {
 
 struct Nibs {
     static let carCellHeader = "HeaderView"
+    static let carCell = "CarCell"
     static let borrowCarView = "BorrowCarView"
 }
 
@@ -55,6 +55,8 @@ struct AuthConfig {
 struct Identifier {
     static let SignUpIdentifier = "SignUp"
     static let SignInIdentifier = "SignIn"
+    static let AtHomeCarCell = "AtHomeCarCell"
+    static let NotatHomeCarCell = "NotAtHomeCarCell"
 }
 
 struct Storyboard {

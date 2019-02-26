@@ -12,22 +12,15 @@ import UIKit
 extension CarViewController: UITableViewDelegate, UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        let carsAtHome = cars.filter({$0.borrowed == false})
-//        let carsNotAtHome = cars.filter({$0.borrowed == true})
-
-        let allcars = [carsAtHome.count, carsNotAtHome.count]
-        
+        let allcars = [sortCarsAtHome(cars: cars).count, sortCarsAtHome(cars: cars).count]
         return allcars[section]
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: Cell.notBorroewd, for: indexPath) as! CarTableViewCell
-        //TODO: FIX indexPath.Section
-        //måste ta fram [indexPath.section], annars blir alla med samma indexpath.row likadana, oberoende section
-        //let car = cars[indexPath.row]
-        let car = allCars?[indexPath.section][indexPath.row].model
-        cell.carModelLabel.text = car
+        let cell = tableView.dequeueReusableCell(withIdentifier: Identifier.AtHomeCarCell, for: indexPath) as! CarTableViewCell
+        let car = sortedCarsByBool![indexPath.section][indexPath.row]
         
+        cell.car = car
         return cell
     }
     
@@ -48,17 +41,17 @@ extension CarViewController: UITableViewDelegate, UITableViewDataSource{
         return headerView
     }
     
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 100
+    }
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         performSegue(withIdentifier: Segues.goToChosenCar, sender: self)
         tableView.deselectRow(at: indexPath, animated: true)
     }
     
-    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 70
-    }
-    
     func registerTableView() {
-        tableView.register(UINib(nibName: Cell.notBorroewd, bundle: nil), forCellReuseIdentifier: Cell.notBorroewd)
+        tableView.register(UINib(nibName: Nibs.carCell, bundle: nil), forCellReuseIdentifier: Identifier.AtHomeCarCell)
         let headerNib = UINib.init(nibName: Nibs.carCellHeader, bundle: Bundle.main)
         tableView.register(headerNib, forHeaderFooterViewReuseIdentifier: Nibs.carCellHeader)
         tableView.rowHeight = UITableView.automaticDimension
