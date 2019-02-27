@@ -27,7 +27,6 @@ class ProfileViewController: UIViewController {
     }
     
     func updateNavigationBarUI() {
-        navigationController?.navigationBar.prefersLargeTitles = true
         self.navigationItem.title = user.username
     }
     

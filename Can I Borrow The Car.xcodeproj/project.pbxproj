@@ -250,13 +250,6 @@
 			path = Xib;
 			sourceTree = "<group>";
 		};
-		878AE466221D9218003A2F1D /* Removed */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Removed;
-			sourceTree = "<group>";
-		};
 		87BB0F252215EC490000F853 = {
 			isa = PBXGroup;
 			children = (
@@ -284,7 +277,6 @@
 			children = (
 				87BB0F312215EC490000F853 /* AppDelegate.swift */,
 				878AE462221D6AD4003A2F1D /* AppStyle.swift */,
-				878AE466221D9218003A2F1D /* Removed */,
 				87BB0F752215F6130000F853 /* Extension */,
 				87BB0F612215EC640000F853 /* Model */,
 				87BB0F602215EC620000F853 /* View */,

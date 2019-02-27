@@ -20,10 +20,12 @@ class CarViewController: UIViewController, UpdateView {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        print("viewdidload")
         registerTableView()
         updateCurrentUserUI()
         goToProfilePage_TouchUpInside()
         loadCars()
+        navigationItem.largeTitleDisplayMode = .never
     }
 
     func loadCars() {

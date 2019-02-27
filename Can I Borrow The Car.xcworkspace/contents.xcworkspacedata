@@ -2,9 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:Can I Borrow The Car/View/Base.lproj/AddNewCar.storyboard">
-   </FileRef>
-   <FileRef
       location = "group:Can I Borrow The Car.xcodeproj">
    </FileRef>
    <FileRef

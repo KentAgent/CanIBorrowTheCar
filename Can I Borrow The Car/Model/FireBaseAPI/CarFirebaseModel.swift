@@ -11,14 +11,13 @@ import Firebase
 import UIKit
 
 class CarFirebaseModel {
-
-    var refCarURL = Database.database().reference().child(AuthConfig.carUrl)
-    var carRef = Database.database().reference(fromURL: AuthConfig.FIRUrl).child(AuthConfig.carUrl)
+//fromURL: AuthConfig.FIRUrl
+    var carRef = Database.database().reference().child(AuthConfig.carUrl)
     var refMyCars = Database.database().reference().child(AuthConfig.myCarsUrl)
 
     
     func observeCar(completion: @escaping (CarModel) -> ()) {
-        refCarURL.observe(.childAdded) { snapshot in
+        carRef.observe(.childAdded) { snapshot in
             if let dict = snapshot.value as? [String: Any] {
                 let key = snapshot.key
                 let newCar = CarModel.transformCarToDict(dict: dict, key: key)
@@ -28,7 +27,7 @@ class CarFirebaseModel {
     }
     
     func observeCar(with id: String, completion: @escaping (CarModel) -> ()) {
-        refCarURL.child(id).observeSingleEvent(of: .value) { snapshot in
+        carRef.child(id).observeSingleEvent(of: .value) { snapshot in
             if let dict = snapshot.value as? [String: Any] {
                 let key = snapshot.key
                 let newCar = CarModel.transformCarToDict(dict: dict, key: key)
@@ -44,10 +43,12 @@ class CarFirebaseModel {
         }
     }
     
-    func uploadCarValues(name: String, model: String, licencePlate: String, color: String, borrowed: Bool, uploaded: (() -> Void)? = nil, onError: ((String?) -> Void)? = nil)  {
+    func uploadCar(name: String, model: String, licencePlate: String, color: String, borrowed: Bool, uploaded: (() -> Void)? = nil, onError: ((String?) -> Void)? = nil)  {
+        
         guard let currentUser = Auth.auth().currentUser else { return }
-        let newCarId = carRef.childByAutoId().key
-        let newCarReference = carRef.child(newCarId!)
+        let newAutoCarId = carRef.childByAutoId().key
+        let newCarReference = carRef.child(newAutoCarId!)
+        //let current = API.User.currentUser?.uid
         let currentUserId = currentUser.uid
         
         newCarReference.setValue([FIRStrings.uid: currentUserId, FIRStrings.name : name, FIRStrings.model: model, FIRStrings.licensePlate: licencePlate, FIRStrings.color: color, FIRStrings.borrowed: borrowed]) { (error, _) in
@@ -56,9 +57,9 @@ class CarFirebaseModel {
                 return
             }
             
-            API.Feed.refFeed.child(API.User.currentUser!.uid).child(newCarId!).setValue(true)
+            API.Feed.refFeed.child(API.User.currentUser!.uid).child(newAutoCarId!).setValue(true)
             
-            let myCarRef = API.Car.refMyCars.child(currentUser.uid).child(newCarId!)
+            let myCarRef = API.Car.refMyCars.child(currentUser.uid).child(newAutoCarId!)
             myCarRef.setValue(true, withCompletionBlock: { (error, _) in
                 if error != nil {
                     onError!(error!.localizedDescription)

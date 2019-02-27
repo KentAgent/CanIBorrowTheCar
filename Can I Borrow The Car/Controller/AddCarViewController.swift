@@ -22,11 +22,10 @@ class AddCarViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        updateNavigationBarUI()
     }
     
     func saveCar() {
-        API.Car.uploadCarValues(name: carNameTextField.text!, model: modelTextField.text!, licencePlate: licensePlateTextField.text!, color: colorTextField!.text!, borrowed: false, uploaded: {
+        API.Car.uploadCar(name: carNameTextField.text!, model: modelTextField.text!, licencePlate: licensePlateTextField.text!, color: colorTextField!.text!, borrowed: false, uploaded: {
             ProgressHUD.showSuccess("Succes")
             self.delegate?.updateCarsFromDismiss()
             self.dismiss(animated: true, completion: nil)
@@ -34,10 +33,7 @@ class AddCarViewController: UIViewController {
             ProgressHUD.showError(error)
         }
     }
-    
-    func updateNavigationBarUI() {
-        navigationItem.largeTitleDisplayMode = .never
-    }
+
     
     @IBAction func saveCarButton(_ sender: Any) {
         saveCar()
