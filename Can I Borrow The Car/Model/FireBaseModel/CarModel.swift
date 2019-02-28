@@ -16,7 +16,7 @@ struct CarModel {
     var licensePlate : String?
     var color : String?
     var borrowed : Bool?
-    var uid: String?
+    var userId: String?
 }
 
 extension CarModel {
@@ -28,7 +28,7 @@ extension CarModel {
         car.licensePlate = dict[FIRModelStrings.licensePlate] as? String
         car.color = dict[FIRModelStrings.color] as? String
         car.borrowed = dict[FIRModelStrings.borrowed] as? Bool
-        car.uid = dict[FIRModelStrings.uid] as? String
+        car.userId = dict[FIRModelStrings.uid] as? String
         return car
     }
 }

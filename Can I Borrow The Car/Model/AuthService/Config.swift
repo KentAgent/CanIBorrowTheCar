@@ -27,6 +27,7 @@ struct Nibs {
 
 struct FIRModelStrings {
     static let uid = "uid"
+    static let groupId = "groupId"
     static let model = "model"
     static let name = "name"
     static let licensePlate = "licensePlate"
@@ -34,6 +35,7 @@ struct FIRModelStrings {
     static let borrowed = "borrowed"
     
     static let groupName = "groupName"
+    static let currentGroupId = "currentGroupId"
     
     static let profileImageUrl = "profileImageUrl"    
     static let username = "username"

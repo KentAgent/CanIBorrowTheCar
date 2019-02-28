@@ -35,7 +35,7 @@ struct CarFirebaseModel {
         }
     }
     
-    func observeMyCars(uploaded: (((DataSnapshot)) -> Void)? = nil) {
+    func observeMyCars(uploaded: (((DataSnapshot?)) -> Void)? = nil) {
         guard let currentUser = Auth.auth().currentUser else { return }
         refMyCars.child(currentUser.uid).observe(.childAdded) { snapshot in
             uploaded!(snapshot)
@@ -48,16 +48,13 @@ struct CarFirebaseModel {
         let newAutoCarId = carRef.childByAutoId().key
         let newCarReference = carRef.child(newAutoCarId!)
         let currentUserId = currentUser.uid
-        
         newCarReference.setValue([FIRModelStrings.uid: currentUserId, FIRModelStrings.name : name, FIRModelStrings.model: model, FIRModelStrings.licensePlate: licencePlate, FIRModelStrings.color: color, FIRModelStrings.borrowed: borrowed]) { (error, _) in
             if error != nil {
                 onError?(error!.localizedDescription)
                 return
             }
-            
             API.Feed.refFeed.child(API.User.currentUser!.uid).child(newAutoCarId!).setValue(true)
             API.Car.refMyCars.child(currentUser.uid).child(newAutoCarId!).setValue(true)
-            
             uploaded?()
         }
     }

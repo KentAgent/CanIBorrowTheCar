@@ -27,8 +27,9 @@ class ProfileViewController: UIViewController {
         }
     }
     @IBAction func observeGroup(_ sender: Any) {
-        API.Group.observeGroups()
+        //API.Group.observeGroups()
     }
+    
     @IBAction func createGroupe(_ sender: Any) {
         API.Group.uploadGroup(name: groupNameTextfield.text!)
     }

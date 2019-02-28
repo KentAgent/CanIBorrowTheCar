@@ -13,6 +13,7 @@ struct UserModel {
     var username: String?
     var email: String?
     var profileImageUrl: String?
+    var currentGroupId: String?
     //var isFollowing: Bool?
 }
 
@@ -22,6 +23,7 @@ extension UserModel {
         user.username = dict[FIRModelStrings.username] as? String
         user.email = dict[FIRModelStrings.email] as? String
         user.profileImageUrl = dict[FIRModelStrings.profileImageUrl] as? String
+        user.currentGroupId = dict[FIRModelStrings.currentGroupId] as? String
         user.id = key
         return user
     }

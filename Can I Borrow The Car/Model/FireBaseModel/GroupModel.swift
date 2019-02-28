@@ -9,9 +9,9 @@
 import UIKit
 
 struct GroupModel {
-    var name : String?
     var id : String?
-    
+    var name : String?
+    var groupId : String?
 }
 
 extension GroupModel {

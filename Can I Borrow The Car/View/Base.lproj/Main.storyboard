@@ -45,18 +45,6 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="B2I-6R-B3X"/>
                                 </connections>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jiz-9Q-LAv">
-                                <rect key="frame" x="18" y="56" width="36" height="36"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="36" id="dqG-j6-X4S"/>
-                                    <constraint firstAttribute="height" constant="36" id="mll-jk-t65"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="32"/>
-                                <state key="normal" title="+"/>
-                                <connections>
-                                    <action selector="addCarButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tU1-gh-Cmh"/>
-                                </connections>
-                            </button>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="T1k-cR-9zZ">
                                 <rect key="frame" x="177.66666666666666" y="396" width="20" height="20"/>
                             </activityIndicatorView>
@@ -82,9 +70,7 @@
                             <constraint firstItem="T1k-cR-9zZ" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="7HC-MC-KGe"/>
                             <constraint firstItem="f1O-ij-A2K" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="B51-zi-omt"/>
                             <constraint firstItem="coj-n9-Cx8" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="E8o-tw-m3w"/>
-                            <constraint firstItem="Jiz-9Q-LAv" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="12" id="Eeq-xe-9gv"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ugA-jX-i23" secondAttribute="trailing" constant="8" id="KwQ-Tv-03v"/>
-                            <constraint firstItem="Jiz-9Q-LAv" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="18" id="fQh-dK-lRb"/>
                             <constraint firstItem="f1O-ij-A2K" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="16" id="jcu-1e-vGQ"/>
                             <constraint firstItem="ugA-jX-i23" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="16" id="qSf-Do-RR7"/>
                             <constraint firstItem="coj-n9-Cx8" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="100" id="zXt-2V-JlX"/>

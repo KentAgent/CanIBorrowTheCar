@@ -17,7 +17,7 @@ class CarViewController: UIViewController, UpdateView {
     @IBOutlet weak var groupName: UILabel!
     
     var cars = [CarModel]()
-    var groups : GroupModel!
+    var group : GroupModel!
     var users = [UserModel]()
     
     override func viewDidLoad() {
@@ -28,7 +28,7 @@ class CarViewController: UIViewController, UpdateView {
         goToProfilePage_TouchUpInside()
         //loadCars()
         fetchGroupName()
-        fetchGroupUsers()
+        fetchUser(uid: API.User.currentUser!.uid)
         
         navigationItem.largeTitleDisplayMode = .never
     }
@@ -36,7 +36,7 @@ class CarViewController: UIViewController, UpdateView {
     func loadCars() {
         activityIndicator.startAnimating()
         API.Feed.observeFeed(with: API.User.currentUser!.uid) { (car) in
-            guard let carId = car.uid else { return }
+            guard let carId = car.userId else { return }
             self.fetchUser(uid: carId, completion: {
                 self.cars.append(car)
                 self.activityIndicator.stopAnimating()
@@ -48,28 +48,19 @@ class CarViewController: UIViewController, UpdateView {
     func fetchUser(uid: String, completion: (() -> ())? = nil) {
         API.User.observeUser(uid: uid) { (user) in
             self.users.append(user)
-            //print(self.users)
             completion?()
         }
     }
     
-    func fetchCurrentGroup() {
+    func loadCarsFromGroup()  {
         
     }
-
-    func fetchGroupUsers() {
-        fetchGroupName()
-        API.Group.observeGroups { (user) in
-            API.User.observeUser(uid: user, completion: { (users) in
-                self.users.append(users)
-                print("users: \(users.id!)")
-            })
-        }
-    }
     
+   
     func fetchGroupName() {
-        API.Group.observeGroupName { (name) in
-            self.groupName.text! = name
+        API.Group.observeGroupName { (group) in
+            self.group = group
+            self.groupName.text = self.group.name
         }
     }
     
@@ -90,14 +81,6 @@ class CarViewController: UIViewController, UpdateView {
         profileImageUIImage.addTapGestureRecognizer {
             self.performSegue(withIdentifier: Segues.goToProfilePage, sender: nil)
         }
-    }
-    
-    @IBAction func addCarButton(_ sender: Any) {
-        performSegue(withIdentifier: Segues.goToAddCar, sender: self)
-    }
-    
-    @IBAction func signOut(_ sender: Any) {
-        AuthServiceSign.signOut(currentVC: self)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
