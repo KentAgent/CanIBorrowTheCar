@@ -14,6 +14,7 @@ protocol UpdateView {
 }
 
 class UpdateChosenCarViewController: UIViewController {
+    var alert = Alert()
     
     var delegate : UpdateView?
     
@@ -50,6 +51,7 @@ class UpdateChosenCarViewController: UIViewController {
         }) { (error) in
             ProgressHUD.showError(error)
         }
+
     }
     
     func showCarUI() {

@@ -53,10 +53,21 @@ struct CarFirebaseModel {
                 onError?(error!.localizedDescription)
                 return
             }
-            API.Feed.refFeed.child(API.User.currentUser!.uid).child(newAutoCarId!).setValue(true)
-            API.Car.refMyCars.child(currentUser.uid).child(newAutoCarId!).setValue(true)
+            // Add car to my groups in groupsFeed
+            self.addCarToGroups(carId: newAutoCarId!)
             uploaded?()
         }
+    }
+    
+    private func addCarToGroups(carId: String) {
+        // Add car to my groups in groupsFeed
+        API.Group.observeMyGroups(uploaded: { myGroupsSnapshot in
+            if let dict = myGroupsSnapshot?.key {
+                API.Group.refGroupFeed.child(dict).child(carId).setValue(true)
+            }
+        })
+        //Add car to My cars
+        API.Car.refMyCars.child(API.User.currentUser!.uid).child(carId).setValue(true)
     }
     
     func updateCarValues(with id: String, borrowed: Bool, uploaded: (() -> Void)? = nil, onError: ((String?) -> Void)? = nil)  {
@@ -69,7 +80,7 @@ struct CarFirebaseModel {
                 return
             }
             
-            API.Feed.refFeed.child(API.User.currentUser!.uid).child(id).setValue(true)
+            //API.Feed.refFeed.child(API.User.currentUser!.uid).child(id).setValue(true)
             
             let myCarRef = API.Car.refMyCars.child(currentUser.uid).child(id)
             myCarRef.setValue(true, withCompletionBlock: { (error, _) in

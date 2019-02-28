@@ -11,7 +11,6 @@ import UIKit
 struct GroupModel {
     var id : String?
     var name : String?
-    var groupId : String?
 }
 
 extension GroupModel {

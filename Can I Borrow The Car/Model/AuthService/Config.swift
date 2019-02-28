@@ -31,7 +31,7 @@ struct FIRModelStrings {
     static let model = "model"
     static let name = "name"
     static let licensePlate = "licensePlate"
-    static let color = "color?"
+    static let color = "color"
     static let borrowed = "borrowed"
     
     static let groupName = "groupName"

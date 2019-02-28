@@ -26,18 +26,21 @@ class CarViewController: UIViewController, UpdateView {
         registerTableView()
         updateCurrentUserUI()
         goToProfilePage_TouchUpInside()
-        //loadCars()
+        loadCarsFromGroup()
         fetchGroupName()
-        fetchUser(uid: API.User.currentUser!.uid)
-        
-        navigationItem.largeTitleDisplayMode = .never
     }
-
-    func loadCars() {
-        activityIndicator.startAnimating()
-        API.Feed.observeFeed(with: API.User.currentUser!.uid) { (car) in
-            guard let carId = car.userId else { return }
-            self.fetchUser(uid: carId, completion: {
+    
+    private func loadCurrentUser(completion: @escaping (UserModel) -> ()) {
+        API.User.observeCurrentUser { (user) in
+            self.users.append(user)
+            completion(user)
+        }
+    }
+    
+    private func loadCarsFromGroup()  {
+        self.activityIndicator.startAnimating()
+        loadCurrentUser { user in
+            API.Group.observeGroupFeed(with: user.currentGroupId!, completion: { (car) in
                 self.cars.append(car)
                 self.activityIndicator.stopAnimating()
                 self.tableView.reloadData()
@@ -45,20 +48,8 @@ class CarViewController: UIViewController, UpdateView {
         }
     }
     
-    func fetchUser(uid: String, completion: (() -> ())? = nil) {
-        API.User.observeUser(uid: uid) { (user) in
-            self.users.append(user)
-            completion?()
-        }
-    }
-    
-    func loadCarsFromGroup()  {
-        
-    }
-    
-   
-    func fetchGroupName() {
-        API.Group.observeGroupName { (group) in
+    private func fetchGroupName() {
+        API.Group.observeMyGroupName { (group) in
             self.group = group
             self.groupName.text = self.group.name
         }
@@ -68,7 +59,7 @@ class CarViewController: UIViewController, UpdateView {
         tableView.reloadData()
     }
     
-    func updateCurrentUserUI() {
+    private func updateCurrentUserUI() {
         profileImageUIImage.isHidden = true
         AppStyle.cirlceUIImageView(image: profileImageUIImage)
         API.User.observeCurrentUser { (user) in
@@ -77,7 +68,7 @@ class CarViewController: UIViewController, UpdateView {
         }
     }
     
-    func goToProfilePage_TouchUpInside() {
+    private func goToProfilePage_TouchUpInside() {
         profileImageUIImage.addTapGestureRecognizer {
             self.performSegue(withIdentifier: Segues.goToProfilePage, sender: nil)
         }
@@ -97,5 +88,25 @@ class CarViewController: UIViewController, UpdateView {
             vcProfile.delegate = self
         }
     }
+    
+    //    func loadCars() {
+    //        activityIndicator.startAnimating()
+    //        API.Feed.observeFeed(with: "", completion: <#T##((CarModel) -> ())?##((CarModel) -> ())?##(CarModel) -> ()#>)
+    //        API.Feed.observeFeed(with: API.User.currentUser!.uid) { (car) in
+    //            guard let carId = car.userId else { return }
+    //            self.fetchUser(uid: carId, completion: {
+    //                self.cars.append(car)
+    //                self.activityIndicator.stopAnimating()
+    //                self.tableView.reloadData()
+    //            })
+    //        }
+    //    }
+    //
+    //    func fetchUser(uid: String, completion: (() -> ())? = nil) {
+    //        API.User.observeUser(uid: uid) { (user) in
+    //            self.users.append(user)
+    //            completion?()
+    //        }
+    //    }
     
 }
