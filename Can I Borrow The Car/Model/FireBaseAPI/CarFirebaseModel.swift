@@ -10,11 +10,10 @@ import Foundation
 import Firebase
 import UIKit
 
-class CarFirebaseModel {
+struct CarFirebaseModel {
 //fromURL: AuthConfig.FIRUrl
     var carRef = Database.database().reference().child(AuthConfig.carUrl)
     var refMyCars = Database.database().reference().child(AuthConfig.myCarsUrl)
-
     
     func observeCar(completion: @escaping (CarModel) -> ()) {
         carRef.observe(.childAdded) { snapshot in
@@ -48,24 +47,17 @@ class CarFirebaseModel {
         guard let currentUser = Auth.auth().currentUser else { return }
         let newAutoCarId = carRef.childByAutoId().key
         let newCarReference = carRef.child(newAutoCarId!)
-        //let current = API.User.currentUser?.uid
         let currentUserId = currentUser.uid
         
-        newCarReference.setValue([FIRStrings.uid: currentUserId, FIRStrings.name : name, FIRStrings.model: model, FIRStrings.licensePlate: licencePlate, FIRStrings.color: color, FIRStrings.borrowed: borrowed]) { (error, _) in
+        newCarReference.setValue([FIRModelStrings.uid: currentUserId, FIRModelStrings.name : name, FIRModelStrings.model: model, FIRModelStrings.licensePlate: licencePlate, FIRModelStrings.color: color, FIRModelStrings.borrowed: borrowed]) { (error, _) in
             if error != nil {
                 onError?(error!.localizedDescription)
                 return
             }
             
             API.Feed.refFeed.child(API.User.currentUser!.uid).child(newAutoCarId!).setValue(true)
+            API.Car.refMyCars.child(currentUser.uid).child(newAutoCarId!).setValue(true)
             
-            let myCarRef = API.Car.refMyCars.child(currentUser.uid).child(newAutoCarId!)
-            myCarRef.setValue(true, withCompletionBlock: { (error, _) in
-                if error != nil {
-                    onError!(error!.localizedDescription)
-                    return
-                }
-            })
             uploaded?()
         }
     }
@@ -74,7 +66,7 @@ class CarFirebaseModel {
         guard let currentUser = Auth.auth().currentUser else { return }
         let newCarReference = carRef.child(id)
         
-        newCarReference.updateChildValues([FIRStrings.borrowed: borrowed]) { (error, _) in
+        newCarReference.updateChildValues([FIRModelStrings.borrowed: borrowed]) { (error, _) in
             if error != nil {
                 onError?(error!.localizedDescription)
                 return

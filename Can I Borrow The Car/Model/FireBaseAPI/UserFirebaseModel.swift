@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 import Firebase
 
-class UserFirebaseModel {
+struct UserFirebaseModel {
 
     var refUsers = Database.database().reference().child(AuthConfig.userUrl)
 
@@ -47,7 +47,7 @@ class UserFirebaseModel {
     }
 
     func queryUser(withText text: String, completion: @escaping (UserModel) -> Void) {
-        refUsers.queryOrdered(byChild: FIRStrings.usernameLowerCase).queryStarting(atValue: text).queryEnding(atValue: text+"\u{f8ff}").queryLimited(toLast: 10).observeSingleEvent(of: .value) { (snapshot) in
+        refUsers.queryOrdered(byChild: FIRModelStrings.usernameLowerCase).queryStarting(atValue: text).queryEnding(atValue: text+"\u{f8ff}").queryLimited(toLast: 10).observeSingleEvent(of: .value) { (snapshot) in
             snapshot.children.forEach({ (s) in
                 let child = s as! DataSnapshot
                 if let dict = child.value as? [String: Any] {

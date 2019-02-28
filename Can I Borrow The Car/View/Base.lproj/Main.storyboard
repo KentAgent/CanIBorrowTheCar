@@ -130,6 +130,29 @@
                                     <action selector="signOut:" destination="BbY-P1-mdY" eventType="touchUpInside" id="kUI-nG-hoE"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MgQ-yq-9Jz">
+                                <rect key="frame" x="135" y="277" width="94" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Upload group"/>
+                                <connections>
+                                    <action selector="createGroupe:" destination="BbY-P1-mdY" eventType="touchUpInside" id="14k-EL-bgq"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FtR-va-ChK">
+                                <rect key="frame" x="98" y="202" width="186" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xRc-Zt-amf">
+                                <rect key="frame" x="168" y="391" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="observeGroup:" destination="BbY-P1-mdY" eventType="touchUpInside" id="aqL-aS-V6d"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -151,6 +174,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="groupNameTextfield" destination="FtR-va-ChK" id="MZn-Re-w55"/>
                         <segue destination="zbu-Ij-BPh" kind="show" identifier="GoToAddCar" id="MN1-pq-Ckp"/>
                     </connections>
                 </viewController>

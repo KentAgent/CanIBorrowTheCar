@@ -8,7 +8,7 @@
 
 import Foundation
 
-class CarModel {
+struct CarModel {
     
     var id : String?
     var name : String?
@@ -21,14 +21,14 @@ class CarModel {
 
 extension CarModel {
     static func transformCarToDict(dict: [String: Any], key: String) -> CarModel {
-        let car = CarModel()
+        var car = CarModel()
         car.id = key
-        car.name = dict[FIRStrings.name] as? String
-        car.model = dict[FIRStrings.model] as? String
-        car.licensePlate = dict[FIRStrings.licensePlate] as? String
-        car.color = dict[FIRStrings.color] as? String
-        car.borrowed = dict[FIRStrings.borrowed] as? Bool
-        car.uid = dict[FIRStrings.uid] as? String
+        car.name = dict[FIRModelStrings.name] as? String
+        car.model = dict[FIRModelStrings.model] as? String
+        car.licensePlate = dict[FIRModelStrings.licensePlate] as? String
+        car.color = dict[FIRModelStrings.color] as? String
+        car.borrowed = dict[FIRModelStrings.borrowed] as? Bool
+        car.uid = dict[FIRModelStrings.uid] as? String
         return car
     }
 }

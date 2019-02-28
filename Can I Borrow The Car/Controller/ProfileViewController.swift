@@ -13,6 +13,7 @@ class ProfileViewController: UIViewController {
     var user: UserModel!
     var cars = [CarModel]()
     var delegate : UpdateView?
+    @IBOutlet weak var groupNameTextfield: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,6 +25,12 @@ class ProfileViewController: UIViewController {
             self.user = user
             self.updateNavigationBarUI()
         }
+    }
+    @IBAction func observeGroup(_ sender: Any) {
+        API.Group.observeGroups()
+    }
+    @IBAction func createGroupe(_ sender: Any) {
+        API.Group.uploadGroup(name: groupNameTextfield.text!)
     }
     
     func updateNavigationBarUI() {

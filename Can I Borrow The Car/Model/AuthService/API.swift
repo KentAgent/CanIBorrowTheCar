@@ -12,4 +12,5 @@ class API {
     static var Car = CarFirebaseModel()
     static var User = UserFirebaseModel()
     static let Feed = FeedFirebaseModel()
+    static let Group = GroupFirebaseModel()
 }

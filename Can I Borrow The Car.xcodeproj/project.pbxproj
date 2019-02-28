@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		26F7A0347F40B23288849637 /* Pods_Can_I_Borrow_The_Car.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A70825BEE60397904434F862 /* Pods_Can_I_Borrow_The_Car.framework */; };
+		875491692227D5CB00E87A91 /* GroupFirebaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 875491682227D5CB00E87A91 /* GroupFirebaseModel.swift */; };
+		8754916B2227D6CC00E87A91 /* GroupModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8754916A2227D6CC00E87A91 /* GroupModel.swift */; };
 		8775787422201BA40002860B /* BorrowCarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8775787322201BA40002860B /* BorrowCarView.xib */; };
 		877578762220227F0002860B /* BorrowCarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877578752220227F0002860B /* BorrowCarView.swift */; };
 		87757878222034DC0002860B /* UIView+Tap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87757877222034DC0002860B /* UIView+Tap.swift */; };
@@ -76,6 +78,8 @@
 		40F154D8D66F9DB403E6B190 /* Pods-Can I Borrow The CarUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Can I Borrow The CarUITests.debug.xcconfig"; path = "Target Support Files/Pods-Can I Borrow The CarUITests/Pods-Can I Borrow The CarUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		5C31AB43B550D59F86780BED /* Pods_Can_I_Borrow_The_CarUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Can_I_Borrow_The_CarUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7EDE679B327CE5AE0D30D222 /* Pods_Can_I_Borrow_The_CarTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Can_I_Borrow_The_CarTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		875491682227D5CB00E87A91 /* GroupFirebaseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupFirebaseModel.swift; sourceTree = "<group>"; };
+		8754916A2227D6CC00E87A91 /* GroupModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupModel.swift; sourceTree = "<group>"; };
 		8775787322201BA40002860B /* BorrowCarView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BorrowCarView.xib; sourceTree = "<group>"; };
 		877578752220227F0002860B /* BorrowCarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BorrowCarView.swift; sourceTree = "<group>"; };
 		87757877222034DC0002860B /* UIView+Tap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Tap.swift"; sourceTree = "<group>"; };
@@ -166,6 +170,7 @@
 			children = (
 				87859E31222400000088E599 /* UserModel.swift */,
 				87859D2A2223EB710088E599 /* CarModel.swift */,
+				8754916A2227D6CC00E87A91 /* GroupModel.swift */,
 			);
 			path = FireBaseModel;
 			sourceTree = "<group>";
@@ -186,6 +191,7 @@
 				879CDF3B222564D500BB300F /* CarFirebaseModel.swift */,
 				87859E3C222416DF0088E599 /* UserFirebaseModel.swift */,
 				87859D352223F7F50088E599 /* FeedFirebaseModel.swift */,
+				875491682227D5CB00E87A91 /* GroupFirebaseModel.swift */,
 			);
 			path = FireBaseAPI;
 			sourceTree = "<group>";
@@ -634,9 +640,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				87859D362223F7F50088E599 /* FeedFirebaseModel.swift in Sources */,
+				875491692227D5CB00E87A91 /* GroupFirebaseModel.swift in Sources */,
 				879CDF46222582A300BB300F /* SdSetImage.swift in Sources */,
 				87BB0F342215EC490000F853 /* StartViewController.swift in Sources */,
 				87859E3D222416DF0088E599 /* UserFirebaseModel.swift in Sources */,
+				8754916B2227D6CC00E87A91 /* GroupModel.swift in Sources */,
 				87859E32222400000088E599 /* UserModel.swift in Sources */,
 				87BB0F812215F6580000F853 /* UIApplication.swift in Sources */,
 				87BB0F832215FB340000F853 /* AddCarViewController.swift in Sources */,

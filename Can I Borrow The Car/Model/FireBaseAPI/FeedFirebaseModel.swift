@@ -10,8 +10,8 @@ import Foundation
 import Firebase
 
 
-class FeedFirebaseModel {
-    var refFeed = Database.database().reference().child(AuthConfig.feed)
+struct FeedFirebaseModel {
+    var refFeed = Database.database().reference().child(AuthConfig.feedUrl)
     
     func observeFeed(with id: String, completion: ((CarModel) -> ())? = nil) {
         refFeed.child(id).observe(.childAdded) { (snapshot) in

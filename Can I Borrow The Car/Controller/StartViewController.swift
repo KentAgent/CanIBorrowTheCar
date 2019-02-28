@@ -43,7 +43,7 @@ class CarViewController: UIViewController, UpdateView {
     func fetchUser(uid: String, completion: (() -> ())? = nil) {
         API.User.observeUser(uid: uid) { (user) in
             self.users.append(user)
-            print(self.users)
+            //print(self.users)
             completion?()
         }
     }

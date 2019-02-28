@@ -25,7 +25,7 @@ struct Nibs {
     static let borrowCarView = "BorrowCarView"
 }
 
-struct FIRStrings {
+struct FIRModelStrings {
     static let uid = "uid"
     static let model = "model"
     static let name = "name"
@@ -33,10 +33,13 @@ struct FIRStrings {
     static let color = "color?"
     static let borrowed = "borrowed"
     
+    static let groupName = "groupName"
+    
     static let profileImageUrl = "profileImageUrl"    
     static let username = "username"
     static let usernameLowerCase = "username_lowercase"
     static let email = "email"
+    
 }
 
 struct AuthConfig {
@@ -45,12 +48,16 @@ struct AuthConfig {
     static let userUrl = "users"
     static let profilePictureUrl = "profile_image"
     static let carUrl = "cars"
-    static let commentUrl = "comments"
-    static let carCommentUrl = "car-comment"
+
+    static let groupNameUrl = "groupeName"
+    static let groupFeedUrl = "groupFeed"
+    static let myGroupsUrl = "myGroups"
+    
     static let myCarsUrl = "myCars"
+    static let feedUrl = "feed"
+
     static let followers = "followers"
     static let following = "following"
-    static let feed = "feed"
 }
 
 struct Identifier {

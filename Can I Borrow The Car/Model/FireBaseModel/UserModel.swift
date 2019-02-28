@@ -8,20 +8,20 @@
 
 import Foundation
 
-class UserModel {
+struct UserModel {
+    var id: String?
     var username: String?
     var email: String?
     var profileImageUrl: String?
-    var id: String?
-    var isFollowing: Bool?
+    //var isFollowing: Bool?
 }
 
 extension UserModel {
     static func transformUserToDict(dict: [String: Any], key: String) -> UserModel {
-        let user = UserModel()
-        user.username = dict[FIRStrings.username] as? String
-        user.email = dict[FIRStrings.email] as? String
-        user.profileImageUrl = dict[FIRStrings.profileImageUrl] as? String
+        var user = UserModel()
+        user.username = dict[FIRModelStrings.username] as? String
+        user.email = dict[FIRModelStrings.email] as? String
+        user.profileImageUrl = dict[FIRModelStrings.profileImageUrl] as? String
         user.id = key
         return user
     }
