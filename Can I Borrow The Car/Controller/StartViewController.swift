@@ -14,8 +14,10 @@ class CarViewController: UIViewController, UpdateView {
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var profileImageUIImage: UIImageView!
+    @IBOutlet weak var groupName: UILabel!
     
     var cars = [CarModel]()
+    var groups : GroupModel!
     var users = [UserModel]()
     
     override func viewDidLoad() {
@@ -24,7 +26,10 @@ class CarViewController: UIViewController, UpdateView {
         registerTableView()
         updateCurrentUserUI()
         goToProfilePage_TouchUpInside()
-        loadCars()
+        //loadCars()
+        fetchGroupName()
+        fetchGroupUsers()
+        
         navigationItem.largeTitleDisplayMode = .never
     }
 
@@ -45,6 +50,26 @@ class CarViewController: UIViewController, UpdateView {
             self.users.append(user)
             //print(self.users)
             completion?()
+        }
+    }
+    
+    func fetchCurrentGroup() {
+        
+    }
+
+    func fetchGroupUsers() {
+        fetchGroupName()
+        API.Group.observeGroups { (user) in
+            API.User.observeUser(uid: user, completion: { (users) in
+                self.users.append(users)
+                print("users: \(users.id!)")
+            })
+        }
+    }
+    
+    func fetchGroupName() {
+        API.Group.observeGroupName { (name) in
+            self.groupName.text! = name
         }
     }
     

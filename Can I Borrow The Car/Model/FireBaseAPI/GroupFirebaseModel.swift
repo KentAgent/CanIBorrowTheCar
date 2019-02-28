@@ -28,24 +28,26 @@ struct GroupFirebaseModel {
             }
             API.Group.refMyGroup.child(API.User.currentUser!.uid).child(newAutoGroupId).setValue(true)
             API.Group.refGroupName.child(newAutoGroupId).setValue([FIRModelStrings.groupName: name])
-            
-            
         }
-        
     }
     
-    func observeGroups(){
+    func observeGroups(observe: ((String) -> Void)? = nil){
         refMyGroup.child(API.User.currentUser!.uid).observe(.childAdded) { (snapshot) in
-            print(snapshot.key)
             let myGroupId = snapshot.key
             API.Group.refGroup.child(myGroupId).observe(.childAdded, with: { (snapshot) in
-                print(snapshot.key)
+                let userId = snapshot.key
+                observe?(userId)
             })
         }
-        
-        
     }
     
-    
+    func observeGroupName(name: ((String) -> ())? = nil){
+        refMyGroup.child(API.User.currentUser!.uid).observe(.childAdded) { (snapshot) in
+            let groupId = snapshot.key
+            API.Group.refGroupName.child(groupId).observe(.childAdded, with: { (snapshot) in
+                name!(String(describing: snapshot.value!))
+            })
+        }
+    }
     
 }

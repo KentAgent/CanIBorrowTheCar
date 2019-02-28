@@ -67,6 +67,12 @@
                                     <constraint firstAttribute="height" constant="45" id="yvC-mJ-pn2"/>
                                 </constraints>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f1O-ij-A2K">
+                                <rect key="frame" x="187.66666666666666" y="60" width="0.0" height="0.0"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="26"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803915" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -74,10 +80,12 @@
                             <constraint firstItem="T1k-cR-9zZ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="2y5-gI-DpO"/>
                             <constraint firstItem="coj-n9-Cx8" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" constant="34" id="3EF-AQ-sG2"/>
                             <constraint firstItem="T1k-cR-9zZ" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="7HC-MC-KGe"/>
+                            <constraint firstItem="f1O-ij-A2K" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="B51-zi-omt"/>
                             <constraint firstItem="coj-n9-Cx8" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="E8o-tw-m3w"/>
                             <constraint firstItem="Jiz-9Q-LAv" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="12" id="Eeq-xe-9gv"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ugA-jX-i23" secondAttribute="trailing" constant="8" id="KwQ-Tv-03v"/>
                             <constraint firstItem="Jiz-9Q-LAv" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="18" id="fQh-dK-lRb"/>
+                            <constraint firstItem="f1O-ij-A2K" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="16" id="jcu-1e-vGQ"/>
                             <constraint firstItem="ugA-jX-i23" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="16" id="qSf-Do-RR7"/>
                             <constraint firstItem="coj-n9-Cx8" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="100" id="zXt-2V-JlX"/>
                         </constraints>
@@ -87,6 +95,7 @@
                     <nil key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="activityIndicator" destination="T1k-cR-9zZ" id="wQu-ma-UNa"/>
+                        <outlet property="groupName" destination="f1O-ij-A2K" id="qPA-tv-qHt"/>
                         <outlet property="profileImageUIImage" destination="ugA-jX-i23" id="lM4-JD-3t9"/>
                         <outlet property="tableView" destination="coj-n9-Cx8" id="yZe-vL-ge0"/>
                         <segue destination="gte-LU-dJh" kind="presentation" identifier="GoToChosenCar" modalPresentationStyle="overFullScreen" id="ouv-M2-ZBP"/>
@@ -95,7 +104,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3396" y="136"/>
+            <point key="canvasLocation" x="3396" y="135.96059113300493"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="YUh-6j-uhq">
