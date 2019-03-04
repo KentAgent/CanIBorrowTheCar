@@ -208,7 +208,7 @@
                     <navigationItem key="navigationItem" id="5u0-F8-QQ3"/>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="1841" y="1906"/>
+            <point key="canvasLocation" x="3521" y="610"/>
         </scene>
         <!--Profile Tab Bar View Controller-->
         <scene sceneID="feJ-Bq-slj">
@@ -233,7 +233,7 @@
                     <navigationItem key="navigationItem" id="zpA-jn-a14"/>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="2582" y="1906"/>
+            <point key="canvasLocation" x="3521" y="-134"/>
         </scene>
         <!--Activity Tab Bar View Controller-->
         <scene sceneID="6pi-Rj-x98">
@@ -258,7 +258,7 @@
                     <navigationItem key="navigationItem" id="ZYK-mv-qqL"/>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="1137" y="1906"/>
+            <point key="canvasLocation" x="3521" y="1398"/>
         </scene>
         <!--Main Tab Bar View Controller-->
         <scene sceneID="eJy-28-Umv">
@@ -277,7 +277,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="X50-dC-4YM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1841" y="378"/>
+            <point key="canvasLocation" x="1630" y="610"/>
         </scene>
         <!--BorrowOrReturnCar-->
         <scene sceneID="LCk-Tb-KpE">
@@ -285,7 +285,7 @@
                 <viewControllerPlaceholder storyboardName="BorrowOrReturnCar" id="gte-LU-dJh" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wEv-ll-AdQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3915" y="1590"/>
+            <point key="canvasLocation" x="5802" y="1612"/>
         </scene>
         <!--Add a car-->
         <scene sceneID="8Li-j4-n4R">
@@ -395,7 +395,7 @@
                     </connections>
                 </navigationController>
             </objects>
-            <point key="canvasLocation" x="2582" y="1162"/>
+            <point key="canvasLocation" x="2698" y="-134"/>
         </scene>
         <!--Borrow-->
         <scene sceneID="6n1-Ey-rtJ">
@@ -414,7 +414,7 @@
                     </connections>
                 </navigationController>
             </objects>
-            <point key="canvasLocation" x="1841" y="1162"/>
+            <point key="canvasLocation" x="2697" y="611"/>
         </scene>
         <!--Activity-->
         <scene sceneID="TN7-vD-x11">
@@ -433,7 +433,7 @@
                     </connections>
                 </navigationController>
             </objects>
-            <point key="canvasLocation" x="1137" y="1162"/>
+            <point key="canvasLocation" x="2697" y="1398"/>
         </scene>
     </scenes>
     <resources>
