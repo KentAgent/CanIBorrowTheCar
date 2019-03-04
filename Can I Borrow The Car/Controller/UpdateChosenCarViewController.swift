@@ -83,7 +83,7 @@ class UpdateChosenCarViewController: UIViewController {
         }
     }
     
-    func cancelCar_TouchUpInside() {
+    func cancelCar_TouchUpInside() { 
         borrowCarView.cancelCarButton.addTapGestureRecognizer {
             self.dismiss(animated: true, completion: nil)
         }

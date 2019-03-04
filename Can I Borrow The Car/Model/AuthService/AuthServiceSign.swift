@@ -66,7 +66,7 @@ class AuthServiceSign {
       let ref = Database.database().reference()
       let usersReference = ref.child(AuthConfig.userUrl)
       let newUserReference = usersReference.child(uid)
-      newUserReference.setValue([FIRModelStrings.username: username, FIRModelStrings.usernameLowerCase: username.lowercased(), FIRModelStrings.email: email, FIRModelStrings.profileImageUrl: profileImageUrl])
+    newUserReference.setValue([FIRModelStrings.currentGroupId : nil, FIRModelStrings.username: username, FIRModelStrings.usernameLowerCase: username.lowercased(), FIRModelStrings.email: email, FIRModelStrings.profileImageUrl: profileImageUrl])
       signedIn!()
    }
 

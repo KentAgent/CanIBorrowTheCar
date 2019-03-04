@@ -27,7 +27,6 @@ class CarViewController: UIViewController, UpdateView {
         updateCurrentUserUI()
         goToProfilePage_TouchUpInside()
         loadCarsFromGroup()
-        fetchGroupName()
     }
     
     private func loadCurrentUser(completion: @escaping (UserModel) -> ()) {
@@ -40,11 +39,15 @@ class CarViewController: UIViewController, UpdateView {
     private func loadCarsFromGroup()  {
         self.activityIndicator.startAnimating()
         loadCurrentUser { user in
-            API.Group.observeGroupFeed(with: user.currentGroupId!, completion: { (car) in
-                self.cars.append(car)
-                self.activityIndicator.stopAnimating()
-                self.tableView.reloadData()
-            })
+            if user.currentGroupId != nil {
+                self.fetchGroupName()
+                API.Group.observeGroupFeed(with: user.currentGroupId!, completion: { (car) in
+                    self.cars.append(car)
+                    self.activityIndicator.stopAnimating()
+                    self.tableView.reloadData()
+                })
+            }
+            
         }
     }
     

@@ -13,6 +13,19 @@ import Firebase
 struct UserFirebaseModel {
 
     var refUsers = Database.database().reference().child(AuthConfig.userUrl)
+   
+    var refCurrentUser: DatabaseReference? {
+        guard let currentUser = Auth.auth().currentUser else { return nil }
+        return refUsers.child(currentUser.uid)
+    }
+    
+    var currentUser: User? {
+        if let currentUser = Auth.auth().currentUser {
+            return currentUser
+        }
+        return nil
+    }
+
 
     func observeUser(uid: String, completion: @escaping (UserModel) -> Void) {
         refUsers.child(uid).observe(.value, with: {
@@ -56,20 +69,6 @@ struct UserFirebaseModel {
                 }
             })
         }
-    }
-
-    var currentUser: User? {
-        if let currentUser = Auth.auth().currentUser {
-            return currentUser
-        }
-        return nil
-    }
-
-    var refCurrentUser: DatabaseReference? {
-        guard let currentUser = Auth.auth().currentUser else {
-            return nil
-        }
-        return refUsers.child(currentUser.uid)
     }
 
 }

@@ -78,3 +78,11 @@ struct ImageName {
     static let signInBackground = "background"
     static let placeholderProfileImage = "placeholderProfileImage"
 }
+
+struct Tutorial {
+    static let text : [String]? = ["Welcome to Can I borrow the Car",
+                                   "Made by Kristoffer Knape",
+                                   "ITHS",
+                                   "Göteborg"]
+
+}

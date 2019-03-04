@@ -11,7 +11,6 @@ import Firebase
 import UIKit
 
 struct CarFirebaseModel {
-//fromURL: AuthConfig.FIRUrl
     var carRef = Database.database().reference().child(AuthConfig.carUrl)
     var refMyCars = Database.database().reference().child(AuthConfig.myCarsUrl)
     

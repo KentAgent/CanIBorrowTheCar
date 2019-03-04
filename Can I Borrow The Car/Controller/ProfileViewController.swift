@@ -30,6 +30,9 @@ class ProfileViewController: UIViewController {
         //API.Group.observeGroups()
     }
     
+    @IBAction func removeGroup(_ sender: Any) {
+        API.Group.removeCurrentGroup()
+    }
     @IBAction func createGroupe(_ sender: Any) {
         API.Group.uploadGroup(name: groupNameTextfield.text!)
     }

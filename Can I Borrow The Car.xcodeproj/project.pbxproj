@@ -51,6 +51,21 @@
 		87BB0F802215F6580000F853 /* AlertModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87BB0F7E2215F6580000F853 /* AlertModel.swift */; };
 		87BB0F812215F6580000F853 /* UIApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87BB0F7F2215F6580000F853 /* UIApplication.swift */; };
 		87BB0F832215FB340000F853 /* AddCarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87BB0F822215FB340000F853 /* AddCarViewController.swift */; };
+		87C19A8C22295ACC00CED666 /* Authintication.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 87C19A8B22295ACC00CED666 /* Authintication.storyboard */; };
+		87C19A9822295F8C00CED666 /* TutorialPageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87C19A9722295F8C00CED666 /* TutorialPageController.swift */; };
+		87C19A9F2229723200CED666 /* TutorialPageController+PageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87C19A9E2229723200CED666 /* TutorialPageController+PageController.swift */; };
+		87C19AA3222D2F6300CED666 /* StartPageCViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87C19AA2222D2F6300CED666 /* StartPageCViewController.swift */; };
+		87C19AA7222D357500CED666 /* TutorialTextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87C19AA6222D357500CED666 /* TutorialTextViewController.swift */; };
+		87C19AA9222D366300CED666 /* MainPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87C19AA8222D366300CED666 /* MainPageViewController.swift */; };
+		87C19AAD222D517E00CED666 /* TutorialTextHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87C19AAC222D517E00CED666 /* TutorialTextHeaderView.swift */; };
+		87C19AB0222D54F700CED666 /* TutorialModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87C19AAF222D54F700CED666 /* TutorialModel.swift */; };
+		87C19AB2222D642200CED666 /* TutorialPageViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 87C19AB1222D642200CED666 /* TutorialPageViewController.storyboard */; };
+		87C19AB6222D6C4E00CED666 /* RegisterUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87C19AB5222D6C4E00CED666 /* RegisterUserViewController.swift */; };
+		87C19AB8222D6CB700CED666 /* UIColor+Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87C19AB7222D6CB600CED666 /* UIColor+Assets.swift */; };
+		87C19ABB222D733400CED666 /* MainTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87C19ABA222D733400CED666 /* MainTabBarViewController.swift */; };
+		87C19ABD222D742900CED666 /* ActivityTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87C19ABC222D742900CED666 /* ActivityTabBarViewController.swift */; };
+		87C19ABF222D743200CED666 /* BorrowTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87C19ABE222D743200CED666 /* BorrowTabBarViewController.swift */; };
+		87C19AC1222D743A00CED666 /* ProfileTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87C19AC0222D743A00CED666 /* ProfileTabBarViewController.swift */; };
 		BBCF1D43BAC94AC64C71A631 /* Pods_Can_I_Borrow_The_CarTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EDE679B327CE5AE0D30D222 /* Pods_Can_I_Borrow_The_CarTests.framework */; };
 		C50FA87CEAE4F3943B8603D9 /* Pods_Can_I_Borrow_The_CarUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C31AB43B550D59F86780BED /* Pods_Can_I_Borrow_The_CarUITests.framework */; };
 /* End PBXBuildFile section */
@@ -131,6 +146,21 @@
 		87BB0F7E2215F6580000F853 /* AlertModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertModel.swift; sourceTree = "<group>"; };
 		87BB0F7F2215F6580000F853 /* UIApplication.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIApplication.swift; sourceTree = "<group>"; };
 		87BB0F822215FB340000F853 /* AddCarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCarViewController.swift; sourceTree = "<group>"; };
+		87C19A8B22295ACC00CED666 /* Authintication.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Authintication.storyboard; sourceTree = "<group>"; };
+		87C19A9722295F8C00CED666 /* TutorialPageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialPageController.swift; sourceTree = "<group>"; };
+		87C19A9E2229723200CED666 /* TutorialPageController+PageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TutorialPageController+PageController.swift"; sourceTree = "<group>"; };
+		87C19AA2222D2F6300CED666 /* StartPageCViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = StartPageCViewController.swift; path = "Can I Borrow The Car/Removed/StartPageCViewController.swift"; sourceTree = SOURCE_ROOT; };
+		87C19AA6222D357500CED666 /* TutorialTextViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialTextViewController.swift; sourceTree = "<group>"; };
+		87C19AA8222D366300CED666 /* MainPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainPageViewController.swift; sourceTree = "<group>"; };
+		87C19AAC222D517E00CED666 /* TutorialTextHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialTextHeaderView.swift; sourceTree = "<group>"; };
+		87C19AAF222D54F700CED666 /* TutorialModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialModel.swift; sourceTree = "<group>"; };
+		87C19AB1222D642200CED666 /* TutorialPageViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = TutorialPageViewController.storyboard; sourceTree = "<group>"; };
+		87C19AB5222D6C4E00CED666 /* RegisterUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterUserViewController.swift; sourceTree = "<group>"; };
+		87C19AB7222D6CB600CED666 /* UIColor+Assets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Assets.swift"; sourceTree = "<group>"; };
+		87C19ABA222D733400CED666 /* MainTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarViewController.swift; sourceTree = "<group>"; };
+		87C19ABC222D742900CED666 /* ActivityTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityTabBarViewController.swift; sourceTree = "<group>"; };
+		87C19ABE222D743200CED666 /* BorrowTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BorrowTabBarViewController.swift; sourceTree = "<group>"; };
+		87C19AC0222D743A00CED666 /* ProfileTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTabBarViewController.swift; sourceTree = "<group>"; };
 		9BBBACD00FAC3DFE948EC80B /* Pods-Can I Borrow The Car.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Can I Borrow The Car.debug.xcconfig"; path = "Target Support Files/Pods-Can I Borrow The Car/Pods-Can I Borrow The Car.debug.xcconfig"; sourceTree = "<group>"; };
 		A70825BEE60397904434F862 /* Pods_Can_I_Borrow_The_Car.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Can_I_Borrow_The_Car.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC22F7200D120EA2A75679B1 /* Pods-Can I Borrow The Car.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Can I Borrow The Car.release.xcconfig"; path = "Target Support Files/Pods-Can I Borrow The Car/Pods-Can I Borrow The Car.release.xcconfig"; sourceTree = "<group>"; };
@@ -281,8 +311,10 @@
 		87BB0F302215EC490000F853 /* Can I Borrow The Car */ = {
 			isa = PBXGroup;
 			children = (
+				87C19AAA222D46D100CED666 /* Removed */,
 				87BB0F312215EC490000F853 /* AppDelegate.swift */,
 				878AE462221D6AD4003A2F1D /* AppStyle.swift */,
+				87C19AB7222D6CB600CED666 /* UIColor+Assets.swift */,
 				87BB0F752215F6130000F853 /* Extension */,
 				87BB0F612215EC640000F853 /* Model */,
 				87BB0F602215EC620000F853 /* View */,
@@ -316,6 +348,9 @@
 		87BB0F5F2215EC5D0000F853 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				87C19AB9222D730E00CED666 /* UITabBarController */,
+				87C19AB4222D6C2500CED666 /* Authintication */,
+				87C19A9122295C6700CED666 /* UIPageController */,
 				878AE45A221D558B003A2F1D /* Extension */,
 				87859D392223FC5E0088E599 /* Sign in */,
 				87BB0F332215EC490000F853 /* StartViewController.swift */,
@@ -329,6 +364,9 @@
 		87BB0F602215EC620000F853 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				87C19AC2222D803700CED666 /* TabBars */,
+				87C19AB3222D645900CED666 /* SignIn or Register */,
+				87C19A9422295D7900CED666 /* PageController */,
 				878AE461221D565B003A2F1D /* Xib */,
 				87859D372223FBC40088E599 /* SignIn */,
 				87BB0F352215EC490000F853 /* Main.storyboard */,
@@ -340,6 +378,7 @@
 		87BB0F612215EC640000F853 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				87C19AAE222D54ED00CED666 /* Model */,
 				87BB0F7E2215F6580000F853 /* AlertModel.swift */,
 				87859D2C2223EC0D0088E599 /* FireBaseModel */,
 				87859D2F2223ECEF0088E599 /* AuthService */,
@@ -368,6 +407,92 @@
 				87757877222034DC0002860B /* UIView+Tap.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		87C19A9122295C6700CED666 /* UIPageController */ = {
+			isa = PBXGroup;
+			children = (
+				87C19AA8222D366300CED666 /* MainPageViewController.swift */,
+				87C19AAB222D46F300CED666 /* Xib */,
+				87C19A9D2229721A00CED666 /* Extension */,
+				87C19A9722295F8C00CED666 /* TutorialPageController.swift */,
+			);
+			path = UIPageController;
+			sourceTree = "<group>";
+		};
+		87C19A9422295D7900CED666 /* PageController */ = {
+			isa = PBXGroup;
+			children = (
+				87C19AB1222D642200CED666 /* TutorialPageViewController.storyboard */,
+			);
+			path = PageController;
+			sourceTree = "<group>";
+		};
+		87C19A9D2229721A00CED666 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				87C19A9E2229723200CED666 /* TutorialPageController+PageController.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		87C19AAA222D46D100CED666 /* Removed */ = {
+			isa = PBXGroup;
+			children = (
+				87C19AA2222D2F6300CED666 /* StartPageCViewController.swift */,
+			);
+			path = Removed;
+			sourceTree = "<group>";
+		};
+		87C19AAB222D46F300CED666 /* Xib */ = {
+			isa = PBXGroup;
+			children = (
+				87C19AAC222D517E00CED666 /* TutorialTextHeaderView.swift */,
+				87C19AA6222D357500CED666 /* TutorialTextViewController.swift */,
+			);
+			path = Xib;
+			sourceTree = "<group>";
+		};
+		87C19AAE222D54ED00CED666 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				87C19AAF222D54F700CED666 /* TutorialModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		87C19AB3222D645900CED666 /* SignIn or Register */ = {
+			isa = PBXGroup;
+			children = (
+				87C19A8B22295ACC00CED666 /* Authintication.storyboard */,
+			);
+			path = "SignIn or Register";
+			sourceTree = "<group>";
+		};
+		87C19AB4222D6C2500CED666 /* Authintication */ = {
+			isa = PBXGroup;
+			children = (
+				87C19AB5222D6C4E00CED666 /* RegisterUserViewController.swift */,
+			);
+			path = Authintication;
+			sourceTree = "<group>";
+		};
+		87C19AB9222D730E00CED666 /* UITabBarController */ = {
+			isa = PBXGroup;
+			children = (
+				87C19ABA222D733400CED666 /* MainTabBarViewController.swift */,
+				87C19ABC222D742900CED666 /* ActivityTabBarViewController.swift */,
+				87C19ABE222D743200CED666 /* BorrowTabBarViewController.swift */,
+				87C19AC0222D743A00CED666 /* ProfileTabBarViewController.swift */,
+			);
+			path = UITabBarController;
+			sourceTree = "<group>";
+		};
+		87C19AC2222D803700CED666 /* TabBars */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = TabBars;
 			sourceTree = "<group>";
 		};
 		A8307820059B9B15D2EB6E6C /* Frameworks */ = {
@@ -505,6 +630,8 @@
 				879CDF4022256D8E00BB300F /* BorrowOrReturnCar.storyboard in Resources */,
 				87BB0F3C2215EC4A0000F853 /* LaunchScreen.storyboard in Resources */,
 				87BB0F392215EC4A0000F853 /* Assets.xcassets in Resources */,
+				87C19AB2222D642200CED666 /* TutorialPageViewController.storyboard in Resources */,
+				87C19A8C22295ACC00CED666 /* Authintication.storyboard in Resources */,
 				8775787422201BA40002860B /* BorrowCarView.xib in Resources */,
 				878AE460221D5657003A2F1D /* CarCell.xib in Resources */,
 				87B0CAE4221EECC8004C2DF2 /* HeaderView.xib in Resources */,
@@ -639,9 +766,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				87C19AA7222D357500CED666 /* TutorialTextViewController.swift in Sources */,
 				87859D362223F7F50088E599 /* FeedFirebaseModel.swift in Sources */,
 				875491692227D5CB00E87A91 /* GroupFirebaseModel.swift in Sources */,
+				87C19ABF222D743200CED666 /* BorrowTabBarViewController.swift in Sources */,
+				87C19ABB222D733400CED666 /* MainTabBarViewController.swift in Sources */,
+				87C19AA3222D2F6300CED666 /* StartPageCViewController.swift in Sources */,
 				879CDF46222582A300BB300F /* SdSetImage.swift in Sources */,
+				87C19AA9222D366300CED666 /* MainPageViewController.swift in Sources */,
 				87BB0F342215EC490000F853 /* StartViewController.swift in Sources */,
 				87859E3D222416DF0088E599 /* UserFirebaseModel.swift in Sources */,
 				8754916B2227D6CC00E87A91 /* GroupModel.swift in Sources */,
@@ -652,9 +784,14 @@
 				87859E34222405B10088E599 /* SignInViewController.swift in Sources */,
 				878AE45C221D55A6003A2F1D /* StartView+TableView.swift in Sources */,
 				878AE45F221D5657003A2F1D /* CarTableViewCell.swift in Sources */,
+				87C19A9F2229723200CED666 /* TutorialPageController+PageController.swift in Sources */,
+				87C19AB0222D54F700CED666 /* TutorialModel.swift in Sources */,
 				879CDF3C222564D500BB300F /* CarFirebaseModel.swift in Sources */,
+				87C19AB8222D6CB700CED666 /* UIColor+Assets.swift in Sources */,
 				878AE463221D6AD4003A2F1D /* AppStyle.swift in Sources */,
+				87C19AB6222D6C4E00CED666 /* RegisterUserViewController.swift in Sources */,
 				87859E382224064E0088E599 /* UIViewController.swift in Sources */,
+				87C19AAD222D517E00CED666 /* TutorialTextHeaderView.swift in Sources */,
 				879CDF442225769B00BB300F /* ProfileViewController.swift in Sources */,
 				87BB0F322215EC490000F853 /* AppDelegate.swift in Sources */,
 				878AE459221D3AA5003A2F1D /* UpdateChosenCarViewController.swift in Sources */,
@@ -666,9 +803,12 @@
 				87859D2E2223EC230088E599 /* API.swift in Sources */,
 				87859E3A2224067F0088E599 /* UITextFielsd+Count.swift in Sources */,
 				877578762220227F0002860B /* BorrowCarView.swift in Sources */,
+				87C19A9822295F8C00CED666 /* TutorialPageController.swift in Sources */,
+				87C19ABD222D742900CED666 /* ActivityTabBarViewController.swift in Sources */,
 				87859D2B2223EB710088E599 /* CarModel.swift in Sources */,
 				879CDF392225367700BB300F /* StartView+ArrayFunc.swift in Sources */,
 				87859E35222405B30088E599 /* SignUp+ButtonFade.swift in Sources */,
+				87C19AC1222D743A00CED666 /* ProfileTabBarViewController.swift in Sources */,
 				87859E36222405B60088E599 /* SignUp+CameraPicker.swift in Sources */,
 				878AE465221D8240003A2F1D /* UIView.swift in Sources */,
 			);
