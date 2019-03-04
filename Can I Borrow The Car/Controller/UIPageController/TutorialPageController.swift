@@ -41,13 +41,13 @@ class TutorialPageController: UIPageViewController {
         self.turnToPage(index: 0)
     }
     
-    func setUpDelegate() {
+    private func setUpDelegate() {
         self.tutorialText = Tutorial.text
         self.dataSource = self
         self.delegate = self
     }
     
-    func turnToPage(index: Int) {
+    private func turnToPage(index: Int) {
         let controller = orderedViewControllers[index]
         
         var direction = UIPageViewController.NavigationDirection.forward

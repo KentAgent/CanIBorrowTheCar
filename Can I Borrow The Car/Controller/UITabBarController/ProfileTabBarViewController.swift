@@ -10,21 +10,26 @@ import UIKit
 
 class ProfileTabBarViewController: UIViewController {
 
+    var cars = [CarModel]()
+    var group = [GroupModel]()
+    var users = [UserModel]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        setUpCurrentUser()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    private func loadCurrentUser(completion: @escaping (UserModel) -> ()) {
+        API.User.observeCurrentUser { (user) in
+            self.users.append(user)
+            completion(user)
+        }
     }
-    */
+    
+    private func setUpCurrentUser() {
+        loadCurrentUser { (user) in
+            self.navigationItem.title = user.firstName
+        }
+    }
 
 }

@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -26,14 +27,6 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="zlJ-Fz-2Ht" id="4J6-xT-9Ji">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="xSf-V7-qYb">
-                                        <rect key="frame" x="0.0" y="72" width="375" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="xSf-V7-qYb" id="5oi-fR-XJr">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
@@ -82,7 +75,6 @@
                     <connections>
                         <outlet property="activityIndicator" destination="T1k-cR-9zZ" id="wQu-ma-UNa"/>
                         <outlet property="groupName" destination="f1O-ij-A2K" id="qPA-tv-qHt"/>
-                        <outlet property="profileImageUIImage" destination="ugA-jX-i23" id="lM4-JD-3t9"/>
                         <outlet property="tableView" destination="coj-n9-Cx8" id="yZe-vL-ge0"/>
                         <segue destination="gte-LU-dJh" kind="presentation" identifier="GoToChosenCar" modalPresentationStyle="overFullScreen" id="ouv-M2-ZBP"/>
                         <segue destination="fdW-52-eM9" kind="showDetail" identifier="GoToProfilePage" id="wh1-el-2Po"/>
@@ -188,75 +180,74 @@
         <!--Borrow Tab Bar View Controller-->
         <scene sceneID="9Up-fY-LDz">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Uwo-WC-V6T" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="BorrowTabBarViewController" id="Yge-Gl-VOz" customClass="BorrowTabBarViewController" customModule="Can_I_Borrow_The_Car" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="NBm-h9-8NO">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Borrow" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Mq-9f-7Hb">
-                                <rect key="frame" x="166" y="396" width="55" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="vtg-Qo-G3D">
+                                <rect key="frame" x="0.0" y="88" width="375" height="641"/>
+                                <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="Kvm-or-sJi">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Kvm-or-sJi" id="E4d-Qk-MNb">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <sections/>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" name="BackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="vtg-Qo-G3D" firstAttribute="leading" secondItem="uyl-Wm-zY3" secondAttribute="leading" id="9bD-XP-GMg"/>
+                            <constraint firstItem="vtg-Qo-G3D" firstAttribute="top" secondItem="uyl-Wm-zY3" secondAttribute="top" id="BhE-EF-GEJ"/>
+                            <constraint firstItem="vtg-Qo-G3D" firstAttribute="bottom" secondItem="uyl-Wm-zY3" secondAttribute="bottom" id="Uif-56-2eA"/>
+                            <constraint firstItem="vtg-Qo-G3D" firstAttribute="trailing" secondItem="uyl-Wm-zY3" secondAttribute="trailing" id="upI-3K-mVb"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="uyl-Wm-zY3"/>
                     </view>
                     <navigationItem key="navigationItem" id="5u0-F8-QQ3"/>
+                    <connections>
+                        <outlet property="tableView" destination="vtg-Qo-G3D" id="GlH-Bz-1sF"/>
+                    </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Uwo-WC-V6T" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3521" y="610"/>
+            <point key="canvasLocation" x="3520.8000000000002" y="609.60591133004925"/>
         </scene>
         <!--Profile Tab Bar View Controller-->
         <scene sceneID="feJ-Bq-slj">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="J4d-ER-9TA" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="HMV-of-K2B" customClass="ProfileTabBarViewController" customModule="Can_I_Borrow_The_Car" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="m7r-tt-dNH">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Profile" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G5c-D7-4rp">
-                                <rect key="frame" x="166" y="396" width="49" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
                         <color key="backgroundColor" name="BackgroundColor"/>
                         <viewLayoutGuide key="safeArea" id="GA5-LZ-gyX"/>
                     </view>
                     <navigationItem key="navigationItem" id="zpA-jn-a14"/>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="J4d-ER-9TA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3521" y="-134"/>
         </scene>
         <!--Activity Tab Bar View Controller-->
         <scene sceneID="6pi-Rj-x98">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Het-iK-udW" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="ahU-Xk-eI2" customClass="ActivityTabBarViewController" customModule="Can_I_Borrow_The_Car" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ugb-qk-0bK">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Activity" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fgI-dN-lYo">
-                                <rect key="frame" x="150" y="375" width="57" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
                         <color key="backgroundColor" name="BackgroundColor"/>
                         <viewLayoutGuide key="safeArea" id="ugt-gD-oLU"/>
                     </view>
                     <navigationItem key="navigationItem" id="ZYK-mv-qqL"/>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Het-iK-udW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3521" y="1398"/>
         </scene>
@@ -381,7 +372,6 @@
         <!--Profile-->
         <scene sceneID="zLY-Y5-I0M">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="rD3-JN-ebC" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="q8c-Qc-l5d" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Profile" id="taQ-Ia-XRg"/>
                     <toolbarItems/>
@@ -394,13 +384,13 @@
                         <segue destination="HMV-of-K2B" kind="relationship" relationship="rootViewController" id="8pg-35-UfU"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rD3-JN-ebC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2698" y="-134"/>
         </scene>
         <!--Borrow-->
         <scene sceneID="6n1-Ey-rtJ">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="8P1-CE-1wn" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="UM7-kg-lkO" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Borrow" id="11f-3B-7UA"/>
                     <toolbarItems/>
@@ -413,13 +403,13 @@
                         <segue destination="Yge-Gl-VOz" kind="relationship" relationship="rootViewController" id="cE4-K1-wOp"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8P1-CE-1wn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2697" y="611"/>
         </scene>
         <!--Activity-->
         <scene sceneID="TN7-vD-x11">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="5Q3-3l-i18" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="NoC-wI-zbg" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Activity" id="8oN-4L-LjK"/>
                     <toolbarItems/>
@@ -432,6 +422,7 @@
                         <segue destination="ahU-Xk-eI2" kind="relationship" relationship="rootViewController" id="dKz-6E-H2U"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5Q3-3l-i18" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2697" y="1398"/>
         </scene>

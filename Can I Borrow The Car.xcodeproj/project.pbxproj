@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		26F7A0347F40B23288849637 /* Pods_Can_I_Borrow_The_Car.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A70825BEE60397904434F862 /* Pods_Can_I_Borrow_The_Car.framework */; };
+		8738A5E8222DB010004A45F6 /* Register+CameraPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8738A5E6222DAF08004A45F6 /* Register+CameraPicker.swift */; };
+		8738A5E9222DB013004A45F6 /* Register+ButtonFade.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8738A5E7222DAF09004A45F6 /* Register+ButtonFade.swift */; };
+		8738A5EB222DBE12004A45F6 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8738A5EA222DBE12004A45F6 /* LogInViewController.swift */; };
 		875491692227D5CB00E87A91 /* GroupFirebaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 875491682227D5CB00E87A91 /* GroupFirebaseModel.swift */; };
 		8754916B2227D6CC00E87A91 /* GroupModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8754916A2227D6CC00E87A91 /* GroupModel.swift */; };
 		8775787422201BA40002860B /* BorrowCarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8775787322201BA40002860B /* BorrowCarView.xib */; };
@@ -19,10 +22,6 @@
 		87859D362223F7F50088E599 /* FeedFirebaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87859D352223F7F50088E599 /* FeedFirebaseModel.swift */; };
 		87859E2B2223FEE20088E599 /* AuthServiceSign.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87859E2A2223FEE20088E599 /* AuthServiceSign.swift */; };
 		87859E32222400000088E599 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87859E31222400000088E599 /* UserModel.swift */; };
-		87859E33222405AD0088E599 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87859D402223FC9D0088E599 /* SignUpViewController.swift */; };
-		87859E34222405B10088E599 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87859D3F2223FC9C0088E599 /* SignInViewController.swift */; };
-		87859E35222405B30088E599 /* SignUp+ButtonFade.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87859D3D2223FC9C0088E599 /* SignUp+ButtonFade.swift */; };
-		87859E36222405B60088E599 /* SignUp+CameraPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87859E302223FFDB0088E599 /* SignUp+CameraPicker.swift */; };
 		87859E382224064E0088E599 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87859E372224064E0088E599 /* UIViewController.swift */; };
 		87859E3A2224067F0088E599 /* UITextFielsd+Count.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87859E392224067F0088E599 /* UITextFielsd+Count.swift */; };
 		87859E3B222406D00088E599 /* SignIn.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 87859D382223FBD00088E599 /* SignIn.storyboard */; };
@@ -93,6 +92,9 @@
 		40F154D8D66F9DB403E6B190 /* Pods-Can I Borrow The CarUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Can I Borrow The CarUITests.debug.xcconfig"; path = "Target Support Files/Pods-Can I Borrow The CarUITests/Pods-Can I Borrow The CarUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		5C31AB43B550D59F86780BED /* Pods_Can_I_Borrow_The_CarUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Can_I_Borrow_The_CarUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7EDE679B327CE5AE0D30D222 /* Pods_Can_I_Borrow_The_CarTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Can_I_Borrow_The_CarTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8738A5E6222DAF08004A45F6 /* Register+CameraPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Register+CameraPicker.swift"; sourceTree = "<group>"; };
+		8738A5E7222DAF09004A45F6 /* Register+ButtonFade.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Register+ButtonFade.swift"; sourceTree = "<group>"; };
+		8738A5EA222DBE12004A45F6 /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
 		875491682227D5CB00E87A91 /* GroupFirebaseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupFirebaseModel.swift; sourceTree = "<group>"; };
 		8754916A2227D6CC00E87A91 /* GroupModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupModel.swift; sourceTree = "<group>"; };
 		8775787322201BA40002860B /* BorrowCarView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BorrowCarView.xib; sourceTree = "<group>"; };
@@ -103,15 +105,11 @@
 		87859D2D2223EC230088E599 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		87859D352223F7F50088E599 /* FeedFirebaseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedFirebaseModel.swift; sourceTree = "<group>"; };
 		87859D382223FBD00088E599 /* SignIn.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignIn.storyboard; sourceTree = "<group>"; };
-		87859D3D2223FC9C0088E599 /* SignUp+ButtonFade.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SignUp+ButtonFade.swift"; sourceTree = "<group>"; };
-		87859D3F2223FC9C0088E599 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
-		87859D402223FC9D0088E599 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		87859E262223FE010088E599 /* Can-I-Borrow-The-Car-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Can-I-Borrow-The-Car-Bridging-Header.h"; sourceTree = "<group>"; };
 		87859E272223FE020088E599 /* ProgressHUD.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProgressHUD.m; sourceTree = "<group>"; };
 		87859E282223FE020088E599 /* ProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = ProgressHUD.bundle; sourceTree = "<group>"; };
 		87859E292223FE030088E599 /* ProgressHUD.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProgressHUD.h; sourceTree = "<group>"; };
 		87859E2A2223FEE20088E599 /* AuthServiceSign.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthServiceSign.swift; sourceTree = "<group>"; };
-		87859E302223FFDB0088E599 /* SignUp+CameraPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SignUp+CameraPicker.swift"; sourceTree = "<group>"; };
 		87859E31222400000088E599 /* UserModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		87859E372224064E0088E599 /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		87859E392224067F0088E599 /* UITextFielsd+Count.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextFielsd+Count.swift"; sourceTree = "<group>"; };
@@ -195,6 +193,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8738A5E5222DAEFD004A45F6 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				8738A5E6222DAF08004A45F6 /* Register+CameraPicker.swift */,
+				8738A5E7222DAF09004A45F6 /* Register+ButtonFade.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
 		87859D2C2223EC0D0088E599 /* FireBaseModel */ = {
 			isa = PBXGroup;
 			children = (
@@ -232,25 +239,6 @@
 				87859D382223FBD00088E599 /* SignIn.storyboard */,
 			);
 			path = SignIn;
-			sourceTree = "<group>";
-		};
-		87859D392223FC5E0088E599 /* Sign in */ = {
-			isa = PBXGroup;
-			children = (
-				87859D3B2223FC9C0088E599 /* Extensions */,
-				87859D3F2223FC9C0088E599 /* SignInViewController.swift */,
-				87859D402223FC9D0088E599 /* SignUpViewController.swift */,
-			);
-			path = "Sign in";
-			sourceTree = "<group>";
-		};
-		87859D3B2223FC9C0088E599 /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-				87859E302223FFDB0088E599 /* SignUp+CameraPicker.swift */,
-				87859D3D2223FC9C0088E599 /* SignUp+ButtonFade.swift */,
-			);
-			path = Extensions;
 			sourceTree = "<group>";
 		};
 		87859E242223FDE30088E599 /* ProgressHUD */ = {
@@ -348,11 +336,10 @@
 		87BB0F5F2215EC5D0000F853 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				87C19AB9222D730E00CED666 /* UITabBarController */,
 				87C19AB4222D6C2500CED666 /* Authintication */,
+				87C19AB9222D730E00CED666 /* UITabBarController */,
 				87C19A9122295C6700CED666 /* UIPageController */,
 				878AE45A221D558B003A2F1D /* Extension */,
-				87859D392223FC5E0088E599 /* Sign in */,
 				87BB0F332215EC490000F853 /* StartViewController.swift */,
 				878AE458221D3AA5003A2F1D /* UpdateChosenCarViewController.swift */,
 				87BB0F822215FB340000F853 /* AddCarViewController.swift */,
@@ -472,7 +459,9 @@
 		87C19AB4222D6C2500CED666 /* Authintication */ = {
 			isa = PBXGroup;
 			children = (
+				8738A5E5222DAEFD004A45F6 /* Extension */,
 				87C19AB5222D6C4E00CED666 /* RegisterUserViewController.swift */,
+				8738A5EA222DBE12004A45F6 /* LogInViewController.swift */,
 			);
 			path = Authintication;
 			sourceTree = "<group>";
@@ -769,19 +758,20 @@
 				87C19AA7222D357500CED666 /* TutorialTextViewController.swift in Sources */,
 				87859D362223F7F50088E599 /* FeedFirebaseModel.swift in Sources */,
 				875491692227D5CB00E87A91 /* GroupFirebaseModel.swift in Sources */,
+				8738A5E8222DB010004A45F6 /* Register+CameraPicker.swift in Sources */,
 				87C19ABF222D743200CED666 /* BorrowTabBarViewController.swift in Sources */,
 				87C19ABB222D733400CED666 /* MainTabBarViewController.swift in Sources */,
 				87C19AA3222D2F6300CED666 /* StartPageCViewController.swift in Sources */,
 				879CDF46222582A300BB300F /* SdSetImage.swift in Sources */,
 				87C19AA9222D366300CED666 /* MainPageViewController.swift in Sources */,
 				87BB0F342215EC490000F853 /* StartViewController.swift in Sources */,
+				8738A5E9222DB013004A45F6 /* Register+ButtonFade.swift in Sources */,
 				87859E3D222416DF0088E599 /* UserFirebaseModel.swift in Sources */,
 				8754916B2227D6CC00E87A91 /* GroupModel.swift in Sources */,
 				87859E32222400000088E599 /* UserModel.swift in Sources */,
 				87BB0F812215F6580000F853 /* UIApplication.swift in Sources */,
 				87BB0F832215FB340000F853 /* AddCarViewController.swift in Sources */,
 				87BB0F6A2215F1F10000F853 /* Config.swift in Sources */,
-				87859E34222405B10088E599 /* SignInViewController.swift in Sources */,
 				878AE45C221D55A6003A2F1D /* StartView+TableView.swift in Sources */,
 				878AE45F221D5657003A2F1D /* CarTableViewCell.swift in Sources */,
 				87C19A9F2229723200CED666 /* TutorialPageController+PageController.swift in Sources */,
@@ -796,20 +786,18 @@
 				87BB0F322215EC490000F853 /* AppDelegate.swift in Sources */,
 				878AE459221D3AA5003A2F1D /* UpdateChosenCarViewController.swift in Sources */,
 				87757878222034DC0002860B /* UIView+Tap.swift in Sources */,
-				87859E33222405AD0088E599 /* SignUpViewController.swift in Sources */,
 				87B0CAE6221EF388004C2DF2 /* HeaderView.swift in Sources */,
 				87BB0F802215F6580000F853 /* AlertModel.swift in Sources */,
 				87859E2B2223FEE20088E599 /* AuthServiceSign.swift in Sources */,
 				87859D2E2223EC230088E599 /* API.swift in Sources */,
 				87859E3A2224067F0088E599 /* UITextFielsd+Count.swift in Sources */,
 				877578762220227F0002860B /* BorrowCarView.swift in Sources */,
+				8738A5EB222DBE12004A45F6 /* LogInViewController.swift in Sources */,
 				87C19A9822295F8C00CED666 /* TutorialPageController.swift in Sources */,
 				87C19ABD222D742900CED666 /* ActivityTabBarViewController.swift in Sources */,
 				87859D2B2223EB710088E599 /* CarModel.swift in Sources */,
 				879CDF392225367700BB300F /* StartView+ArrayFunc.swift in Sources */,
-				87859E35222405B30088E599 /* SignUp+ButtonFade.swift in Sources */,
 				87C19AC1222D743A00CED666 /* ProfileTabBarViewController.swift in Sources */,
-				87859E36222405B60088E599 /* SignUp+CameraPicker.swift in Sources */,
 				878AE465221D8240003A2F1D /* UIView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

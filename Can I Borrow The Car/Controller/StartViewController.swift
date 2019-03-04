@@ -24,8 +24,6 @@ class CarViewController: UIViewController, UpdateView {
         super.viewDidLoad()
         print("viewdidload")
         registerTableView()
-        updateCurrentUserUI()
-        goToProfilePage_TouchUpInside()
         loadCarsFromGroup()
     }
     
@@ -60,21 +58,6 @@ class CarViewController: UIViewController, UpdateView {
     
     func updateCarsFromDismiss() {
         tableView.reloadData()
-    }
-    
-    private func updateCurrentUserUI() {
-        profileImageUIImage.isHidden = true
-        AppStyle.cirlceUIImageView(image: profileImageUIImage)
-        API.User.observeCurrentUser { (user) in
-            self.profileImageUIImage.isHidden = false
-            SdSetImage.fetchUserImage(image: self.profileImageUIImage, user: user)
-        }
-    }
-    
-    private func goToProfilePage_TouchUpInside() {
-        profileImageUIImage.addTapGestureRecognizer {
-            self.performSegue(withIdentifier: Segues.goToProfilePage, sender: nil)
-        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

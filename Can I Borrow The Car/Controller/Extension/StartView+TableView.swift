@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-extension CarViewController: UITableViewDelegate, UITableViewDataSource{
+extension CarViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         let allcars = [sortCarsAtHome.count, sortCarsNotAtHome.count]

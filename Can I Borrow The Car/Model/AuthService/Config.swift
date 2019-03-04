@@ -41,6 +41,8 @@ struct FIRModelStrings {
     static let username = "username"
     static let usernameLowerCase = "username_lowercase"
     static let email = "email"
+    static let firstName = "firstName"
+    static let lastName = "lastName"
     
 }
 

@@ -9,13 +9,13 @@
 import Foundation
 import UIKit
 
-extension SignUpViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+extension RegisterUserViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     func changeProfileImageOnClick() {
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(SignUpViewController.handleProfileView))
-        profileUIImage.addGestureRecognizer(tapGesture)
-        profileUIImage.isUserInteractionEnabled = true
-        AppStyle.cirlceUIImageView(image: profileUIImage)
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(RegisterUserViewController.handleProfileView))
+        profileImageView.addGestureRecognizer(tapGesture)
+        profileImageView.isUserInteractionEnabled = true
+        AppStyle.cirlceUIImageView(image: profileImageView)
         self.hideKeyboardWhenTappedAround()
     }
 
@@ -37,7 +37,7 @@ extension SignUpViewController: UIImagePickerControllerDelegate, UINavigationCon
 
         if let selectedImage = selectImageFromPicker {
             self.isPicturePicked = true
-            profileUIImage.image = selectedImage
+            profileImageView.image = selectedImage
         }
 
         dismiss(animated: true, completion: nil)

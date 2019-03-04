@@ -40,7 +40,7 @@ class AuthServiceSign {
       }
    }
     
-   static func signUp(username: String, email: String, password: String, imageData: Data, signedIn: (() -> Void)? = nil, onError: ((String?) -> Void)? = nil) {
+   static func signUp(username: String, email: String, password: String, firstName: String, lastName: String, imageData: Data, signedIn: (() -> Void)? = nil, onError: ((String?) -> Void)? = nil) {
       Auth.auth().createUser(withEmail: email, password: password, completion: { (user, error) in
          if error != nil {
             onError!(error!.localizedDescription)
@@ -56,17 +56,17 @@ class AuthServiceSign {
             }
             storageRef.downloadURL(completion: { (url, error) in
                 let profileImageUrl = url?.absoluteString
-                self.setUserInfomation(profileImageUrl: profileImageUrl!, username: username, email: email, uid: uid!, signedIn: signedIn)
+                self.setUserInfomation(profileImageUrl: profileImageUrl!, username: username, firstName: firstName, lastName: lastName, email: email, uid: uid!, signedIn: signedIn)
             })
         })
       })
    }
 
-   static func setUserInfomation(profileImageUrl: String, username: String, email: String, uid: String, signedIn: (() -> Void)? = nil) {
+    static func setUserInfomation(profileImageUrl: String, username: String, firstName: String, lastName: String, email: String, uid: String, signedIn: (() -> Void)? = nil) {
       let ref = Database.database().reference()
       let usersReference = ref.child(AuthConfig.userUrl)
       let newUserReference = usersReference.child(uid)
-    newUserReference.setValue([FIRModelStrings.currentGroupId : nil, FIRModelStrings.username: username, FIRModelStrings.usernameLowerCase: username.lowercased(), FIRModelStrings.email: email, FIRModelStrings.profileImageUrl: profileImageUrl])
+    newUserReference.setValue([FIRModelStrings.currentGroupId : nil, FIRModelStrings.username: username, FIRModelStrings.usernameLowerCase: username.lowercased(), FIRModelStrings.email: email, FIRModelStrings.firstName: firstName, FIRModelStrings.lastName: lastName , FIRModelStrings.profileImageUrl: profileImageUrl])
       signedIn!()
    }
 
