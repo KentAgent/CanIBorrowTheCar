@@ -8,49 +8,56 @@
 
 import UIKit
 
-class BorrowTabBarViewController: UIViewController {
+class BorrowTabBarViewController: UIViewController, UpdateView  {
     
+    func updateCarsFromOnLoad() {
+        print("cars updated")
+        loadCurrentUser { user in
+            //self.loadCarsIfInGroup(user: self.currentUser)
+            self.carsInCurrentGroup.removeAll()
+            self.loadCarsFromGroup()
+        }
+    }
+    
+
     @IBOutlet weak var groupName: UILabel!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
 
-    var cars : [CarModel]!
-    var group : GroupModel!
-    var users : UserModel!
+    var carsInCurrentGroup = [CarModel]()
+    var currentGroup : GroupModel?
+    var currentUser : UserModel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         registerTableView()
+        noCarsInGroup()
         loadCarsFromGroup()
+        tableView.delegate = self
     }
     
-    private func loadCurrentUser(completion: @escaping (UserModel) -> ()) {
-        API.User.observeCurrentUser { (user) in
-            self.users = user
-            completion(user)
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(true)
+        tableView.reloadData()
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let indexPath = tableView.indexPathForSelectedRow {
+            let vcSelectedCar = segue.destination as! UpdateChosenCarViewController
+            vcSelectedCar.selectedCar = sortedCarsByBool[indexPath.section][indexPath.row]
+            vcSelectedCar.delegate = self
         }
     }
     
-    private func loadCarsFromGroup()  {
-        //self.activityIndicator.startAnimating()
-        loadCurrentUser { user in
-            self.navigationItem.title = user.firstName
-            if user.currentGroupId != nil {
-                self.fetchGroupName()
-                API.Group.observeGroupFeed(with: user.currentGroupId!, completion: { (car) in
-                    self.cars.append(car)
-                    //self.activityIndicator.stopAnimating()
-                    self.tableView.reloadData()
-                })
-            }
-        }
+    func carsInGroup() {
+        tableView.isHidden = false
+        tableView.dataSource = self
     }
     
-    private func fetchGroupName() {
-        API.Group.observeMyGroupName { (group) in
-            self.group = group
-            self.navigationItem.title = self.group.name
-        }
+    func noCarsInGroup() {
+        print("no cars")
+        tableView.isHidden = true
+        tableView.dataSource = nil
     }
     
 }
@@ -58,11 +65,11 @@ class BorrowTabBarViewController: UIViewController {
 extension BorrowTabBarViewController: UITableViewDelegate, UITableViewDataSource {
     
     var sortCarsAtHome : [CarModel] {
-        return cars.filter({$0.borrowed == false})
+        return carsInCurrentGroup.filter({$0.borrowed == false})
     }
     
     var sortCarsNotAtHome : [CarModel] {
-        return cars.filter({$0.borrowed == true})
+        return carsInCurrentGroup.filter({$0.borrowed == true})
     }
     
     var sortedCarsByBool : [[CarModel]] {

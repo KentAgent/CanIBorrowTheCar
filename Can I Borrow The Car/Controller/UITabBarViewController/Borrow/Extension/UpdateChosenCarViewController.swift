@@ -10,19 +10,16 @@ import UIKit
 import ProgressHUD
 
 protocol UpdateView {
-    func updateCarsFromDismiss()
+    func updateCarsFromOnLoad()
 }
 
 class UpdateChosenCarViewController: UIViewController {
-    var alert = Alert()
     
     var delegate : UpdateView?
     
     @IBOutlet weak var borrowCarView: BorrowCarView!
     @IBOutlet weak var visiualEffectView: UIVisualEffectView!
     var effect : UIVisualEffect?
-    
-    var selected = true
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,7 +32,6 @@ class UpdateChosenCarViewController: UIViewController {
         didSet {
             DispatchQueue.main.async {
                 print(self.selectedCar!.id!)
-                AppStyle.circleUIView(image: self.borrowCarView.ownerView)
                 self.showCarUI()
                 self.showVisualEffect()
                 self.animateIn()
@@ -45,8 +41,7 @@ class UpdateChosenCarViewController: UIViewController {
     
     func updateCar() {
         API.Car.updateCarValues(with: selectedCar!.id!, borrowed: updateCarBool(), uploaded: {
-            ProgressHUD.showSuccess()
-            self.delegate?.updateCarsFromDismiss()
+            self.delegate!.updateCarsFromOnLoad()
             self.dismiss(animated: true, completion: nil)
         }) { (error) in
             ProgressHUD.showError(error)
@@ -55,6 +50,7 @@ class UpdateChosenCarViewController: UIViewController {
     }
     
     func showCarUI() {
+        AppStyle.circleUIView(image: self.borrowCarView.ownerView)
         if selectedCar?.borrowed == true {
             borrowCarView.borrowCarButton.setTitle("Return", for: .normal)
         } else {
@@ -85,6 +81,7 @@ class UpdateChosenCarViewController: UIViewController {
     
     func cancelCar_TouchUpInside() { 
         borrowCarView.cancelCarButton.addTapGestureRecognizer {
+            self.delegate!.updateCarsFromOnLoad()
             self.dismiss(animated: true, completion: nil)
         }
     }

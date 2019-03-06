@@ -11,97 +11,6 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Car View Controller-->
-        <scene sceneID="tne-QT-ifu">
-            <objects>
-                <viewController storyboardIdentifier="BorrowedViewController" id="BYZ-38-t0r" customClass="CarViewController" customModule="Can_I_Borrow_The_Car" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="coj-n9-Cx8">
-                                <rect key="frame" x="0.0" y="100" width="375" height="712"/>
-                                <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803915" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="zlJ-Fz-2Ht">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="zlJ-Fz-2Ht" id="4J6-xT-9Ji">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </prototypes>
-                                <sections/>
-                                <connections>
-                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="0r1-7H-nLk"/>
-                                    <outlet property="delegate" destination="BYZ-38-t0r" id="B2I-6R-B3X"/>
-                                </connections>
-                            </tableView>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="T1k-cR-9zZ">
-                                <rect key="frame" x="177.66666666666666" y="396" width="20" height="20"/>
-                            </activityIndicatorView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholderProfileImage" translatesAutoresizingMaskIntoConstraints="NO" id="ugA-jX-i23">
-                                <rect key="frame" x="322" y="60" width="45" height="45"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="45" id="sUG-7I-w5z"/>
-                                    <constraint firstAttribute="height" constant="45" id="yvC-mJ-pn2"/>
-                                </constraints>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f1O-ij-A2K">
-                                <rect key="frame" x="187.66666666666666" y="60" width="0.0" height="0.0"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="26"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803915" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstItem="coj-n9-Cx8" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="1UX-Ua-OKA"/>
-                            <constraint firstItem="T1k-cR-9zZ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="2y5-gI-DpO"/>
-                            <constraint firstItem="coj-n9-Cx8" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" constant="34" id="3EF-AQ-sG2"/>
-                            <constraint firstItem="T1k-cR-9zZ" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="7HC-MC-KGe"/>
-                            <constraint firstItem="f1O-ij-A2K" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="B51-zi-omt"/>
-                            <constraint firstItem="coj-n9-Cx8" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="E8o-tw-m3w"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ugA-jX-i23" secondAttribute="trailing" constant="8" id="KwQ-Tv-03v"/>
-                            <constraint firstItem="f1O-ij-A2K" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="16" id="jcu-1e-vGQ"/>
-                            <constraint firstItem="ugA-jX-i23" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="16" id="qSf-Do-RR7"/>
-                            <constraint firstItem="coj-n9-Cx8" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="100" id="zXt-2V-JlX"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                    </view>
-                    <nil key="simulatedTopBarMetrics"/>
-                    <nil key="simulatedBottomBarMetrics"/>
-                    <connections>
-                        <outlet property="activityIndicator" destination="T1k-cR-9zZ" id="wQu-ma-UNa"/>
-                        <outlet property="groupName" destination="f1O-ij-A2K" id="qPA-tv-qHt"/>
-                        <outlet property="tableView" destination="coj-n9-Cx8" id="yZe-vL-ge0"/>
-                        <segue destination="gte-LU-dJh" kind="presentation" identifier="GoToChosenCar" modalPresentationStyle="overFullScreen" id="ouv-M2-ZBP"/>
-                        <segue destination="fdW-52-eM9" kind="showDetail" identifier="GoToProfilePage" id="wh1-el-2Po"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="5802.3999999999996" y="1161.576354679803"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="YUh-6j-uhq">
-            <objects>
-                <navigationController id="fdW-52-eM9" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="p28-WI-CPN"/>
-                    <nil key="simulatedBottomBarMetrics"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ddQ-eY-gxM">
-                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="BbY-P1-mdY" kind="relationship" relationship="rootViewController" id="m2y-PU-UBd"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="zyF-52-I9b" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="6690.3999999999996" y="1161.576354679803"/>
-        </scene>
         <!--Profile View Controller-->
         <scene sceneID="reH-Nu-6lL">
             <objects>
@@ -157,17 +66,13 @@
                         <viewLayoutGuide key="safeArea" id="BYW-li-jP5"/>
                     </view>
                     <navigationItem key="navigationItem" id="pdC-dg-BMH">
-                        <barButtonItem key="leftBarButtonItem" title="Back" id="IMB-xP-7Cj">
-                            <connections>
-                                <action selector="backButton:" destination="BbY-P1-mdY" id="Hta-km-4Xd"/>
-                            </connections>
-                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Add car" id="UZ7-hG-B4m">
                             <connections>
                                 <action selector="addCarButton:" destination="BbY-P1-mdY" id="Qsd-Ib-k9d"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <nil key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="groupNameTextfield" destination="FtR-va-ChK" id="MZn-Re-w55"/>
                         <segue destination="zbu-Ij-BPh" kind="show" identifier="GoToAddCar" id="MN1-pq-Ckp"/>
@@ -175,7 +80,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mPv-pY-2Oa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7573.6000000000004" y="1161.576354679803"/>
+            <point key="canvasLocation" x="4338" y="1377"/>
         </scene>
         <!--Borrow Tab Bar View Controller-->
         <scene sceneID="9Up-fY-LDz">
@@ -196,9 +101,15 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="gte-LU-dJh" kind="presentation" identifier="GoToChosenCar" id="7EW-BC-XFM"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <sections/>
+                                <connections>
+                                    <outlet property="delegate" destination="Yge-Gl-VOz" id="Mbl-Ib-R54"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" name="BackgroundColor"/>
@@ -229,11 +140,17 @@
                         <color key="backgroundColor" name="BackgroundColor"/>
                         <viewLayoutGuide key="safeArea" id="GA5-LZ-gyX"/>
                     </view>
-                    <navigationItem key="navigationItem" id="zpA-jn-a14"/>
+                    <navigationItem key="navigationItem" id="zpA-jn-a14">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="4NA-0B-Sbr">
+                            <connections>
+                                <segue destination="BbY-P1-mdY" kind="show" identifier="goToAddGroup" id="zFO-M0-Hym"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="J4d-ER-9TA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3521" y="-134"/>
+            <point key="canvasLocation" x="3521" y="1378"/>
         </scene>
         <!--Activity Tab Bar View Controller-->
         <scene sceneID="6pi-Rj-x98">
@@ -249,13 +166,13 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Het-iK-udW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3521" y="1398"/>
+            <point key="canvasLocation" x="3521" y="-125"/>
         </scene>
-        <!--Main Tab Bar View Controller-->
+        <!--Tab Bar Controller-->
         <scene sceneID="eJy-28-Umv">
             <objects>
-                <tabBarController storyboardIdentifier="MainTabBarViewController" id="OkS-bv-BQd" customClass="MainTabBarViewController" customModule="Can_I_Borrow_The_Car" customModuleProvider="target" sceneMemberID="viewController">
-                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="l3g-Qi-Y9c">
+                <tabBarController storyboardIdentifier="MainTabBarViewController" id="OkS-bv-BQd" customClass="TabBarController" customModule="Can_I_Borrow_The_Car" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBar key="tabBar" tag="1" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="l3g-Qi-Y9c">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -276,7 +193,7 @@
                 <viewControllerPlaceholder storyboardName="BorrowOrReturnCar" id="gte-LU-dJh" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wEv-ll-AdQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5802" y="1612"/>
+            <point key="canvasLocation" x="4157" y="642"/>
         </scene>
         <!--Add a car-->
         <scene sceneID="8Li-j4-n4R">
@@ -367,7 +284,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b0W-wt-pOz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="8386.3999999999996" y="1161.576354679803"/>
+            <point key="canvasLocation" x="5151" y="1377"/>
         </scene>
         <!--Profile-->
         <scene sceneID="zLY-Y5-I0M">
@@ -381,18 +298,18 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="HMV-of-K2B" kind="relationship" relationship="rootViewController" id="8pg-35-UfU"/>
+                        <segue destination="HMV-of-K2B" kind="relationship" relationship="rootViewController" id="YmI-ek-LQw"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rD3-JN-ebC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2698" y="-134"/>
+            <point key="canvasLocation" x="2697" y="1378"/>
         </scene>
         <!--Borrow-->
         <scene sceneID="6n1-Ey-rtJ">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="UM7-kg-lkO" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Borrow" id="11f-3B-7UA"/>
+                    <tabBarItem key="tabBarItem" tag="1" title="Borrow" id="11f-3B-7UA"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="4Ro-Lz-KCl">
                         <rect key="frame" x="0.0" y="44" width="375" height="44"/>
@@ -411,7 +328,7 @@
         <scene sceneID="TN7-vD-x11">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="NoC-wI-zbg" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Activity" id="8oN-4L-LjK"/>
+                    <tabBarItem key="tabBarItem" tag="2" title="Activity" id="8oN-4L-LjK"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ls7-sI-oFX">
                         <rect key="frame" x="0.0" y="44" width="375" height="44"/>
@@ -424,11 +341,10 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5Q3-3l-i18" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2697" y="1398"/>
+            <point key="canvasLocation" x="2697" y="-126"/>
         </scene>
     </scenes>
     <resources>
-        <image name="placeholderProfileImage" width="225" height="225"/>
         <namedColor name="BackgroundColor">
             <color red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803926" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

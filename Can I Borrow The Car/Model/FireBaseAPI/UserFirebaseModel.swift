@@ -25,8 +25,7 @@ struct UserFirebaseModel {
         }
         return nil
     }
-
-
+    
     func observeUser(uid: String, completion: @escaping (UserModel) -> Void) {
         refUsers.child(uid).observe(.value, with: {
             (snapshot) in
@@ -59,7 +58,7 @@ struct UserFirebaseModel {
         }
     }
 
-    func queryUser(withText text: String, completion: @escaping (UserModel) -> Void) {
+    private func queryUser(withText text: String, completion: @escaping (UserModel) -> Void) {
         refUsers.queryOrdered(byChild: FIRModelStrings.usernameLowerCase).queryStarting(atValue: text).queryEnding(atValue: text+"\u{f8ff}").queryLimited(toLast: 10).observeSingleEvent(of: .value) { (snapshot) in
             snapshot.children.forEach({ (s) in
                 let child = s as! DataSnapshot

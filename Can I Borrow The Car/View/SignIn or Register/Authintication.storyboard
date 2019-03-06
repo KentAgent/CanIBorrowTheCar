@@ -65,7 +65,7 @@
                     </view>
                     <connections>
                         <outlet property="tutorialTextHeaderView" destination="far-KT-teS" id="9KP-1c-lcp"/>
-                        <segue destination="wcP-1p-B3X" kind="presentation" identifier="SignIn" id="wwn-1v-fAw"/>
+                        <segue destination="wcP-1p-B3X" kind="show" identifier="SignIn" id="wwn-1v-fAw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IHe-Tl-8rN" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -308,7 +308,7 @@
                         <outlet property="profileImageView" destination="ebz-ih-xG6" id="zOE-Le-VF6"/>
                         <outlet property="rePasswordTextField" destination="u90-y4-46T" id="noT-zQ-TIW"/>
                         <outlet property="usernameTextField" destination="YMk-w2-qxP" id="9lX-J6-3GI"/>
-                        <segue destination="wcP-1p-B3X" kind="presentation" identifier="SignUp" id="zia-EN-N7h"/>
+                        <segue destination="wcP-1p-B3X" kind="show" identifier="SignUp" id="zia-EN-N7h"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mUL-1a-4hp" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -318,7 +318,9 @@
         <!--MainTabBarViewController-->
         <scene sceneID="1aR-Mp-VrL">
             <objects>
-                <viewControllerPlaceholder storyboardIdentifier="MainTabBarViewController" storyboardName="Main" referencedIdentifier="MainTabBarViewController" id="wcP-1p-B3X" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardIdentifier="MainTabBarViewController" storyboardName="Main" referencedIdentifier="MainTabBarViewController" id="wcP-1p-B3X" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="wUr-ox-QPY"/>
+                </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UqO-Ts-aT8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1154" y="563"/>
@@ -424,7 +426,7 @@
                     <connections>
                         <outlet property="emailTextField" destination="7aQ-Li-NcC" id="KWL-TL-oif"/>
                         <outlet property="passwordTextField" destination="h3y-9y-tCo" id="gcF-oC-lbM"/>
-                        <segue destination="wcP-1p-B3X" kind="presentation" identifier="SignIn" id="Gh2-3s-c5F"/>
+                        <segue destination="wcP-1p-B3X" kind="show" identifier="SignIn" id="Gh2-3s-c5F"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="E72-Lf-bVH" userLabel="First Responder" sceneMemberID="firstResponder"/>

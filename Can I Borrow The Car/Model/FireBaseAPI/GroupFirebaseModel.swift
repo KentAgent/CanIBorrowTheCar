@@ -15,28 +15,31 @@ struct GroupFirebaseModel {
     var refMyGroup = Database.database().reference().child(AuthConfig.myGroupsUrl)
     var refGroupName = Database.database().reference().child(AuthConfig.groupNameUrl)
     
-    func uploadGroup(name: String, created: ((CarModel) -> Void)? = nil, onError: ((String?) -> Void)? = nil) {
-        guard let newAutoGroupId = refGroupFeed.childByAutoId().key else { return }
-        let newGroupReference = refGroupFeed.child(newAutoGroupId)
-        addCurrentCarsToGroup(groupRef: newGroupReference)
-        addGroupToRefs(name: name, groupId: newAutoGroupId)
+    func uploadGroup(name: String, created: (() -> Void)? = nil, onError: (() -> Void)? = nil) {
+        if let newAutoGroupId = refGroupFeed.childByAutoId().key {
+            let newGroupReference = refGroupFeed.child(newAutoGroupId)
+            addCurrentCarsToGroup(groupRef: newGroupReference)
+            addGroupToRefs(name: name, groupId: newAutoGroupId)
+            created?()
+        } else {
+            onError?()
+        }
     }
     
-    func removeCurrentGroup() {
-        removeGroupFromRefs { (user) in
-            self.removeCurrentCarsFromGroup(user: user)
+    func observeGroupFeed(with groupId: String, completion: @escaping (CarModel) -> Void, error: ((Error?) -> ())? = nil ) {
+        refGroupFeed.child(groupId).observe(.childAdded, with: { (snapshot) in
+            let cars = snapshot.key
+            API.Car.observeCar(with: cars, completion: { (car) in
+                completion(car)
+            }, error: { (er) in
+                error?(er)
+            })
+        }) { (er) in
+            error?(er)
         }
         
     }
     
-    func observeGroupFeed(with groupId: String, completion: ((CarModel) -> ())? = nil) {
-        refGroupFeed.child(groupId).observe(.childAdded) { (snapshot) in
-            let key = snapshot.key
-            API.Car.observeCar(with: key, completion: { (car) in
-                completion?(car)
-            })
-        }
-    }
 
     func observeMyGroups(uploaded: (((DataSnapshot?)) -> Void)? = nil) {
         guard let currentUser = Auth.auth().currentUser else { return }
@@ -45,7 +48,7 @@ struct GroupFirebaseModel {
         }
     }
 
-    func observeMyGroupName(completion: @escaping (GroupModel) -> ()){
+    func observeCurrentGroupName(completion: @escaping (GroupModel) -> ()){
         refMyGroup.child(API.User.currentUser!.uid).observe(.childAdded) { (snapshot) in
             let groupId = snapshot.key
             self.observeGroupName(with: groupId, completion: { (group) in
@@ -56,7 +59,7 @@ struct GroupFirebaseModel {
     
     private func addCurrentCarsToGroup(groupRef: DatabaseReference) {
         //Add current cars to Family
-        API.Car.observeMyCars(uploaded: { myCarSnapshot in
+        API.Car.observeForUpdateMyCar(uploaded: { myCarSnapshot in
             if let dict = myCarSnapshot?.key {
                 groupRef.child(dict).setValue(true)
             }
@@ -72,8 +75,16 @@ struct GroupFirebaseModel {
         API.Group.refMyGroup.child(API.User.currentUser!.uid).child(groupId).setValue(true)
     }
     
+    
+    func removeCurrentGroup() {
+        removeGroupFromRefs { (user) in
+            self.removeCurrentCarsFromGroup(user: user)
+        }
+        
+    }
+    
     private func removeCurrentCarsFromGroup(user: UserModel) {
-        API.Car.observeMyCars(uploaded: { myCarSnapshot in
+        API.Car.observeForUpdateMyCar(uploaded: { myCarSnapshot in
             if let dict = myCarSnapshot?.key {
                 self.refGroupFeed.child(user.currentGroupId!).child(dict).setValue(NSNull())
                 //remove groupId from current user

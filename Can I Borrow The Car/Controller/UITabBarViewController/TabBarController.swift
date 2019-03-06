@@ -8,10 +8,14 @@
 
 import UIKit
 
-class MainTabBarViewController: UITabBarController {
-
+class TabBarController: UITabBarController, UITabBarControllerDelegate {
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        selectedIndex = 1
+        self.delegate = self
     }
+    
+    
 
 }

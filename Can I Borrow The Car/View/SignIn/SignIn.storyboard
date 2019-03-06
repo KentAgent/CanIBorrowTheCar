@@ -145,7 +145,6 @@
                         <outlet property="noAccountButton" destination="a3R-Qa-hd0" id="pWq-w0-nMv"/>
                         <outlet property="passwordText" destination="oEc-Zl-Zm3" id="Yb0-B4-Oma"/>
                         <outlet property="signInButton" destination="Oqn-nt-SIj" id="tAp-Hm-TWs"/>
-                        <segue destination="Csm-6U-vTD" kind="presentation" identifier="SignIn" id="eYN-c3-57S"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -409,20 +408,11 @@
                         <outlet property="profileUIImage" destination="t68-Yi-XnJ" id="wBo-bp-v7D"/>
                         <outlet property="signUpButton" destination="o68-Fb-XIX" id="eZ9-zP-dHh"/>
                         <outlet property="userNameText" destination="46i-hf-0Yd" id="eh0-b8-d1a"/>
-                        <segue destination="Csm-6U-vTD" kind="presentation" identifier="SignUp" id="Z8S-Cq-iJJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5Jh-9W-XRD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="621.73913043478262" y="-63.586956521739133"/>
-        </scene>
-        <!--BorrowedViewController-->
-        <scene sceneID="6L8-k7-3i6">
-            <objects>
-                <viewControllerPlaceholder storyboardIdentifier="StartPage" storyboardName="Main" referencedIdentifier="BorrowedViewController" id="Csm-6U-vTD" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="VIx-jc-EpH" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="217" y="451"/>
         </scene>
     </scenes>
     <resources>
@@ -435,7 +425,4 @@
             <color red="0.0" green="0.58431372549019611" blue="1" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="Z8S-Cq-iJJ"/>
-    </inferredMetricsTieBreakers>
 </document>

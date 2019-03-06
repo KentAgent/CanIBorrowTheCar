@@ -27,10 +27,10 @@ class AddCarViewController: UIViewController {
     func saveCar() {
         API.Car.uploadCar(name: carNameTextField.text!, model: modelTextField.text!, licencePlate: licensePlateTextField.text!, color: colorTextField!.text!, borrowed: false, uploaded: {
             ProgressHUD.showSuccess("Succes")
-            self.delegate?.updateCarsFromDismiss()
-            self.dismiss(animated: true, completion: nil)
+            self.delegate?.updateCarsFromOnLoad()
+            self.navigationController?.popViewController(animated: true)
         }) { (error) in
-            ProgressHUD.showError(error)
+            ProgressHUD.showError(error?.localizedDescription)
         }
     }
 
