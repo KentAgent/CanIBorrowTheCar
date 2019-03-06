@@ -10,6 +10,8 @@ import UIKit
 
 class TabBarController: UITabBarController, UITabBarControllerDelegate {
     
+    var user : UserModel?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         selectedIndex = 1

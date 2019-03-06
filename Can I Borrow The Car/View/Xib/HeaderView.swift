@@ -12,6 +12,7 @@ class HeaderView: UITableViewHeaderFooterView {
 
     let atHome = "Cars at home"
     let notAtHome = "Cars not at home"
+    let myCars = "My Cars"
     
     @IBOutlet weak var sectionLabel: UILabel!
     

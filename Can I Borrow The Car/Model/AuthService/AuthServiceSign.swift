@@ -29,18 +29,20 @@ class AuthServiceSign {
       } catch let logoutError {
          ProgressHUD.showError(logoutError.localizedDescription)
       }
-      let storyboard = UIStoryboard(name: "SignIn", bundle: nil)
-      let signInVC = storyboard.instantiateViewController(withIdentifier: "SignInViewController")
+      let storyboard = UIStoryboard(name: Identifier.SignInIdentifier, bundle: nil)
+      let signInVC = storyboard.instantiateViewController(withIdentifier: Storyboard.SignInSB)
       currentVC.present(signInVC, animated: true, completion: nil)
    }
 
-   static func autoSignIn(signedIn: (() -> Void)? = nil) {
+   static func autoSignIn(signedIn: ((UserModel) -> Void)? = nil) {
       if Auth.auth().currentUser != nil {
-         signedIn!()
+        API.User.observeCurrentUser { (user) in
+            signedIn!(user)
+        }
       }
    }
     
-   static func signUp(username: String, email: String, password: String, firstName: String, lastName: String, imageData: Data, signedIn: (() -> Void)? = nil, onError: ((String?) -> Void)? = nil) {
+    static func signUp(username: String, email: String, password: String, firstName: String, lastName: String, imageData: Data, signedIn: (() -> Void)? = nil, onError: ((String?) -> Void)? = nil) {
       Auth.auth().createUser(withEmail: email, password: password, completion: { (user, error) in
          if error != nil {
             onError!(error!.localizedDescription)
@@ -66,7 +68,7 @@ class AuthServiceSign {
       let ref = Database.database().reference()
       let usersReference = ref.child(AuthConfig.userUrl)
       let newUserReference = usersReference.child(uid)
-    newUserReference.setValue([FIRModelStrings.currentGroupId : nil, FIRModelStrings.username: username, FIRModelStrings.usernameLowerCase: username.lowercased(), FIRModelStrings.email: email, FIRModelStrings.firstName: firstName, FIRModelStrings.lastName: lastName , FIRModelStrings.profileImageUrl: profileImageUrl])
+        newUserReference.setValue([FIRModelStrings.currentGroupId : "noGroup", FIRModelStrings.username: username, FIRModelStrings.usernameLowerCase: username.lowercased(), FIRModelStrings.email: email, FIRModelStrings.firstName: firstName, FIRModelStrings.lastName: lastName , FIRModelStrings.profileImageUrl: profileImageUrl, FIRModelStrings.isUserInAGroup : false])
       signedIn!()
    }
 

@@ -4,7 +4,6 @@ target 'Can I Borrow The Car' do
   use_frameworks!
 
   # Pods for Can I Borrow The Car
-    pod 'RealmSwift'
     pod 'Firebase/Core'
     pod 'Firebase'
     pod 'Firebase/Auth'

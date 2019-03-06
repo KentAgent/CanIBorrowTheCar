@@ -9,28 +9,32 @@
 import UIKit
 
 extension ProfileTabBarViewController {
-
-    func loadCarsFromGroup()  {
-        loadCurrentUser { (user) in
-            self.loadCarsIfInGroup(user: self.currentUser!)
+    
+    func loadCurrentUser() {
+        API.User.observeCurrentUser { (user) in
+            self.currentUser = user
+            self.userNameLabel.text! = "\(self.currentUser!.firstName!) \(self.currentUser!.lastName!)"
+            SdSetImage.fetchUserImage(image: self.profileImageView, user: user)
+            AppStyle.cirlceUIImageView(image: self.profileImageView)
+            self.tableView.reloadData()
         }
     }
     
-    private func loadCurrentUser(completion: @escaping (UserModel) -> ()) {
-        API.User.observeCurrentUser { (user) in
-            self.currentUser = user
-            self.navigationItem.title = self.currentUser?.firstName
-            completion(user)
+    func loadMyCars() {
+        API.Car.observeMyCars(completion: { (car) in
+            self.myCars.append(car)
+            self.tableView.reloadData()
+        }) { (er) in
+            print(er?.localizedDescription)
         }
     }
     
     private func loadCarsIfInGroup(user: UserModel) {
         if user.currentGroupId != nil {
             self.fetchGroupName()
-            API.Group.observeGroupFeed(with: user.currentGroupId!, completion: { (car) in
-                self.cars.append(car)
-                //self.activityIndicator.stopAnimating()
-            })
+            API.Group.observeFeed(withId: user.currentGroupId!) { (car) in
+                self.myCars.append(car)
+            }
         }
     }
     

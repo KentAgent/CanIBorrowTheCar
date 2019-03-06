@@ -18,7 +18,11 @@ protocol FetchGroup {
 
 class ProfileTabBarViewController: UIViewController, FetchUser, FetchGroup {
 
-    var cars = [CarModel]()
+    @IBOutlet weak var profileImageView: UIImageView!
+    @IBOutlet weak var userNameLabel: UILabel!
+    @IBOutlet weak var tableView: UITableView!
+    
+    var myCars = [CarModel]()
     var currentGroup : GroupModel?
     var currentUser : UserModel?
     
@@ -27,13 +31,10 @@ class ProfileTabBarViewController: UIViewController, FetchUser, FetchGroup {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        loadCarsFromGroup()
-        if currentUser != nil {
-            currentUser = userDelegate?.passCurrentUser()
-        }
-        if currentGroup != nil {
-            currentGroup = groupDelegate?.passCurrentGroup()
-        }
+        registerTableView()
+        loadCurrentUser()
+        loadMyCars()
+        setUpDelegate()
     }
     
     func passCurrentUser() -> UserModel {
@@ -42,6 +43,15 @@ class ProfileTabBarViewController: UIViewController, FetchUser, FetchGroup {
     
     func passCurrentGroup() -> GroupModel {
         return self.currentGroup!
+    }
+    
+    func setUpDelegate() {
+        if currentUser != nil {
+            currentUser = userDelegate?.passCurrentUser()
+        }
+        if currentGroup != nil {
+            currentGroup = groupDelegate?.passCurrentGroup()
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

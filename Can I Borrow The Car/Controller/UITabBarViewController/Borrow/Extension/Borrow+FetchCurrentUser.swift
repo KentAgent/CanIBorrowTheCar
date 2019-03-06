@@ -10,31 +10,42 @@ import UIKit
 
 extension BorrowTabBarViewController {
     
-    func loadCarsFromGroup()  {
-        loadCurrentUser { user in
-            //self.loadCarsIfInGroup(user: self.currentUser)
-            self.loadCar()
+    func loadCurrentUser() {
+        if let tabbar = tabBarController as? TabBarController {
+            currentUser = tabbar.user
+            tableView.reloadData()
         }
     }
     
-    func loadCurrentUser(completion: @escaping (UserModel) -> ()) {
-        API.User.observeCurrentUser { user in
+    func obseveCurrentUser() {
+        API.User.observeCurrentUser { (user) in
             self.currentUser = user
-            completion(user)
+            self.fetchGroupName()
+            self.navigationItem.title = self.currentUser.firstName ?? self.currentUser.username
+            self.tableView.reloadData()
         }
     }
     
-    private func loadCar() {
-        if let id = currentUser.currentGroupId {
-            fetchGroupName()
-            API.Group.observeGroupFeed(with: id, completion: { car in
-                self.carsInGroup()
+    func observeFeed() {
+        API.Group.observeFeed(withId: currentUser.currentGroupId!) { (car) in
+            guard let carId = car.userId else { return }
+            self.fetchUser(uid: carId, completion: {
                 self.carsInCurrentGroup.append(car)
                 self.tableView.reloadData()
-            }) { (error) in
-                self.noCarsInGroup()
-                print(error?.localizedDescription as Any)
-            }
+            })
+        }
+
+        API.Group.observeFeedRemoved(withId: currentUser.currentGroupId!) { (car) in
+            self.carsInCurrentGroup = self.carsInCurrentGroup.filter { $0.id != car.id}
+            self.groupUsers = self.groupUsers.filter { $0.id != car.id}
+            self.tableView.reloadData()
+        }
+    }
+    
+    func fetchUser(uid: String, completion: (() -> Void)? = nil) {
+        API.User.observeUser(uid: uid) { (user) in
+            self.groupUsers.append(user)
+            completion!()
         }
     }
     

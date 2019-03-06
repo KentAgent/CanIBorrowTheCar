@@ -12,28 +12,26 @@ class BorrowTabBarViewController: UIViewController, UpdateView  {
     
     func updateCarsFromOnLoad() {
         print("cars updated")
-        loadCurrentUser { user in
-            //self.loadCarsIfInGroup(user: self.currentUser)
-            self.carsInCurrentGroup.removeAll()
-            self.loadCarsFromGroup()
-        }
+        carsInCurrentGroup.removeAll()
+        observeFeed()
     }
     
 
+    @IBOutlet weak var noGroupView: UIView!
     @IBOutlet weak var groupName: UILabel!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
 
     var carsInCurrentGroup = [CarModel]()
+    var groupUsers = [UserModel]()
     var currentGroup : GroupModel?
     var currentUser : UserModel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         registerTableView()
-        noCarsInGroup()
-        loadCarsFromGroup()
-        tableView.delegate = self
+        loadCurrentUser()
+        observeFeed()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -50,14 +48,14 @@ class BorrowTabBarViewController: UIViewController, UpdateView  {
     }
     
     func carsInGroup() {
+        noGroupView.isHidden = true
         tableView.isHidden = false
-        tableView.dataSource = self
     }
     
     func noCarsInGroup() {
         print("no cars")
+        noGroupView.isHidden = false
         tableView.isHidden = true
-        tableView.dataSource = nil
     }
     
 }
@@ -116,6 +114,8 @@ extension BorrowTabBarViewController: UITableViewDelegate, UITableViewDataSource
     }
     
     func registerTableView() {
+        tableView.delegate = self
+        tableView.dataSource = self
         tableView.register(UINib(nibName: Nibs.carCell, bundle: nil), forCellReuseIdentifier: Identifier.AtHomeCarCell)
         let headerNib = UINib.init(nibName: Nibs.carCellHeader, bundle: Bundle.main)
         tableView.register(headerNib, forHeaderFooterViewReuseIdentifier: Nibs.carCellHeader)

@@ -29,6 +29,17 @@
                         <constraint firstItem="jqU-KI-7Bn" firstAttribute="leading" secondItem="ehE-Cq-ZbP" secondAttribute="leading" constant="34" id="Yhm-Tm-A18"/>
                         <constraint firstAttribute="bottom" secondItem="jqU-KI-7Bn" secondAttribute="bottom" constant="16" id="kKp-aV-s9O"/>
                     </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                            <real key="value" value="0.0"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                            <size key="value" width="0.0" height="0.0"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                            <color key="value" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
                 </view>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

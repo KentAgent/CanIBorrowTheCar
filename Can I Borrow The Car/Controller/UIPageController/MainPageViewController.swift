@@ -18,10 +18,19 @@ class MainPageViewController: UIViewController {
         super.viewDidLoad()
     }
     
+    var user : UserModel?
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        AuthServiceSign.autoSignIn {
+        AuthServiceSign.autoSignIn { (user) in
+            self.user = user
             self.performSegue(withIdentifier: Identifier.SignInIdentifier, sender: nil)
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let sigedInVc = segue.destination as? TabBarController {
+            sigedInVc.user = user
         }
     }
 }

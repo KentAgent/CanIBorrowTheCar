@@ -37,17 +37,21 @@
                                     <constraint firstAttribute="bottom" secondItem="lrZ-nL-WzF" secondAttribute="bottom" id="x99-5x-0Qq"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fcs-Ad-hnM">
-                                <rect key="frame" x="60" y="736" width="70" height="40"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fcs-Ad-hnM">
+                                <rect key="frame" x="24" y="714" width="47" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="fYv-64-0e7"/>
+                                </constraints>
                                 <state key="normal" title="Sign In"/>
                                 <connections>
                                     <segue destination="lw6-k5-bpK" kind="presentation" id="QDo-Hp-aK5"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sns-e6-csR">
-                                <rect key="frame" x="243" y="736" width="70" height="40"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sns-e6-csR">
+                                <rect key="frame" x="294" y="714" width="57" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="LWD-Ey-hkc"/>
+                                </constraints>
                                 <state key="normal" title="Register"/>
                                 <connections>
                                     <segue destination="L9z-aS-hMW" kind="presentation" id="SUg-br-BS9"/>
@@ -57,8 +61,12 @@
                         <color key="backgroundColor" name="BackgroundColor"/>
                         <constraints>
                             <constraint firstItem="far-KT-teS" firstAttribute="trailing" secondItem="sli-Rf-Crk" secondAttribute="trailing" id="1du-VF-x0P"/>
+                            <constraint firstItem="sli-Rf-Crk" firstAttribute="bottom" secondItem="fcs-Ad-hnM" secondAttribute="bottom" constant="24" id="57x-39-0Bs"/>
+                            <constraint firstItem="sli-Rf-Crk" firstAttribute="trailing" secondItem="Sns-e6-csR" secondAttribute="trailing" constant="24" id="5aT-Lq-2I6"/>
+                            <constraint firstItem="sli-Rf-Crk" firstAttribute="bottom" secondItem="Sns-e6-csR" secondAttribute="bottom" constant="24" id="Bwk-ni-vse"/>
                             <constraint firstItem="far-KT-teS" firstAttribute="leading" secondItem="sli-Rf-Crk" secondAttribute="leading" id="D8z-Xs-rog"/>
                             <constraint firstItem="far-KT-teS" firstAttribute="baseline" secondItem="dfs-ge-fpJ" secondAttribute="bottom" id="Ocg-kW-f5q"/>
+                            <constraint firstItem="fcs-Ad-hnM" firstAttribute="leading" secondItem="sli-Rf-Crk" secondAttribute="leading" constant="24" id="ckf-HS-vEN"/>
                             <constraint firstItem="far-KT-teS" firstAttribute="top" secondItem="dfs-ge-fpJ" secondAttribute="top" id="pEh-BN-Huz"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="sli-Rf-Crk"/>
@@ -97,7 +105,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hrs-t2-36s">
-                                <rect key="frame" x="16" y="733" width="343" height="45"/>
+                                <rect key="frame" x="16" y="717" width="343" height="45"/>
                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="vpf-EM-eDa"/>
@@ -293,7 +301,7 @@
                             <constraint firstItem="ebz-ih-xG6" firstAttribute="centerX" secondItem="TrQ-ZO-gVS" secondAttribute="centerX" id="VSh-du-2GO"/>
                             <constraint firstItem="4Nr-zz-skU" firstAttribute="top" secondItem="ebz-ih-xG6" secondAttribute="bottom" constant="46" id="kzK-o6-duA"/>
                             <constraint firstItem="ebz-ih-xG6" firstAttribute="top" secondItem="fUA-Ly-aiK" secondAttribute="top" constant="46" id="vbw-zI-Ece"/>
-                            <constraint firstItem="hrs-t2-36s" firstAttribute="bottom" secondItem="fUA-Ly-aiK" secondAttribute="bottom" id="whn-IW-9VB"/>
+                            <constraint firstItem="fUA-Ly-aiK" firstAttribute="bottom" secondItem="hrs-t2-36s" secondAttribute="bottom" constant="16" id="whn-IW-9VB"/>
                             <constraint firstItem="4Nr-zz-skU" firstAttribute="centerX" secondItem="TrQ-ZO-gVS" secondAttribute="centerX" id="yUa-Zh-HaM"/>
                             <constraint firstItem="fUA-Ly-aiK" firstAttribute="trailing" secondItem="hrs-t2-36s" secondAttribute="trailing" constant="16" id="zXH-fd-NTx"/>
                             <constraint firstItem="hrs-t2-36s" firstAttribute="leading" secondItem="fUA-Ly-aiK" secondAttribute="leading" constant="16" id="zkO-Z2-2mF"/>
@@ -441,6 +449,6 @@
         </namedColor>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="wwn-1v-fAw"/>
+        <segue reference="zia-EN-N7h"/>
     </inferredMetricsTieBreakers>
 </document>

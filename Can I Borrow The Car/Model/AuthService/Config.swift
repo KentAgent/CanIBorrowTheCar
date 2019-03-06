@@ -43,6 +43,7 @@ struct FIRModelStrings {
     static let email = "email"
     static let firstName = "firstName"
     static let lastName = "lastName"
+    static let isUserInAGroup = "isUserInAGroup"
     
 }
 

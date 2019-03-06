@@ -25,7 +25,7 @@ struct UserFirebaseModel {
         }
         return nil
     }
-    
+        
     func observeUser(uid: String, completion: @escaping (UserModel) -> Void) {
         refUsers.child(uid).observe(.value, with: {
             (snapshot) in

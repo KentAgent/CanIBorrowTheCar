@@ -16,6 +16,7 @@ struct UserModel {
     var lastName: String?
     var profileImageUrl: String?
     var currentGroupId: String?
+    var isUserInAGroup: Bool?
     //var isFollowing: Bool?
 }
 
@@ -26,6 +27,7 @@ extension UserModel {
         user.email = dict[FIRModelStrings.email] as? String
         user.profileImageUrl = dict[FIRModelStrings.profileImageUrl] as? String
         user.currentGroupId = dict[FIRModelStrings.currentGroupId] as? String
+        user.isUserInAGroup = dict[FIRModelStrings.isUserInAGroup] as? Bool
         user.firstName = dict[FIRModelStrings.firstName] as? String
         user.lastName = dict[FIRModelStrings.lastName] as? String
         user.id = key
